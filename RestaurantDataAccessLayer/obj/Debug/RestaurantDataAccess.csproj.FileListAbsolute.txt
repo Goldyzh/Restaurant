@@ -1,0 +1,6 @@
+C:\Users\g\source\repos\Restaurant\RestaurantDataAccessLayer\obj\Debug\RestaurantDataAccess.csproj.AssemblyReference.cache
+C:\Users\g\source\repos\Restaurant\RestaurantDataAccessLayer\obj\Debug\RestaurantDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\g\source\repos\Restaurant\RestaurantDataAccessLayer\bin\Debug\RestaurantDataAccessLayer.dll
+C:\Users\g\source\repos\Restaurant\RestaurantDataAccessLayer\bin\Debug\RestaurantDataAccessLayer.pdb
+C:\Users\g\source\repos\Restaurant\RestaurantDataAccessLayer\obj\Debug\RestaurantDataAccessLayer.dll
+C:\Users\g\source\repos\Restaurant\RestaurantDataAccessLayer\obj\Debug\RestaurantDataAccessLayer.pdb
