@@ -24,19 +24,19 @@ namespace Restaurant
         frmLogin _frmLogin;
 
 
-    
 
-        //public frmMain(frmLogin frm)
-        //{
-        //    InitializeComponent();
-        //    _frmLogin = frm;
 
-        //}
+        public frmMain(frmLogin frm)
+        {
+            InitializeComponent();
+            _frmLogin = frm;
+
+        }
 
         public frmMain()
         {
             InitializeComponent();
-        
+
 
         }
 

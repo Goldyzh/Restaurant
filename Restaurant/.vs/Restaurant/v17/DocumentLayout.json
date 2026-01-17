@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|c:\\users\\g\\source\\repos\\restaurant\\restaurant\\login\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|solutionrelative:login\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|c:\\users\\g\\source\\repos\\restaurant\\restaurant\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|c:\\users\\g\\source\\repos\\restaurant\\restaurant\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|c:\\users\\g\\source\\repos\\restaurant\\restaurant\\login\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|solutionrelative:login\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,50 +35,50 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmLogin.cs",
-              "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\login\\frmLogin.cs",
-              "RelativeDocumentMoniker": "login\\frmLogin.cs",
-              "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\login\\frmLogin.cs",
-              "RelativeToolTip": "login\\frmLogin.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAYwDEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-17T16:55:32.837Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "frmMain.cs [Design]",
               "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\frmMain.cs",
               "RelativeDocumentMoniker": "frmMain.cs",
               "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\frmMain.cs [Design]",
               "RelativeToolTip": "frmMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-17T16:49:10.74Z",
+              "WhenOpened": "2026-01-17T17:43:29.645Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "frmLogin.cs",
+              "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\login\\frmLogin.cs",
+              "RelativeDocumentMoniker": "login\\frmLogin.cs",
+              "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\login\\frmLogin.cs",
+              "RelativeToolTip": "login\\frmLogin.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAYwD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T17:41:34.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "frmMain.cs",
               "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\frmMain.cs",
               "RelativeDocumentMoniker": "frmMain.cs",
               "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\frmMain.cs",
               "RelativeToolTip": "frmMain.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAlwCoAAABOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-17T16:45:52.075Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAuwBQAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAuwBcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-17T16:47:15.285Z",
               "EditorCaption": ""

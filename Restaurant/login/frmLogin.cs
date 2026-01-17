@@ -56,8 +56,8 @@ namespace Restaurant.Login
 
                  clsGlobal.CurrentUser = user;
                  this.Hide();
-                // frmMain frm = new frmMain(this);
-                // frm.ShowDialog();
+                frmMain frm = new frmMain(this);
+                frm.ShowDialog();
 
 
             } else
