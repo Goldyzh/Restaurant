@@ -3,8 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|c:\\users\\g\\source\\repos\\restaurant\\restaurant\\people\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|solutionrelative:people\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D469A2E6-9355-4BB0-A7C1-E2459299DF87}|..\\BusinessLayer\\Business.csproj|c:\\users\\g\\source\\repos\\restaurant\\businesslayer\\clscategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B6CB737-3EBB-47BB-8218-B34C89D0120F}|..\\RestaurantDataAccessLayer\\RestaurantDataAccess.csproj|c:\\users\\g\\source\\repos\\restaurant\\restaurantdataaccesslayer\\clscategorydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +25,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmAddUpdatePerson.cs",
-              "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\people\\frmAddUpdatePerson.cs",
-              "RelativeDocumentMoniker": "people\\frmAddUpdatePerson.cs",
-              "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\people\\frmAddUpdatePerson.cs",
-              "RelativeToolTip": "people\\frmAddUpdatePerson.cs",
-              "ViewState": "AgIAAPAAAAAAAAAAAAAkwPcAAAAbAAAAAAAAAA==",
+              "Title": "clsCategory.cs",
+              "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\BusinessLayer\\clsCategory.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLayer\\clsCategory.cs",
+              "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\BusinessLayer\\clsCategory.cs",
+              "RelativeToolTip": "..\\BusinessLayer\\clsCategory.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAASwFQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-18T11:30:57.953Z",
+              "WhenOpened": "2026-01-18T21:41:17.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "clsCategoryData.cs",
+              "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\RestaurantDataAccessLayer\\clsCategoryData.cs",
+              "RelativeDocumentMoniker": "..\\RestaurantDataAccessLayer\\clsCategoryData.cs",
+              "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\RestaurantDataAccessLayer\\clsCategoryData.cs",
+              "RelativeToolTip": "..\\RestaurantDataAccessLayer\\clsCategoryData.cs",
+              "ViewState": "AgIAAJkAAAAAAAAAAADgv6gAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-18T21:21:44.33Z",
               "EditorCaption": ""
             }
           ]
