@@ -37,22 +37,7 @@ namespace Restaurant
         {
             InitializeComponent();
 
-
         }
-
-        private void peopleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form frm = new frmListPeople();
-            frm.ShowDialog();
-        }
-
-        private void employeesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form frm = new frmListUsers();
-            frm.ShowDialog();
-        }
-
-
 
     
 
@@ -77,24 +62,22 @@ namespace Restaurant
 
         }
 
-    
-       
-
-
-
-
 
         private void vehiclesLicensesServicesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("This Feature Is Not Implemented Yet!", "Not Ready", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void btmPeople_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmListPeople();
+            frm.ShowDialog();
+        }
 
-
-
-
-
-
-
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmListUsers();
+            frm.ShowDialog();
+        }
     }
 }

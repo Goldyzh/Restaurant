@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using Restaurant.Classes;
 using Restaurant.Properties;
 using Restaurant_Buisness;
+using Restaurant_DataAccess;
 using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using System.Runtime.ConstrainedExecution;
@@ -52,7 +53,7 @@ namespace Restaurant.People
         private void _ResetDefualtValues()
         {
             //this will initialize the reset the defaule values
-            //_FillCountriesInComoboBox();
+            _FillCountriesInComoboBox();
 
             if (_Mode == enMode.AddNew)
             {
@@ -96,15 +97,15 @@ namespace Restaurant.People
 
         }
 
-        //private void _FillCountriesInComoboBox()
-        //{
-        //    DataTable dtCountries = clsCountry.GetAllCountries();
+        private void _FillCountriesInComoboBox()
+        {
+            DataTable dtCountries = clsCountry.GetAllCountries();
 
-        //    foreach (DataRow row in dtCountries.Rows)
-        //    {
-        //        cbCountry.Items.Add(row["CountryName"]);
-        //    }
-        //}
+            foreach (DataRow row in dtCountries.Rows)
+            {
+                cbCountry.Items.Add(row["CountryName"]);
+            }
+        }
 
         private void _LoadData()
         {
@@ -220,7 +221,7 @@ namespace Restaurant.People
            if (! _HandlePersonImage())
                 return;
 
-           // int NationalityCountryID = clsCountry.Find(cbCountry.Text).ID;
+            int NationalityCountryID = clsCountry.Find(cbCountry.Text).ID;
 
             _Person.FirstName = txtFirstName.Text.Trim();
             _Person.SecondName = txtSecondName.Text.Trim();
@@ -237,7 +238,7 @@ namespace Restaurant.People
             else
                 _Person.Gendor = (short) enGendor.Female;
 
-           // _Person.NationalityCountryID = NationalityCountryID;
+            _Person.NationalityCountryID = NationalityCountryID;
             
             if (pbPersonImage.ImageLocation != null)
                 _Person.ImagePath = pbPersonImage.ImageLocation;

@@ -29,6 +29,8 @@ namespace Restaurant.User
         {
             _dtAllUsers = clsUser.GetAllUsers();
             dgvUsers.DataSource = _dtAllUsers;
+
+
             cbFilterBy.SelectedIndex = 0;
             lblRecordsCount.Text = dgvUsers.Rows.Count.ToString();
 

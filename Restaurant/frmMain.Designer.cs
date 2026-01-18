@@ -84,6 +84,7 @@
             this.btnUsers.TabIndex = 3;
             this.btnUsers.Text = "Users";
             this.btnUsers.UseVisualStyleBackColor = true;
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
             // btmPeople
             // 
@@ -96,13 +97,14 @@
             this.btmPeople.TabIndex = 4;
             this.btmPeople.Text = "People";
             this.btmPeople.UseVisualStyleBackColor = true;
+            this.btmPeople.Click += new System.EventHandler(this.btmPeople_Click);
             // 
             // lblRestaurantNmae
             // 
             this.lblRestaurantNmae.AutoSize = true;
             this.lblRestaurantNmae.Font = new System.Drawing.Font("Snap ITC", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRestaurantNmae.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblRestaurantNmae.Location = new System.Drawing.Point(421, 9);
+            this.lblRestaurantNmae.Location = new System.Drawing.Point(421, 18);
             this.lblRestaurantNmae.Name = "lblRestaurantNmae";
             this.lblRestaurantNmae.Size = new System.Drawing.Size(250, 63);
             this.lblRestaurantNmae.TabIndex = 5;

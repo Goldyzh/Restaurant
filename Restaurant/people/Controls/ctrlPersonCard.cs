@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using System.IO;
 using Restaurant.People;
+using Restaurant_DataAccess;
+
 
 namespace Restaurant.Controls
 {
@@ -89,7 +91,7 @@ namespace Restaurant.Controls
             lblEmail.Text = _Person.Email;
             lblPhone.Text = _Person.Phone;
             lblDateOfBirth.Text = _Person.DateOfBirth.ToShortDateString();
-           // lblCountry.Text= clsCountry.Find( _Person.NationalityCountryID).CountryName ;
+            lblCountry.Text= clsCountry.Find( _Person.NationalityCountryID).CountryName ;
             lblAddress.Text= _Person.Address;
             _LoadPersonImage();
 

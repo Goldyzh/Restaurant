@@ -19,6 +19,9 @@ namespace Restaurant.People
     {
 
       private static DataTable _dtAllPeople = clsPerson.GetAllPeople();
+
+
+
         
         //only select the columns that you want to show in the grid
       private DataTable _dtPeople = _dtAllPeople.DefaultView.ToTable(false, "PersonID", "NationalNo",
