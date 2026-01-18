@@ -1,4 +1,5 @@
-﻿using Restaurant.Classes;
+﻿using Restaurant.Category;
+using Restaurant.Classes;
 using Restaurant.Login;
 using Restaurant.People;
 using Restaurant.User;
@@ -77,6 +78,12 @@ namespace Restaurant
         private void btnUsers_Click(object sender, EventArgs e)
         {
             Form frm = new frmListUsers();
+            frm.ShowDialog();
+        }
+
+        private void btnCategories_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmListCategory();
             frm.ShowDialog();
         }
     }

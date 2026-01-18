@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="category\frmAddUpdatedCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="category\frmAddUpdatedCategory.Designer.cs">
+      <DependentUpon>frmAddUpdatedCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +62,12 @@
     <Compile Include="global classes\clsGlobal.cs" />
     <Compile Include="global classes\clsValidatoin.cs" />
     <Compile Include="global classes\util.cs" />
+    <Compile Include="category\frmListCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="category\frmListCategory.Designer.cs">
+      <DependentUpon>frmListCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +142,12 @@
     <Compile Include="user\frmUserInfo.Designer.cs">
       <DependentUpon>frmUserInfo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="category\frmAddUpdatedCategory.resx">
+      <DependentUpon>frmAddUpdatedCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="category\frmListCategory.resx">
+      <DependentUpon>frmListCategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,5 +329,6 @@
     <Content Include="Resources\Written Test 32.png" />
     <Content Include="Resources\Written Test 512.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

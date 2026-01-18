@@ -197,7 +197,7 @@ namespace Restaurant_DataAccess
 
             catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                 Console.WriteLine("Error-------------------------: " + ex.Message);
             }
             finally
             {

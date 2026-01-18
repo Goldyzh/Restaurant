@@ -106,7 +106,7 @@ namespace Restaurant_Buisness
             return false;
         }
 
-        public static DataTable GetAllPeople()
+        public static DataTable GetAllCategories()
         {
             return clsCategoryData.GetAllCategories();
         }
