@@ -75,8 +75,6 @@ namespace Restaurant.Item
 
             txtItemName.Text = "";
             txtPrice.Text = "";
-   
-
             txtDescription.Text = "";
 
             chkIsAvailable.Checked = true;
@@ -198,22 +196,36 @@ namespace Restaurant.Item
             if (!_HandlePersonImage())
                 return;
 
+            if (cbCategory.Text == "")
+            {
+                MessageBox.Show("Please select a Category", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             int CategoryID = clsCategory.Find(cbCategory.Text).CategoryID;
 
-            Console.WriteLine("CategoryID-------------------------");
-            Console.WriteLine(cbCategory.Text);
-            Console.WriteLine("CategoryID-------------------------");
 
-            Console.WriteLine("CategoryID-------------------------");
-            Console.WriteLine(CategoryID);
-            Console.WriteLine("CategoryID-------------------------");
 
             _Item.ItemName = txtItemName.Text.Trim();
             _Item.Price = decimal.Parse(txtPrice.Text) ;
             _Item.Description = txtDescription.Text.Trim();
             _Item.CreatedAt = DateTime.Now;
-
             _Item.CategoryID = CategoryID;
+
+
+            if (chkIsAvailable.Checked)
+            {
+                _Item.IsAvailable = true;
+            }
+            else
+            {
+                _Item.IsAvailable = false;
+            }
+             
+
+
+            
+
 
 
             if (pbPersonImage.ImageLocation != null)

@@ -74,7 +74,7 @@ namespace Restaurant_Buisness
             int CategoryID = -1;
             string Description = "", ImagePath = "";
 
-            if (clsCategoryData.GetCategoryInfoByName(CategoryID, ref  Name, ref Description, ref ImagePath))
+            if (clsCategoryData.GetCategoryInfoByName(Name, ref CategoryID, ref Description, ref ImagePath))
 
                 return new clsCategory(CategoryID, Name, Description, ImagePath);
             else

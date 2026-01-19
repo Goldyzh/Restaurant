@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Security.Policy;
 
 namespace Restaurant_DataAccess
 {
@@ -282,7 +283,7 @@ namespace Restaurant_DataAccess
     
 
 
-        public static bool GetCategoryInfoByName( int CategoryID , ref string Name, ref string Description, ref string ImagePath)
+        public static bool GetCategoryInfoByName(string Name ,ref int CategoryID, ref string Description, ref string ImagePath)
         {
             bool isFound = false;
 
