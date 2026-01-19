@@ -214,10 +214,10 @@ namespace Restaurant_DataAccess
               @"SELECT Items.ItemID, Items.ItemName,
               Items.Price, Items.Price, Items.Description, Items.ImagePath,
 			  Items.IsAvailable,
-			  Items.CreatedAt, Items.CategoryID
+			  Items.CreatedAt, Categories.Name
               FROM            Items INNER JOIN
                          Categories ON Items.CategoryID = Categories.CategoryID
-              ORDER BY Items.CategoryID";
+              ORDER BY Categories.Name";
 
 
 

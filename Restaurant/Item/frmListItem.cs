@@ -27,13 +27,13 @@ namespace Restaurant.Item
 
         //only select the columns that you want to show in the grid
         private DataTable _dtCategory = _dtAllItems.DefaultView.ToTable(false, "ItemID", "ItemName", "Price",
-                                                         "Description" , "ImagePath" , "IsAvailable" , "CreatedAt" , "CategoryID");
+                                                         "Description" , "ImagePath" , "IsAvailable" , "CreatedAt" , "Name");
 
         private void _RefreshItemsList()
         {
             _dtAllItems = clsItems.GetAllItems();
             _dtCategory = _dtAllItems.DefaultView.ToTable(false, "ItemID", "ItemName", "Price",
-                                                         "Description", "ImagePath", "IsAvailable", "CreatedAt", "CategoryID");
+                                                         "Description", "ImagePath", "IsAvailable", "CreatedAt", "Name");
 
             dgvItems.DataSource = _dtCategory;
             lblRecordsCount.Text = dgvItems.Rows.Count.ToString();
@@ -52,28 +52,28 @@ namespace Restaurant.Item
             if (dgvItems.Rows.Count > 0)
             {
 
-                dgvItems.Columns[0].HeaderText = "Category ID";
+                dgvItems.Columns[0].HeaderText = "Item ID";
                 dgvItems.Columns[0].Width = 80;
 
-                dgvItems.Columns[1].HeaderText = "ItemName.";
+                dgvItems.Columns[1].HeaderText = "Item Name";
                 dgvItems.Columns[1].Width = 150;
 
-                dgvItems.Columns[2].HeaderText = "Price.";
+                dgvItems.Columns[2].HeaderText = "Price";
                 dgvItems.Columns[2].Width = 150;
 
                 dgvItems.Columns[3].HeaderText = "Description";
                 dgvItems.Columns[3].Width = 320;
 
-                dgvItems.Columns[4].HeaderText = "ImagePath.";
+                dgvItems.Columns[4].HeaderText = "Image Path";
                 dgvItems.Columns[4].Width = 150;
 
-                dgvItems.Columns[5].HeaderText = "IsAvailable.";
+                dgvItems.Columns[5].HeaderText = "Is Available";
                 dgvItems.Columns[5].Width = 150;
 
-                dgvItems.Columns[6].HeaderText = "CreatedAt.";
+                dgvItems.Columns[6].HeaderText = "Created At";
                 dgvItems.Columns[6].Width = 150;
 
-                dgvItems.Columns[7].HeaderText = "CategoryID.";
+                dgvItems.Columns[7].HeaderText = "Category Name";
                 dgvItems.Columns[7].Width = 150;
 
 

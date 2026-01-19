@@ -77,7 +77,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItems.Size = new System.Drawing.Size(1270, 371);
+            this.dgvItems.Size = new System.Drawing.Size(1361, 371);
             this.dgvItems.TabIndex = 103;
             this.dgvItems.TabStop = false;
             // 
@@ -159,7 +159,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::Restaurant.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(1160, 668);
+            this.btnClose.Location = new System.Drawing.Point(1251, 668);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(135, 36);
             this.btnClose.TabIndex = 112;
@@ -170,7 +170,7 @@
             // 
             this.btnAdddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdddItem.Image = global::Restaurant.Properties.Resources.Add_Person_40;
-            this.btnAdddItem.Location = new System.Drawing.Point(1207, 221);
+            this.btnAdddItem.Location = new System.Drawing.Point(1298, 221);
             this.btnAdddItem.Name = "btnAdddItem";
             this.btnAdddItem.Size = new System.Drawing.Size(88, 55);
             this.btnAdddItem.TabIndex = 111;
@@ -181,7 +181,7 @@
             // 
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTitle.Location = new System.Drawing.Point(542, 208);
+            this.lblTitle.Location = new System.Drawing.Point(613, 208);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(369, 39);
             this.lblTitle.TabIndex = 110;
@@ -193,7 +193,7 @@
             this.pbPersonImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbPersonImage.Image = global::Restaurant.Properties.Resources.People_400;
             this.pbPersonImage.InitialImage = null;
-            this.pbPersonImage.Location = new System.Drawing.Point(617, 14);
+            this.pbPersonImage.Location = new System.Drawing.Point(688, 14);
             this.pbPersonImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbPersonImage.Name = "pbPersonImage";
             this.pbPersonImage.Size = new System.Drawing.Size(220, 189);
@@ -264,7 +264,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1307, 712);
+            this.ClientSize = new System.Drawing.Size(1409, 712);
             this.Controls.Add(this.dgvItems);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAdddItem);
