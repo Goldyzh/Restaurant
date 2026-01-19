@@ -128,7 +128,7 @@ namespace Restaurant.Item
 
         }
 
-        private void frmAddUpdatePerson_Load(object sender, EventArgs e)
+        private void frmAddUpdatedItems_Load(object sender, EventArgs e)
         {
             _ResetDefualtValues();
 
@@ -184,7 +184,7 @@ namespace Restaurant.Item
             return true;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click_1(object sender, EventArgs e)
         {
 
             if (!this.ValidateChildren())
@@ -198,7 +198,15 @@ namespace Restaurant.Item
             if (!_HandlePersonImage())
                 return;
 
-            int CategoryID = clsCategory.Find(cbCategory.Text).ID;
+            int CategoryID = clsCategory.Find(cbCategory.Text).CategoryID;
+
+            Console.WriteLine("CategoryID-------------------------");
+            Console.WriteLine(cbCategory.Text);
+            Console.WriteLine("CategoryID-------------------------");
+
+            Console.WriteLine("CategoryID-------------------------");
+            Console.WriteLine(CategoryID);
+            Console.WriteLine("CategoryID-------------------------");
 
             _Item.ItemName = txtItemName.Text.Trim();
             _Item.Price = decimal.Parse(txtPrice.Text) ;
@@ -233,7 +241,7 @@ namespace Restaurant.Item
 
         }
 
-        private void llSetImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void llSetImage_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
             openFileDialog1.FilterIndex = 1;
@@ -293,8 +301,7 @@ namespace Restaurant.Item
 
         }
 
-       
-
+   
     }
 }
 

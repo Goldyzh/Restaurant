@@ -279,20 +279,20 @@ namespace Restaurant_DataAccess
         }
 
 
-    }
+    
 
 
-        public static bool GetCategoryInfoByName( int CategoryID , ref string CountryName, ref string Description, ref string ImagePath)
+        public static bool GetCategoryInfoByName( int CategoryID , ref string Name, ref string Description, ref string ImagePath)
         {
             bool isFound = false;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = "SELECT * FROM Countries WHERE CountryName = @CountryName";
+            string query = "SELECT * FROM Categories WHERE Name = @Name";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@CountryName", CountryName);
+            command.Parameters.AddWithValue("@Name", Name);
 
             try
             {
@@ -305,7 +305,7 @@ namespace Restaurant_DataAccess
                     // The record was found
                     isFound = true;
 
-                    ID = (int)reader["CountryID"];
+                    CategoryID = (int)reader["CategoryID"];
 
                 }
                 else
@@ -330,6 +330,6 @@ namespace Restaurant_DataAccess
 
             return isFound;
         }
-
-
     }
+
+}

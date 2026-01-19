@@ -88,12 +88,12 @@ namespace Restaurant_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"INSERT INTO Items (ItemName, Price,escription
+            string query = @"INSERT INTO Items (ItemName, Price,Description
            ,ImagePath
            ,IsAvailable
            ,CreatedAt
            ,CategoryID)
-                             VALUES (@ItemName, @Price,@escription
+                             VALUES (@ItemName, @Price,@Description
            ,@ImagePath
            ,@IsAvailable
            ,@CreatedAt
@@ -120,6 +120,9 @@ namespace Restaurant_DataAccess
             else
                 command.Parameters.AddWithValue("@ImagePath", System.DBNull.Value);
 
+            command.Parameters.AddWithValue("@IsAvailable", IsAvailable);
+
+
             try
             {
                 connection.Open();
@@ -134,7 +137,7 @@ namespace Restaurant_DataAccess
 
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                Console.WriteLine("Error:------------------------------ " + ex.Message);
 
             }
 
@@ -170,14 +173,8 @@ namespace Restaurant_DataAccess
             command.Parameters.AddWithValue("@ItemID", ItemID);
             command.Parameters.AddWithValue("@ItemName", ItemName);
             command.Parameters.AddWithValue("@Price", Price);
-
-          
             command.Parameters.AddWithValue("@CreatedAt", CreatedAt);
             command.Parameters.AddWithValue("@Description", Description);
- 
-
-        
-
             command.Parameters.AddWithValue("@CategoryID", CategoryID);
 
             if (ImagePath != "" && ImagePath != null)

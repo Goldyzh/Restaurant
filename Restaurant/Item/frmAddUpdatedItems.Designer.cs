@@ -38,6 +38,9 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkIsAvailable = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -51,17 +54,14 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.chkIsAvailable = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblItemID
@@ -118,6 +118,7 @@
             this.llSetImage.TabIndex = 13;
             this.llSetImage.TabStop = true;
             this.llSetImage.Text = "Set Image";
+            this.llSetImage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llSetImage_LinkClicked_1);
             // 
             // label22
             // 
@@ -167,6 +168,40 @@
             this.groupBox1.Size = new System.Drawing.Size(928, 378);
             this.groupBox1.TabIndex = 114;
             this.groupBox1.TabStop = false;
+            // 
+            // chkIsAvailable
+            // 
+            this.chkIsAvailable.AutoSize = true;
+            this.chkIsAvailable.Checked = true;
+            this.chkIsAvailable.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkIsAvailable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkIsAvailable.Location = new System.Drawing.Point(524, 28);
+            this.chkIsAvailable.Name = "chkIsAvailable";
+            this.chkIsAvailable.Size = new System.Drawing.Size(97, 24);
+            this.chkIsAvailable.TabIndex = 128;
+            this.chkIsAvailable.Text = "Is Active";
+            this.chkIsAvailable.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Restaurant.Properties.Resources.Person_32;
+            this.pictureBox1.Location = new System.Drawing.Point(144, 84);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 114;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(39, 84);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 20);
+            this.label2.TabIndex = 113;
+            this.label2.Text = "Price:";
             // 
             // pictureBox8
             // 
@@ -288,6 +323,7 @@
             this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
             // 
             // errorProvider1
             // 
@@ -303,40 +339,6 @@
             this.pictureBox10.TabIndex = 118;
             this.pictureBox10.TabStop = false;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(39, 84);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 20);
-            this.label2.TabIndex = 113;
-            this.label2.Text = "Price:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Restaurant.Properties.Resources.Person_32;
-            this.pictureBox1.Location = new System.Drawing.Point(144, 84);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 26);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 114;
-            this.pictureBox1.TabStop = false;
-            // 
-            // chkIsAvailable
-            // 
-            this.chkIsAvailable.AutoSize = true;
-            this.chkIsAvailable.Checked = true;
-            this.chkIsAvailable.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkIsAvailable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkIsAvailable.Location = new System.Drawing.Point(524, 28);
-            this.chkIsAvailable.Name = "chkIsAvailable";
-            this.chkIsAvailable.Size = new System.Drawing.Size(97, 24);
-            this.chkIsAvailable.TabIndex = 128;
-            this.chkIsAvailable.Text = "Is Active";
-            this.chkIsAvailable.UseVisualStyleBackColor = true;
-            // 
             // frmAddUpdatedItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,15 +351,16 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmAddUpdatedItems";
             this.Text = "frmAddUpdatedItems";
+            this.Load += new System.EventHandler(this.frmAddUpdatedItems_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -43,7 +43,6 @@ namespace Restaurant.User
         {
             //this will initialize the reset the defaule values
 
-            _FillCountriesInComoboBox();
 
             if (_Mode == enMode.AddNew)
             {
@@ -74,15 +73,7 @@ namespace Restaurant.User
 
         }
 
-        private void _FillCountriesInComoboBox()
-        {
-            DataTable dtCountries = clsCountry.GetAllCountries();
 
-            foreach (DataRow row in dtCountries.Rows)
-            {
-                cbCountry.Items.Add(row["CountryName"]);
-            }
-        }
 
         private void _LoadData()
         {

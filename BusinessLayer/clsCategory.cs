@@ -68,7 +68,7 @@ namespace Restaurant_Buisness
         }
 
 
-        public static clsCountry Find(string Name)
+        public static clsCategory Find(string Name)
         {
 
             int CategoryID = -1;

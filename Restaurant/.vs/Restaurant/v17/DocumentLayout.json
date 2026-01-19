@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|c:\\users\\g\\source\\repos\\restaurant\\restaurant\\item\\frmaddupdateditems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|solutionrelative:item\\frmaddupdateditems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D469A2E6-9355-4BB0-A7C1-E2459299DF87}|..\\BusinessLayer\\Business.csproj|c:\\users\\g\\source\\repos\\restaurant\\businesslayer\\clscategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -17,12 +13,21 @@
       "RelativeMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|solutionrelative:item\\frmaddupdateditems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|c:\\users\\g\\source\\repos\\restaurant\\restaurant\\people\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|solutionrelative:people\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0B6CB737-3EBB-47BB-8218-B34C89D0120F}|..\\RestaurantDataAccessLayer\\RestaurantDataAccess.csproj|c:\\users\\g\\source\\repos\\restaurant\\restaurantdataaccesslayer\\clsitemsdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|c:\\users\\g\\source\\repos\\restaurant\\restaurant\\people\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|solutionrelative:people\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\item\\frmaddupdateditems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|solutionrelative:item\\frmaddupdateditems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D469A2E6-9355-4BB0-A7C1-E2459299DF87}|..\\BusinessLayer\\Business.csproj|c:\\users\\g\\source\\repos\\restaurant\\businesslayer\\clsuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D469A2E6-9355-4BB0-A7C1-E2459299DF87}|..\\BusinessLayer\\Business.csproj|c:\\users\\g\\source\\repos\\restaurant\\businesslayer\\clscountry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|c:\\users\\g\\source\\repos\\restaurant\\restaurant\\people\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|solutionrelative:people\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,7 +37,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -41,18 +46,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "frmAddUpdatePerson.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\people\\frmAddUpdatePerson.cs",
-              "RelativeDocumentMoniker": "people\\frmAddUpdatePerson.cs",
-              "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\people\\frmAddUpdatePerson.cs [Design]",
-              "RelativeToolTip": "people\\frmAddUpdatePerson.cs [Design]",
+              "Title": "clsUser.cs",
+              "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\BusinessLayer\\clsUser.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLayer\\clsUser.cs",
+              "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\BusinessLayer\\clsUser.cs",
+              "RelativeToolTip": "..\\BusinessLayer\\clsUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-19T15:26:34.771Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-01-19T16:02:01.856Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "frmAddUpdatedItems.cs [Design]",
               "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\Item\\frmAddUpdatedItems.cs",
               "RelativeDocumentMoniker": "Item\\frmAddUpdatedItems.cs",
@@ -61,52 +67,44 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-19T14:39:53.428Z",
               "EditorCaption": " [Design]"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "877e33b9-87f1-44e3-ab16-b256602e4a52",
-        "Display": 0,
-        "X": 39,
-        "Y": 157,
-        "Width": 1386,
-        "Height": 785,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "clsCategory.cs",
-              "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\BusinessLayer\\clsCategory.cs",
-              "RelativeDocumentMoniker": "..\\BusinessLayer\\clsCategory.cs",
-              "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\BusinessLayer\\clsCategory.cs",
-              "RelativeToolTip": "..\\BusinessLayer\\clsCategory.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAjwCwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-19T15:30:26.987Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "clsItemsData.cs",
+              "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\RestaurantDataAccessLayer\\clsItemsData.cs",
+              "RelativeDocumentMoniker": "..\\RestaurantDataAccessLayer\\clsItemsData.cs",
+              "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\RestaurantDataAccessLayer\\clsItemsData.cs",
+              "RelativeToolTip": "..\\RestaurantDataAccessLayer\\clsItemsData.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAEwF0AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T16:24:53.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "frmAddUpdatedItems.cs",
               "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\Item\\frmAddUpdatedItems.cs",
               "RelativeDocumentMoniker": "Item\\frmAddUpdatedItems.cs",
               "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\Item\\frmAddUpdatedItems.cs",
               "RelativeToolTip": "Item\\frmAddUpdatedItems.cs",
-              "ViewState": "AgIAALcAAAAAAAAAAAAAwMgAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAALoAAAAAAAAAAAAtwMgAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-19T14:41:09.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "clsCategory.cs",
+              "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\BusinessLayer\\clsCategory.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLayer\\clsCategory.cs",
+              "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\BusinessLayer\\clsCategory.cs",
+              "RelativeToolTip": "..\\BusinessLayer\\clsCategory.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAnwEwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T15:30:26.987Z",
               "EditorCaption": ""
             }
           ]
@@ -119,8 +117,8 @@
       "FloatingWindowState": {
         "Id": "85619b02-28b6-46c3-8cc6-3292477f79fb",
         "Display": 1,
-        "X": 744,
-        "Y": 103,
+        "X": 328,
+        "Y": 185,
         "Width": 1102,
         "Height": 702,
         "WindowState": 0
@@ -132,7 +130,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "frmAddUpdatePerson.cs",
               "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\people\\frmAddUpdatePerson.cs",
               "RelativeDocumentMoniker": "people\\frmAddUpdatePerson.cs",
@@ -152,9 +150,9 @@
       "VerticalTabListWidth": 256,
       "FloatingWindowState": {
         "Id": "723a0fbe-52da-4043-91e4-6cfa274a298c",
-        "Display": 1,
-        "X": 320,
-        "Y": 230,
+        "Display": 0,
+        "X": 115,
+        "Y": 101,
         "Width": 1386,
         "Height": 785,
         "WindowState": 0
@@ -166,15 +164,49 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "clsCategoryData.cs",
               "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\RestaurantDataAccessLayer\\clsCategoryData.cs",
               "RelativeDocumentMoniker": "..\\RestaurantDataAccessLayer\\clsCategoryData.cs",
               "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\RestaurantDataAccessLayer\\clsCategoryData.cs",
               "RelativeToolTip": "..\\RestaurantDataAccessLayer\\clsCategoryData.cs",
-              "ViewState": "AgIAABQBAAAAAAAAAAAlwBwBAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAsBAAAAAAAAAAAlwCUBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-19T15:36:19.857Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "8d24ddce-3c14-4ff7-a3ad-36ee4a1be9b4",
+        "Display": 1,
+        "X": 345,
+        "Y": 146,
+        "Width": 1516,
+        "Height": 702,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "clsCountry.cs",
+              "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\BusinessLayer\\clsCountry.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLayer\\clsCountry.cs",
+              "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\BusinessLayer\\clsCountry.cs",
+              "RelativeToolTip": "..\\BusinessLayer\\clsCountry.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T15:57:04.385Z",
               "EditorCaption": ""
             }
           ]
