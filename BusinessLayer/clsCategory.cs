@@ -45,6 +45,10 @@ namespace Restaurant_Buisness
             Mode = enMode.Update;
         }
 
+
+
+
+
         private bool _AddNewCategory()
         {
             //call DataAccess Layer 
@@ -61,6 +65,21 @@ namespace Restaurant_Buisness
 
             return clsCategoryData.UpdateCategory(
                 this.CategoryID, this.Name,this.Description, this.ImagePath);
+        }
+
+
+        public static clsCountry Find(string Name)
+        {
+
+            int CategoryID = -1;
+            string Description = "", ImagePath = "";
+
+            if (clsCategoryData.GetCategoryInfoByName(CategoryID, ref  Name, ref Description, ref ImagePath))
+
+                return new clsCategory(CategoryID, Name, Description, ImagePath);
+            else
+                return null;
+
         }
 
         public static clsCategory Find(int CategoryID)

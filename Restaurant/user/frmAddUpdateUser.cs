@@ -1,18 +1,19 @@
-﻿using Restaurant.Properties;
+﻿using Restaurant.Classes;
+using Restaurant.Controls;
+using Restaurant.People;
+using Restaurant.Properties;
 using Restaurant_Buisness;
+using Restaurant_DataAccess;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Restaurant.Classes;
-using Restaurant.People;
-using Restaurant.Controls;
-using System.Runtime.Remoting.Messaging;
 
 namespace Restaurant.User
 {
@@ -42,6 +43,8 @@ namespace Restaurant.User
         {
             //this will initialize the reset the defaule values
 
+            _FillCountriesInComoboBox();
+
             if (_Mode == enMode.AddNew)
             {
                 lblTitle.Text = "Add New User";
@@ -69,6 +72,16 @@ namespace Restaurant.User
             chkIsActive.Checked = true; 
 
 
+        }
+
+        private void _FillCountriesInComoboBox()
+        {
+            DataTable dtCountries = clsCountry.GetAllCountries();
+
+            foreach (DataRow row in dtCountries.Rows)
+            {
+                cbCountry.Items.Add(row["CountryName"]);
+            }
         }
 
         private void _LoadData()

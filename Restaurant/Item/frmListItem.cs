@@ -220,7 +220,7 @@ namespace Restaurant.Item
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
-            Form frm1 = new frmAddUpdatedCategory();
+            Form frm1 = new frmAddUpdatedItems();
             frm1.ShowDialog();
             _RefreshItemsList();
         }
