@@ -39,3 +39,4 @@ C:\Users\g\source\repos\Restaurant\Restaurant\bin\Debug\RestaurantDataAccessLaye
 C:\Users\g\source\repos\Restaurant\Restaurant\obj\Debug\Restaurant.csproj.Up2Date
 C:\Users\g\source\repos\Restaurant\Restaurant\obj\Debug\Restaurant.Category.frmListCategory.resources
 C:\Users\g\source\repos\Restaurant\Restaurant\obj\Debug\Restaurant.category.frmAddUpdatedCategory.resources
+C:\Users\g\source\repos\Restaurant\Restaurant\obj\Debug\Restaurant.Item.frmListItem.resources

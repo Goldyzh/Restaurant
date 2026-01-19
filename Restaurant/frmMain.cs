@@ -1,5 +1,6 @@
 ﻿using Restaurant.Category;
 using Restaurant.Classes;
+using Restaurant.Item;
 using Restaurant.Login;
 using Restaurant.People;
 using Restaurant.User;
@@ -89,7 +90,9 @@ namespace Restaurant
 
         private void btnItems_Click(object sender, EventArgs e)
         {
-
+            Form frm = new frmListItem();
+            frm.ShowDialog();
+            
         }
     }
 }
