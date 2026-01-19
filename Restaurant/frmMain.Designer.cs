@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnOrders = new System.Windows.Forms.Button();
-            this.btnMenu = new System.Windows.Forms.Button();
+            this.btnItems = new System.Windows.Forms.Button();
             this.btnFinishedOrders = new System.Windows.Forms.Button();
             this.btnUsers = new System.Windows.Forms.Button();
             this.btmPeople = new System.Windows.Forms.Button();
@@ -49,17 +49,18 @@
             this.btnOrders.Text = "Orders";
             this.btnOrders.UseVisualStyleBackColor = true;
             // 
-            // btnMenu
+            // btnItems
             // 
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu.Font = new System.Drawing.Font("Jokerman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu.ForeColor = System.Drawing.Color.Red;
-            this.btnMenu.Location = new System.Drawing.Point(302, 287);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(192, 118);
-            this.btnMenu.TabIndex = 1;
-            this.btnMenu.Text = " Menu";
-            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnItems.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnItems.Font = new System.Drawing.Font("Jokerman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItems.ForeColor = System.Drawing.Color.Red;
+            this.btnItems.Location = new System.Drawing.Point(302, 287);
+            this.btnItems.Name = "btnItems";
+            this.btnItems.Size = new System.Drawing.Size(192, 118);
+            this.btnItems.TabIndex = 1;
+            this.btnItems.Text = "Items";
+            this.btnItems.UseVisualStyleBackColor = true;
+            this.btnItems.Click += new System.EventHandler(this.btnItems_Click);
             // 
             // btnFinishedOrders
             // 
@@ -135,7 +136,7 @@
             this.Controls.Add(this.btmPeople);
             this.Controls.Add(this.btnUsers);
             this.Controls.Add(this.btnFinishedOrders);
-            this.Controls.Add(this.btnMenu);
+            this.Controls.Add(this.btnItems);
             this.Controls.Add(this.btnOrders);
             this.Name = "frmMain";
             this.Text = "Main Screen";
@@ -147,7 +148,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnOrders;
-        private System.Windows.Forms.Button btnMenu;
+        private System.Windows.Forms.Button btnItems;
         private System.Windows.Forms.Button btnFinishedOrders;
         private System.Windows.Forms.Button btnUsers;
         private System.Windows.Forms.Button btmPeople;

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Restaurant.category;
+using Restaurant.Classes;
+using Restaurant_Buisness;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,8 +12,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using Restaurant.Classes;
-using Restaurant_Buisness;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Restaurant.Category
@@ -28,7 +29,7 @@ namespace Restaurant.Category
         private DataTable _dtCategory = _dtAllCategory.DefaultView.ToTable(false, "CategoryID", "Name",
                                                          "Description");
 
-        private void _RefreshPeoplList()
+        private void _RefreshCategoryList()
         {
             _dtAllCategory = clsCategory.GetAllCategories();
             _dtCategory = _dtAllCategory.DefaultView.ToTable(false, "CategoryID", "Name",
@@ -183,12 +184,7 @@ namespace Restaurant.Category
             //_RefreshPeoplList();
         }
 
-        private void btnAddPerson_Click(object sender, EventArgs e)
-        {
-            //Form frm1 = new frmAddUpdatePerson();
-            //frm1.ShowDialog();
-            //_RefreshPeoplList();
-        }
+      
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -208,6 +204,11 @@ namespace Restaurant.Category
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
-     
+        private void btnAddPerson_Click_1(object sender, EventArgs e)
+        {
+            Form frm1 = new frmAddUpdatedCategory();
+            frm1.ShowDialog();
+            _RefreshCategoryList();
+        }
     }
 }

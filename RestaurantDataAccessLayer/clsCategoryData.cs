@@ -79,7 +79,7 @@ namespace Restaurant_DataAccess
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query = @"INSERT INTO Categories (Name, Description,ImagePath)
-                             VALUES (@Name, @Description@ImagePath);
+                             VALUES (@Name, @Description ,@ImagePath);
                              SELECT SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -107,7 +107,7 @@ namespace Restaurant_DataAccess
 
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                //Console.WriteLine("Error----------------------: " + ex.Message);
 
             }
 

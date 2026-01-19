@@ -86,5 +86,10 @@ namespace Restaurant
             Form frm = new frmListCategory();
             frm.ShowDialog();
         }
+
+        private void btnItems_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
