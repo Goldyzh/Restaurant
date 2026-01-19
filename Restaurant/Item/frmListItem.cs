@@ -59,7 +59,7 @@ namespace Restaurant.Item
                 dgvItems.Columns[1].Width = 150;
 
                 dgvItems.Columns[2].HeaderText = "Price";
-                dgvItems.Columns[2].Width = 150;
+                dgvItems.Columns[2].Width = 80;
 
                 dgvItems.Columns[3].HeaderText = "Description";
                 dgvItems.Columns[3].Width = 320;
@@ -68,13 +68,13 @@ namespace Restaurant.Item
                 dgvItems.Columns[4].Width = 150;
 
                 dgvItems.Columns[5].HeaderText = "Is Available";
-                dgvItems.Columns[5].Width = 150;
+                dgvItems.Columns[5].Width = 80;
 
                 dgvItems.Columns[6].HeaderText = "Created At";
                 dgvItems.Columns[6].Width = 150;
 
                 dgvItems.Columns[7].HeaderText = "Category Name";
-                dgvItems.Columns[7].Width = 150;
+                dgvItems.Columns[7].Width = 130;
 
 
             }
@@ -140,22 +140,22 @@ namespace Restaurant.Item
 
         }
 
-        //private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    int CategoryID = (int)dgvCategory.CurrentRow.Cells[0].Value;
-        //    Form frm = new frmShowPersonInfo(CategoryID);
-        //    frm.ShowDialog();
-        //}
+        private void showDetailsToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            int ItemID = (int)dgvItems.CurrentRow.Cells[0].Value;
+            Form frm = new frmAddUpdatedItems(ItemID);
+            frm.ShowDialog();
+        }
 
-        //private void editToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
+        private void editToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
 
-        //    Form frm = new frmAddUpdatePerson((int)dgvCategory.CurrentRow.Cells[0].Value);
-        //    frm.ShowDialog();
+            Form frm = new frmAddUpdatedItems((int)dgvItems.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
 
-        //    _RefreshPeoplList();
+            _RefreshItemsList();
 
-        //}
+        }
 
         private void sendEmailToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -169,7 +169,7 @@ namespace Restaurant.Item
 
         }
 
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void deleteToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
 
             //if (MessageBox.Show("Are you sure you want to delete Person [" + dgvCategory.CurrentRow.Cells[0].Value + "]", "Confirm Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
@@ -190,7 +190,7 @@ namespace Restaurant.Item
 
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
             //Form frm = new frmAddUpdatePerson();
             //frm.ShowDialog();
@@ -226,5 +226,9 @@ namespace Restaurant.Item
         }
 
   
+
+ 
+
+     
     }
 }
