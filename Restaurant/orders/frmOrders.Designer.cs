@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbNew = new System.Windows.Forms.RadioButton();
-            this.rbPaid = new System.Windows.Forms.RadioButton();
+            this.rbFinished = new System.Windows.Forms.RadioButton();
+            this.rbPending = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNotes = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,14 +41,16 @@
             this.TotalPrice = new System.Windows.Forms.Label();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.btnOrderNow = new System.Windows.Forms.Button();
+            this.dgvOrders = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rbNew);
-            this.groupBox1.Controls.Add(this.rbPaid);
+            this.groupBox1.Controls.Add(this.rbFinished);
+            this.groupBox1.Controls.Add(this.rbPending);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtNotes);
             this.groupBox1.Controls.Add(this.label3);
@@ -62,32 +64,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order Info";
             // 
-            // rbNew
+            // rbFinished
             // 
-            this.rbNew.AutoSize = true;
-            this.rbNew.Location = new System.Drawing.Point(291, 76);
-            this.rbNew.Name = "rbNew";
-            this.rbNew.Size = new System.Drawing.Size(67, 28);
-            this.rbNew.TabIndex = 7;
-            this.rbNew.TabStop = true;
-            this.rbNew.Text = "New";
-            this.rbNew.UseVisualStyleBackColor = true;
+            this.rbFinished.AutoSize = true;
+            this.rbFinished.Location = new System.Drawing.Point(319, 74);
+            this.rbFinished.Name = "rbFinished";
+            this.rbFinished.Size = new System.Drawing.Size(101, 28);
+            this.rbFinished.TabIndex = 7;
+            this.rbFinished.TabStop = true;
+            this.rbFinished.Text = "Finished";
+            this.rbFinished.UseVisualStyleBackColor = true;
             // 
-            // rbPaid
+            // rbPending
             // 
-            this.rbPaid.AutoSize = true;
-            this.rbPaid.Location = new System.Drawing.Point(184, 76);
-            this.rbPaid.Name = "rbPaid";
-            this.rbPaid.Size = new System.Drawing.Size(65, 28);
-            this.rbPaid.TabIndex = 6;
-            this.rbPaid.TabStop = true;
-            this.rbPaid.Text = "Paid";
-            this.rbPaid.UseVisualStyleBackColor = true;
+            this.rbPending.AutoSize = true;
+            this.rbPending.Location = new System.Drawing.Point(197, 74);
+            this.rbPending.Name = "rbPending";
+            this.rbPending.Size = new System.Drawing.Size(99, 28);
+            this.rbPending.TabIndex = 6;
+            this.rbPending.TabStop = true;
+            this.rbPending.Text = "Pending";
+            this.rbPending.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(477, 35);
+            this.label2.Location = new System.Drawing.Point(567, 76);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 24);
             this.label2.TabIndex = 5;
@@ -95,16 +97,16 @@
             // 
             // txtNotes
             // 
-            this.txtNotes.Location = new System.Drawing.Point(558, 35);
+            this.txtNotes.Location = new System.Drawing.Point(663, 28);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(361, 106);
+            this.txtNotes.Size = new System.Drawing.Size(386, 106);
             this.txtNotes.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(42, 78);
+            this.label3.Location = new System.Drawing.Point(55, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(119, 24);
             this.label3.TabIndex = 2;
@@ -113,7 +115,7 @@
             // lblOrderID
             // 
             this.lblOrderID.AutoSize = true;
-            this.lblOrderID.Location = new System.Drawing.Point(180, 35);
+            this.lblOrderID.Location = new System.Drawing.Point(193, 31);
             this.lblOrderID.Name = "lblOrderID";
             this.lblOrderID.Size = new System.Drawing.Size(42, 24);
             this.lblOrderID.TabIndex = 1;
@@ -122,7 +124,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 35);
+            this.label1.Location = new System.Drawing.Point(55, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 24);
             this.label1.TabIndex = 0;
@@ -133,7 +135,7 @@
             this.dgvOrderItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrderItems.Location = new System.Drawing.Point(12, 224);
             this.dgvOrderItems.Name = "dgvOrderItems";
-            this.dgvOrderItems.Size = new System.Drawing.Size(1079, 302);
+            this.dgvOrderItems.Size = new System.Drawing.Size(525, 383);
             this.dgvOrderItems.TabIndex = 1;
             // 
             // btnAddItem
@@ -173,18 +175,27 @@
             // 
             this.btnOrderNow.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrderNow.ForeColor = System.Drawing.Color.IndianRed;
-            this.btnOrderNow.Location = new System.Drawing.Point(940, 532);
+            this.btnOrderNow.Location = new System.Drawing.Point(940, 625);
             this.btnOrderNow.Name = "btnOrderNow";
             this.btnOrderNow.Size = new System.Drawing.Size(151, 42);
             this.btnOrderNow.TabIndex = 8;
             this.btnOrderNow.Text = "Order Now";
             this.btnOrderNow.UseVisualStyleBackColor = true;
             // 
+            // dgvOrders
+            // 
+            this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrders.Location = new System.Drawing.Point(570, 224);
+            this.dgvOrders.Name = "dgvOrders";
+            this.dgvOrders.Size = new System.Drawing.Size(521, 383);
+            this.dgvOrders.TabIndex = 9;
+            // 
             // frmOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1103, 580);
+            this.ClientSize = new System.Drawing.Size(1103, 679);
+            this.Controls.Add(this.dgvOrders);
             this.Controls.Add(this.btnOrderNow);
             this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.TotalPrice);
@@ -196,6 +207,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,8 +225,9 @@
         private System.Windows.Forms.Button btnAddItem;
         private System.Windows.Forms.Label TotalPrice;
         private System.Windows.Forms.Label lblTotalPrice;
-        private System.Windows.Forms.RadioButton rbNew;
-        private System.Windows.Forms.RadioButton rbPaid;
+        private System.Windows.Forms.RadioButton rbFinished;
+        private System.Windows.Forms.RadioButton rbPending;
         private System.Windows.Forms.Button btnOrderNow;
+        private System.Windows.Forms.DataGridView dgvOrders;
     }
 }
