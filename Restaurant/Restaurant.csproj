@@ -92,6 +92,12 @@
     <Compile Include="orders\frmAddItemToOrder.Designer.cs">
       <DependentUpon>frmAddItemToOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="orders\frmFinishedOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="orders\frmFinishedOrders.Designer.cs">
+      <DependentUpon>frmFinishedOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="orders\frmOrders.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="orders\frmAddItemToOrder.resx">
       <DependentUpon>frmAddItemToOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="orders\frmFinishedOrders.resx">
+      <DependentUpon>frmFinishedOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="orders\frmOrders.resx">
       <DependentUpon>frmOrders.cs</DependentUpon>

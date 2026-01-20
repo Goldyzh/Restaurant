@@ -25,6 +25,9 @@ namespace Restaurant_Buisness
 
         public int CreatedBy { set; get; }
 
+        public string OrderName { set; get; }
+
+
 
         public clsUser CreatedByUserInfo;
 
@@ -37,13 +40,15 @@ namespace Restaurant_Buisness
             this.Status = "";
             this.Notes = "";
             this.CreatedBy = -1;
-           
+            this.OrderName = "";
+
+
             Mode = enMode.AddNew;
 
         }
 
         private clsOrder(int OrderID, DateTime OrderDate ,decimal TotalPrice
-            , string Status, string Notes, int CreatedBy)
+            , string Status, string Notes, int CreatedBy , string OrderName)
 
         {
             this.OrderID = OrderID;
@@ -52,6 +57,7 @@ namespace Restaurant_Buisness
             this.Status = Status;
             this.Notes = Notes;
             this.CreatedBy = CreatedBy;
+            this.OrderName = OrderName;
             Mode = enMode.Update;
         }
 
@@ -62,7 +68,7 @@ namespace Restaurant_Buisness
             this.OrderID = clsOrderData.AddNewOrder(
                 this.OrderDate, this.TotalPrice,
                 this.Status, this.Notes,
-                this.CreatedBy);
+                this.CreatedBy , this.OrderName);
 
             return (this.OrderID != -1);
         }
@@ -73,21 +79,21 @@ namespace Restaurant_Buisness
 
             return clsOrderData.UpdateOrder(this.OrderID, this.OrderDate, this.TotalPrice,
                 this.Status, this.Notes,
-                this.CreatedBy);
+                this.CreatedBy ,this.OrderName );
            
         }
 
         public  static clsOrder FindBaseOrder(int OrderID)
         {
             decimal TotalPrice =-1;
-            DateTime OrderDate=DateTime.Now ;  string Status = "" , Notes = "";
+            DateTime OrderDate=DateTime.Now ;  string Status = "" , Notes = "" , OrderName = "";
             int CreatedBy = -1;
 
             bool IsFound = clsOrderData.GetOrderInfoByID
                                 (
                                     OrderID, ref OrderDate , 
                                     ref TotalPrice, ref Status,
-                                    ref Notes, ref CreatedBy
+                                    ref Notes, ref CreatedBy , ref OrderName
 
                                 );
 
@@ -95,7 +101,7 @@ namespace Restaurant_Buisness
                 //we return new object of that person with the right data
                 return new clsOrder(OrderID, OrderDate,
                                      TotalPrice,  Status,
-                                     Notes,  CreatedBy);
+                                     Notes,  CreatedBy , OrderName);
             else
                 return null;
         }
@@ -148,7 +154,18 @@ namespace Restaurant_Buisness
            return clsOrderData.IsOrderExist(OrderID);
         }
 
-       
+        public static DataTable GetPendingOrders()
+        {
+            return clsOrderData.GetPendingOrders();
+        }
+
+
+
+        public static DataTable GetFinishedOrders()
+        {
+            return clsOrderData.GetFinishedOrders();
+        }
+
 
     }
 }

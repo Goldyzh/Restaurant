@@ -54,6 +54,9 @@ namespace Restaurant_DataAccess
                         ImagePath = "";
                     }
 
+                    IsAvailable = (bool)reader["IsAvailable"];
+
+
                 }
                 else
                 {
@@ -137,7 +140,7 @@ namespace Restaurant_DataAccess
 
             catch (Exception ex)
             {
-                Console.WriteLine("Error:------------------------------ " + ex.Message);
+                //Console.WriteLine("Error:------------------------------ " + ex.Message);
 
             }
 

@@ -14,7 +14,7 @@ namespace Restaurant_DataAccess
       
 
         public static bool GetOrderInfoByID(int OrderID, ref DateTime OrderDate, ref decimal TotalPrice, 
-            ref string Status, ref string Notes, ref int CreatedBy)
+            ref string Status, ref string Notes, ref int CreatedBy , ref string OrderName)
             {
                 bool isFound = false;
 
@@ -43,10 +43,11 @@ namespace Restaurant_DataAccess
                         Status = (string)reader["Status"];
                         Notes = (string)reader["Notes"];
                         CreatedBy = (int)reader["CreatedBy"];
+                        OrderName = (string)reader["OrderName"];
 
 
-                    }
-                    else
+                }
+                else
                     {
                         // The record was not found
                         isFound = false;
@@ -69,14 +70,14 @@ namespace Restaurant_DataAccess
                 return isFound;
             }
 
-        public static DataTable GetAllOrders()
+        public static DataTable GetPendingOrders()
             {
 
                 DataTable dt = new DataTable();
                 SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-               // string query = "select * from OrdersList_View order by OrderDate desc";
-                  string query = "select * from Orders order by OrderID desc";
+                  string query = "SELECT * FROM Orders WHERE Status = 'Pending' ORDER BY OrderID DESC";
+
 
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -111,11 +112,53 @@ namespace Restaurant_DataAccess
 
             }
 
+        public static DataTable GetFinishedOrders()
+        {
 
-        
+            DataTable dt = new DataTable();
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = "SELECT * FROM Orders WHERE Status != 'Pending' ORDER BY OrderID DESC";
+
+
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+
+                {
+                    dt.Load(reader);
+                }
+
+                reader.Close();
+
+
+            }
+
+            catch (Exception ex)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return dt;
+
+        }
+
+
+
 
         public static int AddNewOrder(DateTime OrderDate,  decimal TotalPrice,
-             string Status,  string Notes,  int CreatedBy)
+             string Status,  string Notes,  int CreatedBy , string OrderName)
         {
 
             //this function will return the new person id if succeeded and -1 if not.
@@ -125,11 +168,11 @@ namespace Restaurant_DataAccess
 
             string query = @"INSERT INTO Orders ( 
                             OrderDate,TotalPrice,
-                            Status,Notes,
+                            Status,Notes, OrderName,
                             CreatedBy)
                              VALUES (@OrderDate,@TotalPrice,@OrderTypeID,
                                       @Status,@Notes,
-                                      @CreatedBy);
+                                      @CreatedBy, @OrderName);
                              SELECT SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -139,6 +182,7 @@ namespace Restaurant_DataAccess
             command.Parameters.AddWithValue("Status", @Status);
             command.Parameters.AddWithValue("Notes", @Notes);
             command.Parameters.AddWithValue("CreatedBy", @CreatedBy);
+            command.Parameters.AddWithValue("OrderName", OrderName);
 
 
 
@@ -173,7 +217,7 @@ namespace Restaurant_DataAccess
    
 
         public static bool UpdateOrder(int OrderID, DateTime OrderDate, decimal TotalPrice,
-             string Status, string Notes, int CreatedBy)
+             string Status, string Notes, int CreatedBy , string OrderName)
         {
 
             int rowsAffected = 0;
@@ -184,8 +228,8 @@ namespace Restaurant_DataAccess
                                 TotalPrice = @TotalPrice,
                                 Status = @Status,
                                 Notes = @Notes, 
-                                LastStatusDate = @LastStatusDate,
-                                CreatedBy=@CreatedBy
+                                CreatedBy = @CreatedBy,
+                                OrderName=@OrderName
                             where OrderID=@OrderID";
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -196,6 +240,7 @@ namespace Restaurant_DataAccess
             command.Parameters.AddWithValue("Status", Status);
             command.Parameters.AddWithValue("Notes", Notes);
             command.Parameters.AddWithValue("CreatedBy", CreatedBy);
+            command.Parameters.AddWithValue("OrderName", OrderName);
 
 
 
@@ -309,7 +354,6 @@ namespace Restaurant_DataAccess
 
             command.Parameters.AddWithValue("@OrderID", OrderID);
             command.Parameters.AddWithValue("@NewStatus", NewStatus);
-            command.Parameters.AddWithValue("LastStatusDate", DateTime.Now);
             
 
             try

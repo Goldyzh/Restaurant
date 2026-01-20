@@ -77,6 +77,7 @@
             this.btnFinishedOrders.Text = "Finished Orders";
             this.btnFinishedOrders.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFinishedOrders.UseVisualStyleBackColor = true;
+            this.btnFinishedOrders.Click += new System.EventHandler(this.btnFinishedOrders_Click);
             // 
             // btnUsers
             // 

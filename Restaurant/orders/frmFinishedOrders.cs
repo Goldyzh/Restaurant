@@ -12,14 +12,12 @@ using System.Windows.Forms;
 
 namespace Restaurant.orders
 {
-    public partial class frmOrders : Form
+    public partial class frmFinishedOrders : Form
     {
 
         private DataTable _dtOrders;
 
-        private DataTable _dtOrderItems;
-
-        public frmOrders()
+        public frmFinishedOrders()
         {
             InitializeComponent();
         }
@@ -29,12 +27,13 @@ namespace Restaurant.orders
             Form frm1 = new frmAddItemToOrder();
             frm1.ShowDialog();
             //_RefreshItemsOrderList();
-            
+
         }
 
-        private void PendingOrders()
+        private void frmFinishedOrders_Load(object sender, EventArgs e)
         {
-            _dtOrders = clsOrder.GetPendingOrders();
+
+            _dtOrders = clsOrder.GetFinishedOrders();
             dgvOrders.DataSource = _dtOrders;
 
             lbllblOrdersRecordsCount.Text = dgvOrders.Rows.Count.ToString();
@@ -67,38 +66,6 @@ namespace Restaurant.orders
 
         }
 
-        private void OrderItems()
-        {
-            _dtOrderItems = clsOrder.GetPendingOrders();
-            dgvOrders.DataSource = _dtOrderItems;
-
-            lblOrderItemsRecordsCount.Text = dgvOrders.Rows.Count.ToString();
-            if (dgvOrders.Rows.Count > 0)
-            {
-
-                dgvOrders.Columns[0].HeaderText = "ID";
-                dgvOrders.Columns[0].Width = 80;
-
-                dgvOrders.Columns[1].HeaderText = "Order ID";
-                dgvOrders.Columns[1].Width = 120;
-
-                dgvOrders.Columns[2].HeaderText = "Item ID";
-                dgvOrders.Columns[2].Width = 80;
-
-            }
-
-        }
-
-
-
-
-        private void frmOrders_Load(object sender, EventArgs e)
-        {
-
-            PendingOrders();
-
-            OrderItems();
-
-        }
+     
     }
 }

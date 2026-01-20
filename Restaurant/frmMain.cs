@@ -103,5 +103,12 @@ namespace Restaurant
             frm.ShowDialog();
 
         }
+
+        private void btnFinishedOrders_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmFinishedOrders();
+            frm.ShowDialog();
+
+        }
     }
 }

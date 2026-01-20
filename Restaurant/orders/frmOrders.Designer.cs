@@ -38,10 +38,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvOrderItems = new System.Windows.Forms.DataGridView();
             this.btnAddItem = new System.Windows.Forms.Button();
-            this.TotalPrice = new System.Windows.Forms.Label();
-            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.RecordsCount = new System.Windows.Forms.Label();
+            this.lbllblOrdersRecordsCount = new System.Windows.Forms.Label();
             this.btnOrderNow = new System.Windows.Forms.Button();
             this.dgvOrders = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblOrderItemsRecordsCount = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
@@ -59,7 +63,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1079, 155);
+            this.groupBox1.Size = new System.Drawing.Size(1079, 116);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order Info";
@@ -89,7 +93,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(567, 76);
+            this.label2.Location = new System.Drawing.Point(567, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 24);
             this.label2.TabIndex = 5;
@@ -100,7 +104,7 @@
             this.txtNotes.Location = new System.Drawing.Point(663, 28);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(386, 106);
+            this.txtNotes.Size = new System.Drawing.Size(386, 70);
             this.txtNotes.TabIndex = 4;
             // 
             // label3
@@ -133,51 +137,51 @@
             // dgvOrderItems
             // 
             this.dgvOrderItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrderItems.Location = new System.Drawing.Point(12, 224);
+            this.dgvOrderItems.Location = new System.Drawing.Point(12, 170);
             this.dgvOrderItems.Name = "dgvOrderItems";
-            this.dgvOrderItems.Size = new System.Drawing.Size(525, 383);
+            this.dgvOrderItems.Size = new System.Drawing.Size(1067, 256);
             this.dgvOrderItems.TabIndex = 1;
             // 
             // btnAddItem
             // 
             this.btnAddItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddItem.ForeColor = System.Drawing.Color.IndianRed;
-            this.btnAddItem.Location = new System.Drawing.Point(965, 173);
+            this.btnAddItem.Location = new System.Drawing.Point(928, 432);
             this.btnAddItem.Name = "btnAddItem";
-            this.btnAddItem.Size = new System.Drawing.Size(126, 42);
+            this.btnAddItem.Size = new System.Drawing.Size(151, 56);
             this.btnAddItem.TabIndex = 6;
             this.btnAddItem.Text = "Add Item";
             this.btnAddItem.UseVisualStyleBackColor = true;
             this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             // 
-            // TotalPrice
+            // RecordsCount
             // 
-            this.TotalPrice.AutoSize = true;
-            this.TotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalPrice.ForeColor = System.Drawing.Color.IndianRed;
-            this.TotalPrice.Location = new System.Drawing.Point(40, 190);
-            this.TotalPrice.Name = "TotalPrice";
-            this.TotalPrice.Size = new System.Drawing.Size(133, 25);
-            this.TotalPrice.TabIndex = 7;
-            this.TotalPrice.Text = "Total Price:";
+            this.RecordsCount.AutoSize = true;
+            this.RecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RecordsCount.ForeColor = System.Drawing.Color.DimGray;
+            this.RecordsCount.Location = new System.Drawing.Point(8, 808);
+            this.RecordsCount.Name = "RecordsCount";
+            this.RecordsCount.Size = new System.Drawing.Size(134, 20);
+            this.RecordsCount.TabIndex = 7;
+            this.RecordsCount.Text = "Records Count:";
             // 
-            // lblTotalPrice
+            // lbllblOrdersRecordsCount
             // 
-            this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPrice.Location = new System.Drawing.Point(191, 190);
-            this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(24, 25);
-            this.lblTotalPrice.TabIndex = 6;
-            this.lblTotalPrice.Text = "0";
+            this.lbllblOrdersRecordsCount.AutoSize = true;
+            this.lbllblOrdersRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbllblOrdersRecordsCount.Location = new System.Drawing.Point(162, 808);
+            this.lbllblOrdersRecordsCount.Name = "lbllblOrdersRecordsCount";
+            this.lbllblOrdersRecordsCount.Size = new System.Drawing.Size(18, 20);
+            this.lbllblOrdersRecordsCount.TabIndex = 6;
+            this.lbllblOrdersRecordsCount.Text = "0";
             // 
             // btnOrderNow
             // 
             this.btnOrderNow.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrderNow.ForeColor = System.Drawing.Color.IndianRed;
-            this.btnOrderNow.Location = new System.Drawing.Point(940, 625);
+            this.btnOrderNow.Location = new System.Drawing.Point(928, 811);
             this.btnOrderNow.Name = "btnOrderNow";
-            this.btnOrderNow.Size = new System.Drawing.Size(151, 42);
+            this.btnOrderNow.Size = new System.Drawing.Size(151, 56);
             this.btnOrderNow.TabIndex = 8;
             this.btnOrderNow.Text = "Order Now";
             this.btnOrderNow.UseVisualStyleBackColor = true;
@@ -185,25 +189,73 @@
             // dgvOrders
             // 
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrders.Location = new System.Drawing.Point(570, 224);
+            this.dgvOrders.Location = new System.Drawing.Point(10, 502);
             this.dgvOrders.Name = "dgvOrders";
-            this.dgvOrders.Size = new System.Drawing.Size(521, 383);
+            this.dgvOrders.Size = new System.Drawing.Size(1069, 303);
             this.dgvOrders.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.IndianRed;
+            this.label4.Location = new System.Drawing.Point(12, 474);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(183, 25);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Pending Orders:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.IndianRed;
+            this.label5.Location = new System.Drawing.Point(12, 142);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(141, 25);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Order Items:";
+            // 
+            // lblOrderItemsRecordsCount
+            // 
+            this.lblOrderItemsRecordsCount.AutoSize = true;
+            this.lblOrderItemsRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderItemsRecordsCount.Location = new System.Drawing.Point(162, 429);
+            this.lblOrderItemsRecordsCount.Name = "lblOrderItemsRecordsCount";
+            this.lblOrderItemsRecordsCount.Size = new System.Drawing.Size(18, 20);
+            this.lblOrderItemsRecordsCount.TabIndex = 12;
+            this.lblOrderItemsRecordsCount.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DimGray;
+            this.label7.Location = new System.Drawing.Point(12, 429);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(134, 20);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Records Count:";
             // 
             // frmOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1103, 679);
+            this.ClientSize = new System.Drawing.Size(1092, 875);
+            this.Controls.Add(this.lblOrderItemsRecordsCount);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvOrders);
             this.Controls.Add(this.btnOrderNow);
-            this.Controls.Add(this.lblTotalPrice);
-            this.Controls.Add(this.TotalPrice);
+            this.Controls.Add(this.lbllblOrdersRecordsCount);
+            this.Controls.Add(this.RecordsCount);
             this.Controls.Add(this.btnAddItem);
             this.Controls.Add(this.dgvOrderItems);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmOrders";
             this.Text = "frmOrders";
+            this.Load += new System.EventHandler(this.frmOrders_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).EndInit();
@@ -223,11 +275,15 @@
         private System.Windows.Forms.Label lblOrderID;
         private System.Windows.Forms.DataGridView dgvOrderItems;
         private System.Windows.Forms.Button btnAddItem;
-        private System.Windows.Forms.Label TotalPrice;
-        private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.Label RecordsCount;
+        private System.Windows.Forms.Label lbllblOrdersRecordsCount;
         private System.Windows.Forms.RadioButton rbFinished;
         private System.Windows.Forms.RadioButton rbPending;
         private System.Windows.Forms.Button btnOrderNow;
         private System.Windows.Forms.DataGridView dgvOrders;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblOrderItemsRecordsCount;
+        private System.Windows.Forms.Label label7;
     }
 }
