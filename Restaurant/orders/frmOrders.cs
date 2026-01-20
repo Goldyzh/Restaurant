@@ -69,21 +69,21 @@ namespace Restaurant.orders
 
         private void OrderItems()
         {
-            _dtOrderItems = clsOrder.GetPendingOrders();
-            dgvOrders.DataSource = _dtOrderItems;
+            _dtOrderItems = clsOrderItems.GetOrderItems();
+            dgvOrderItems.DataSource = _dtOrderItems;
 
-            lblOrderItemsRecordsCount.Text = dgvOrders.Rows.Count.ToString();
-            if (dgvOrders.Rows.Count > 0)
+            lblOrderItemsRecordsCount.Text = dgvOrderItems.Rows.Count.ToString();
+            if (dgvOrderItems.Rows.Count > 0)
             {
 
-                dgvOrders.Columns[0].HeaderText = "ID";
-                dgvOrders.Columns[0].Width = 80;
+                dgvOrderItems.Columns[0].HeaderText = "ID";
+                dgvOrderItems.Columns[0].Width = 80;
 
-                dgvOrders.Columns[1].HeaderText = "Order ID";
-                dgvOrders.Columns[1].Width = 120;
+                dgvOrderItems.Columns[1].HeaderText = "Order ID";
+                dgvOrderItems.Columns[1].Width = 120;
 
-                dgvOrders.Columns[2].HeaderText = "Item ID";
-                dgvOrders.Columns[2].Width = 80;
+                dgvOrderItems.Columns[2].HeaderText = "Item ID";
+                dgvOrderItems.Columns[2].Width = 80;
 
             }
 

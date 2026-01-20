@@ -9,7 +9,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Restaurant_DataAccess
 {
-    public class clsOrderItemsItemsData
+    public class clsOrderItemsData
     {
         
 
@@ -71,7 +71,7 @@ namespace Restaurant_DataAccess
                 DataTable dt = new DataTable();
                 SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-                  string query = "SELECT * FROM OrderItems Order BY ID DESC";
+                  string query = "SELECT * FROM OrderItems Order BY ID";
 
 
 
@@ -96,7 +96,7 @@ namespace Restaurant_DataAccess
 
                 catch (Exception ex)
                 {
-                    // Console.WriteLine("Error: " + ex.Message);
+                    Console.WriteLine("Error: " + ex.Message);
                 }
                 finally
                 {
