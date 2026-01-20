@@ -6,6 +6,5 @@ namespace Restaurant_DataAccess
     {
         public static string ConnectionString = "Server=.;Database=restaurant;User Id=sa;Password=123456;";
 
-
     }
 }

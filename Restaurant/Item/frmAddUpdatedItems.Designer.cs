@@ -68,7 +68,7 @@
             // 
             this.lblItemID.AutoSize = true;
             this.lblItemID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemID.Location = new System.Drawing.Point(193, 59);
+            this.lblItemID.Location = new System.Drawing.Point(206, 76);
             this.lblItemID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblItemID.Name = "lblItemID";
             this.lblItemID.Size = new System.Drawing.Size(38, 20);
@@ -98,7 +98,7 @@
             // 
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTitle.Location = new System.Drawing.Point(12, 21);
+            this.lblTitle.Location = new System.Drawing.Point(28, 28);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(928, 39);
             this.lblTitle.TabIndex = 115;
@@ -124,7 +124,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(15, 59);
+            this.label22.Location = new System.Drawing.Point(28, 76);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(79, 20);
@@ -163,7 +163,7 @@
             this.groupBox1.Controls.Add(this.pbPersonImage);
             this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(15, 83);
+            this.groupBox1.Location = new System.Drawing.Point(28, 100);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(928, 378);
             this.groupBox1.TabIndex = 114;
@@ -177,9 +177,9 @@
             this.chkIsAvailable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkIsAvailable.Location = new System.Drawing.Point(524, 28);
             this.chkIsAvailable.Name = "chkIsAvailable";
-            this.chkIsAvailable.Size = new System.Drawing.Size(97, 24);
+            this.chkIsAvailable.Size = new System.Drawing.Size(120, 24);
             this.chkIsAvailable.TabIndex = 128;
-            this.chkIsAvailable.Text = "Is Active";
+            this.chkIsAvailable.Text = "Is Available";
             this.chkIsAvailable.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
@@ -332,7 +332,7 @@
             // pictureBox10
             // 
             this.pictureBox10.Image = global::Restaurant.Properties.Resources.Number_32;
-            this.pictureBox10.Location = new System.Drawing.Point(143, 53);
+            this.pictureBox10.Location = new System.Drawing.Point(156, 70);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(31, 26);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

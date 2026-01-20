@@ -42,21 +42,22 @@
             this.btnOrders.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOrders.Font = new System.Drawing.Font("Jokerman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrders.ForeColor = System.Drawing.Color.Red;
-            this.btnOrders.Location = new System.Drawing.Point(302, 117);
+            this.btnOrders.Location = new System.Drawing.Point(163, 117);
             this.btnOrders.Name = "btnOrders";
-            this.btnOrders.Size = new System.Drawing.Size(192, 118);
+            this.btnOrders.Size = new System.Drawing.Size(331, 118);
             this.btnOrders.TabIndex = 0;
             this.btnOrders.Text = "Orders";
             this.btnOrders.UseVisualStyleBackColor = true;
+            this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
             // 
             // btnItems
             // 
             this.btnItems.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnItems.Font = new System.Drawing.Font("Jokerman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnItems.ForeColor = System.Drawing.Color.Red;
-            this.btnItems.Location = new System.Drawing.Point(302, 287);
+            this.btnItems.Location = new System.Drawing.Point(163, 287);
             this.btnItems.Name = "btnItems";
-            this.btnItems.Size = new System.Drawing.Size(192, 118);
+            this.btnItems.Size = new System.Drawing.Size(331, 118);
             this.btnItems.TabIndex = 1;
             this.btnItems.Text = "Items";
             this.btnItems.UseVisualStyleBackColor = true;
@@ -69,7 +70,7 @@
             this.btnFinishedOrders.ForeColor = System.Drawing.Color.Red;
             this.btnFinishedOrders.Location = new System.Drawing.Point(549, 118);
             this.btnFinishedOrders.Name = "btnFinishedOrders";
-            this.btnFinishedOrders.Size = new System.Drawing.Size(192, 118);
+            this.btnFinishedOrders.Size = new System.Drawing.Size(330, 118);
             this.btnFinishedOrders.TabIndex = 2;
             this.btnFinishedOrders.Text = "Finished Orders";
             this.btnFinishedOrders.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -80,9 +81,9 @@
             this.btnUsers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUsers.Font = new System.Drawing.Font("Jokerman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsers.ForeColor = System.Drawing.Color.Red;
-            this.btnUsers.Location = new System.Drawing.Point(302, 451);
+            this.btnUsers.Location = new System.Drawing.Point(163, 451);
             this.btnUsers.Name = "btnUsers";
-            this.btnUsers.Size = new System.Drawing.Size(192, 118);
+            this.btnUsers.Size = new System.Drawing.Size(330, 118);
             this.btnUsers.TabIndex = 3;
             this.btnUsers.Text = "Users";
             this.btnUsers.UseVisualStyleBackColor = true;
@@ -95,7 +96,7 @@
             this.btmPeople.ForeColor = System.Drawing.Color.Red;
             this.btmPeople.Location = new System.Drawing.Point(549, 451);
             this.btmPeople.Name = "btmPeople";
-            this.btmPeople.Size = new System.Drawing.Size(192, 118);
+            this.btmPeople.Size = new System.Drawing.Size(330, 118);
             this.btmPeople.TabIndex = 4;
             this.btmPeople.Text = "People";
             this.btmPeople.UseVisualStyleBackColor = true;
@@ -106,11 +107,11 @@
             this.lblRestaurantNmae.AutoSize = true;
             this.lblRestaurantNmae.Font = new System.Drawing.Font("Snap ITC", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRestaurantNmae.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblRestaurantNmae.Location = new System.Drawing.Point(421, 18);
+            this.lblRestaurantNmae.Location = new System.Drawing.Point(327, 9);
             this.lblRestaurantNmae.Name = "lblRestaurantNmae";
-            this.lblRestaurantNmae.Size = new System.Drawing.Size(250, 63);
+            this.lblRestaurantNmae.Size = new System.Drawing.Size(414, 63);
             this.lblRestaurantNmae.TabIndex = 5;
-            this.lblRestaurantNmae.Text = "مطعم السلام";
+            this.lblRestaurantNmae.Text = "مطعم ابو علي و اخيه";
             // 
             // btnCategories
             // 
@@ -119,7 +120,7 @@
             this.btnCategories.ForeColor = System.Drawing.Color.Red;
             this.btnCategories.Location = new System.Drawing.Point(549, 287);
             this.btnCategories.Name = "btnCategories";
-            this.btnCategories.Size = new System.Drawing.Size(253, 118);
+            this.btnCategories.Size = new System.Drawing.Size(330, 118);
             this.btnCategories.TabIndex = 6;
             this.btnCategories.Text = "Categories";
             this.btnCategories.UseVisualStyleBackColor = true;

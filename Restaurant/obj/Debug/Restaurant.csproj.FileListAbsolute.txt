@@ -41,3 +41,4 @@ C:\Users\g\source\repos\Restaurant\Restaurant\obj\Debug\Restaurant.Category.frmL
 C:\Users\g\source\repos\Restaurant\Restaurant\obj\Debug\Restaurant.category.frmAddUpdatedCategory.resources
 C:\Users\g\source\repos\Restaurant\Restaurant\obj\Debug\Restaurant.Item.frmListItem.resources
 C:\Users\g\source\repos\Restaurant\Restaurant\obj\Debug\Restaurant.Item.frmAddUpdatedItems.resources
+C:\Users\g\source\repos\Restaurant\Restaurant\obj\Debug\Restaurant.orders.frmOrders.resources

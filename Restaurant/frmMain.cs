@@ -2,6 +2,7 @@
 using Restaurant.Classes;
 using Restaurant.Item;
 using Restaurant.Login;
+using Restaurant.orders;
 using Restaurant.People;
 using Restaurant.User;
 using System;
@@ -93,6 +94,14 @@ namespace Restaurant
             Form frm = new frmListItem();
             frm.ShowDialog();
             
+        }
+
+        private void btnOrders_Click(object sender, EventArgs e)
+        {
+
+            Form frm = new frmOrders();
+            frm.ShowDialog();
+
         }
     }
 }

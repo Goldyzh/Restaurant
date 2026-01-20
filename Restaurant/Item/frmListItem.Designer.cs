@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvItems = new System.Windows.Forms.DataGridView();
             this.cmsPeople = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,14 +68,14 @@
             this.dgvItems.MultiSelect = false;
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItems.Size = new System.Drawing.Size(1212, 371);
             this.dgvItems.TabIndex = 103;
@@ -93,27 +93,27 @@
             this.sendEmailToolStripMenuItem,
             this.phoneCallToolStripMenuItem});
             this.cmsPeople.Name = "contextMenuStrip1";
-            this.cmsPeople.Size = new System.Drawing.Size(197, 266);
+            this.cmsPeople.Size = new System.Drawing.Size(179, 244);
             // 
             // showDetailsToolStripMenuItem
             // 
             this.showDetailsToolStripMenuItem.Image = global::Restaurant.Properties.Resources.PersonDetails_32;
             this.showDetailsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(178, 38);
             this.showDetailsToolStripMenuItem.Text = "&Show Details";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(193, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(175, 6);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Image = global::Restaurant.Properties.Resources.AddPerson_32;
             this.toolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(178, 38);
             this.toolStripMenuItem1.Text = "Add &New Person";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click_1);
             // 
@@ -122,7 +122,7 @@
             this.editToolStripMenuItem.Image = global::Restaurant.Properties.Resources.edit_32;
             this.editToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(178, 38);
             this.editToolStripMenuItem.Text = "&Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click_1);
             // 
@@ -131,21 +131,21 @@
             this.deleteToolStripMenuItem.Image = global::Restaurant.Properties.Resources.Delete_32;
             this.deleteToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(178, 38);
             this.deleteToolStripMenuItem.Text = "&Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click_1);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(193, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(175, 6);
             // 
             // sendEmailToolStripMenuItem
             // 
             this.sendEmailToolStripMenuItem.Image = global::Restaurant.Properties.Resources.send_email_32;
             this.sendEmailToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
-            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(178, 38);
             this.sendEmailToolStripMenuItem.Text = "Send E&mail";
             // 
             // phoneCallToolStripMenuItem
@@ -153,7 +153,7 @@
             this.phoneCallToolStripMenuItem.Image = global::Restaurant.Properties.Resources.call_32;
             this.phoneCallToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
-            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(178, 38);
             this.phoneCallToolStripMenuItem.Text = "Phone &Call";
             // 
             // btnClose
@@ -184,7 +184,7 @@
             // 
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTitle.Location = new System.Drawing.Point(613, 208);
+            this.lblTitle.Location = new System.Drawing.Point(471, 199);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(369, 39);
             this.lblTitle.TabIndex = 110;
@@ -196,7 +196,7 @@
             this.pbPersonImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbPersonImage.Image = global::Restaurant.Properties.Resources.People_400;
             this.pbPersonImage.InitialImage = null;
-            this.pbPersonImage.Location = new System.Drawing.Point(688, 14);
+            this.pbPersonImage.Location = new System.Drawing.Point(546, 5);
             this.pbPersonImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbPersonImage.Name = "pbPersonImage";
             this.pbPersonImage.Size = new System.Drawing.Size(220, 189);

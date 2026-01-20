@@ -89,15 +89,15 @@ namespace Restaurant.Item
             //Map Selected Filter to real Column ItemName 
             switch (cbFilterBy.Text)
             {
-                case "Person ID":
+                case "Category ID":
                     FilterColumn = "CategoryID";
                     break;
 
-                case "National No.":
+                case "Item Name":
                     FilterColumn = "ItemName";
                     break;
 
-                case "First ItemName":
+                case "Description":
                     FilterColumn = "Description";
                     break;
 
