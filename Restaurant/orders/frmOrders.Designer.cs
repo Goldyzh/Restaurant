@@ -46,6 +46,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblOrderItemsRecordsCount = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
@@ -53,6 +55,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblTotalPrice);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.rbFinished);
             this.groupBox1.Controls.Add(this.rbPending);
             this.groupBox1.Controls.Add(this.label2);
@@ -71,7 +75,7 @@
             // rbFinished
             // 
             this.rbFinished.AutoSize = true;
-            this.rbFinished.Location = new System.Drawing.Point(319, 74);
+            this.rbFinished.Location = new System.Drawing.Point(294, 74);
             this.rbFinished.Name = "rbFinished";
             this.rbFinished.Size = new System.Drawing.Size(101, 28);
             this.rbFinished.TabIndex = 7;
@@ -82,7 +86,7 @@
             // rbPending
             // 
             this.rbPending.AutoSize = true;
-            this.rbPending.Location = new System.Drawing.Point(197, 74);
+            this.rbPending.Location = new System.Drawing.Point(172, 74);
             this.rbPending.Name = "rbPending";
             this.rbPending.Size = new System.Drawing.Size(99, 28);
             this.rbPending.TabIndex = 6;
@@ -93,7 +97,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(567, 31);
+            this.label2.Location = new System.Drawing.Point(565, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 24);
             this.label2.TabIndex = 5;
@@ -101,16 +105,16 @@
             // 
             // txtNotes
             // 
-            this.txtNotes.Location = new System.Drawing.Point(663, 28);
+            this.txtNotes.Location = new System.Drawing.Point(654, 28);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(386, 70);
+            this.txtNotes.Size = new System.Drawing.Size(395, 70);
             this.txtNotes.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(55, 74);
+            this.label3.Location = new System.Drawing.Point(30, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(119, 24);
             this.label3.TabIndex = 2;
@@ -119,7 +123,7 @@
             // lblOrderID
             // 
             this.lblOrderID.AutoSize = true;
-            this.lblOrderID.Location = new System.Drawing.Point(193, 31);
+            this.lblOrderID.Location = new System.Drawing.Point(150, 28);
             this.lblOrderID.Name = "lblOrderID";
             this.lblOrderID.Size = new System.Drawing.Size(42, 24);
             this.lblOrderID.TabIndex = 1;
@@ -128,7 +132,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 31);
+            this.label1.Location = new System.Drawing.Point(30, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 24);
             this.label1.TabIndex = 0;
@@ -237,6 +241,24 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Records Count:";
             // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.Location = new System.Drawing.Point(398, 28);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(20, 24);
+            this.lblTotalPrice.TabIndex = 9;
+            this.lblTotalPrice.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(278, 28);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(104, 24);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Total Price:";
+            // 
             // frmOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,5 +307,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblOrderItemsRecordsCount;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.Label label8;
     }
 }

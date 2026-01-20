@@ -89,8 +89,30 @@ namespace Restaurant_Buisness
             bool IsAvailable = false;
 
 
-            bool IsFound = clsItemsData.GetPersonInfoByID
+            bool IsFound = clsItemsData.GetItemInfoByID
                                 (ItemID, ref  ItemName, ref  Price, ref  Description, ref  ImagePath,
+          ref  IsAvailable, ref  CreatedAt, ref  CategoryID);
+
+            if (IsFound)
+                //we return new object of that person with the right data
+                return new clsItems(ItemID,  ItemName,  Price,  Description,  ImagePath,
+           IsAvailable,  CreatedAt,  CategoryID);
+            else
+                return null;
+        }
+
+         public static clsItems FindItemByItemName(string ItemName)
+        {
+            int ItemID = -1;
+            string  Description = "", ImagePath = "";
+            DateTime CreatedAt = DateTime.Now;
+            decimal Price = -1;
+            int CategoryID = -1;
+            bool IsAvailable = false;
+
+
+            bool IsFound = clsItemsData.GetItemItemName
+                                (ItemName , ref ItemID, ref  Price, ref  Description, ref  ImagePath,
           ref  IsAvailable, ref  CreatedAt, ref  CategoryID);
 
             if (IsFound)
@@ -132,6 +154,17 @@ namespace Restaurant_Buisness
         {
             return clsItemsData.GetAllItems();
         }
+
+        //public static DataTable GetAllItemsForComboBox()
+        //{
+        //    return clsItemsData.GetAllItemsForComboBox();
+        //}
+
+        public static DataTable GetAllItemsForComboBox(int CategoryID)
+        {
+            return clsItemsData.GetAllItemsForComboBox(CategoryID);
+        }
+
 
         public static bool DeleteItem(int ID)
         {

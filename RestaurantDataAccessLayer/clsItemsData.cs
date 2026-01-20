@@ -8,7 +8,7 @@ namespace Restaurant_DataAccess
     public class clsItemsData
     {
 
-        public static bool GetPersonInfoByID(int ItemID, ref string ItemName, ref decimal Price, ref string Description, ref string ImagePath,
+        public static bool GetItemInfoByID(int ItemID  , ref string ItemName , ref decimal Price, ref string Description, ref string ImagePath,
           ref bool IsAvailable, ref DateTime CreatedAt, ref int CategoryID)
         {
             bool isFound = false;
@@ -41,6 +41,79 @@ namespace Restaurant_DataAccess
 
                     Description = (string)reader["Description"];
                   
+
+                    CategoryID = (int)reader["CategoryID"];
+
+                    //ImagePath: allows null in database so we should handle null
+                    if (reader["ImagePath"] != DBNull.Value)
+                    {
+                        ImagePath = (string)reader["ImagePath"];
+                    }
+                    else
+                    {
+                        ImagePath = "";
+                    }
+
+                    IsAvailable = (bool)reader["IsAvailable"];
+
+
+                }
+                else
+                {
+                    // The record was not found
+                    isFound = false;
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine("Error: " + ex.Message);
+
+                isFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+        }
+
+
+        public static bool GetItemItemName(string ItemName , ref int ItemID, ref decimal Price, ref string Description, ref string ImagePath,
+         ref bool IsAvailable, ref DateTime CreatedAt, ref int CategoryID)
+        {
+            bool isFound = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = "SELECT * FROM Items WHERE ItemName = @ItemName";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@ItemName", ItemName);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    // The record was found
+                    isFound = true;
+
+                    ItemID = (int)reader["ItemID"];
+                    Price = (decimal)reader["Price"];
+
+
+
+
+                    CreatedAt = (DateTime)reader["CreatedAt"];
+
+                    Description = (string)reader["Description"];
+
 
                     CategoryID = (int)reader["CategoryID"];
 
@@ -256,6 +329,51 @@ namespace Restaurant_DataAccess
             return dt;
 
         }
+
+        public static DataTable GetAllItemsForComboBox(int CategoryID)
+        {
+
+            DataTable dt = new DataTable();
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            //string query = @"SELECT * FROM Items";
+            string query = @"SELECT * FROM Items where CategoryID = @CategoryID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@CategoryID", CategoryID);
+
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+
+                {
+                    dt.Load(reader);
+                }
+
+                reader.Close();
+
+
+            }
+
+            catch (Exception ex)
+            {
+                 Console.WriteLine("Error:------------------ " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return dt;
+
+        }
+
 
         public static bool DeleteItem(int ItemID)
         {

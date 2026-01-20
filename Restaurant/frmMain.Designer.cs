@@ -134,9 +134,9 @@
             // 
             this.pictureBox1.Image = global::Restaurant.Properties.Resources._53748245_2506642936325210_8273804709588893696_n;
             this.pictureBox1.InitialImage = global::Restaurant.Properties.Resources._53748245_2506642936325210_8273804709588893696_n;
-            this.pictureBox1.Location = new System.Drawing.Point(23, 158);
+            this.pictureBox1.Location = new System.Drawing.Point(1, 147);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1597, 687);
+            this.pictureBox1.Size = new System.Drawing.Size(1633, 698);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
