@@ -253,6 +253,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\53748245_2506642936325210_8273804709588893696_n.jpg" />
     <Content Include="Resources\account_settings 64.png" />
     <Content Include="Resources\Add New User 32.png" />
     <Content Include="Resources\Add New User 72.png" />

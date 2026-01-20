@@ -29,17 +29,18 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblOrderID = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtNotes = new System.Windows.Forms.TextBox();
+            this.rbNew = new System.Windows.Forms.RadioButton();
+            this.rbPaid = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtNotes = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblOrderID = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.dgvOrderItems = new System.Windows.Forms.DataGridView();
             this.btnAddItem = new System.Windows.Forms.Button();
             this.TotalPrice = new System.Windows.Forms.Label();
             this.lblTotalPrice = new System.Windows.Forms.Label();
-            this.rbPaid = new System.Windows.Forms.RadioButton();
-            this.rbNew = new System.Windows.Forms.RadioButton();
+            this.btnOrderNow = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).BeginInit();
             this.SuspendLayout();
@@ -61,23 +62,44 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order Info";
             // 
-            // label1
+            // rbNew
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Order ID:";
+            this.rbNew.AutoSize = true;
+            this.rbNew.Location = new System.Drawing.Point(291, 76);
+            this.rbNew.Name = "rbNew";
+            this.rbNew.Size = new System.Drawing.Size(67, 28);
+            this.rbNew.TabIndex = 7;
+            this.rbNew.TabStop = true;
+            this.rbNew.Text = "New";
+            this.rbNew.UseVisualStyleBackColor = true;
             // 
-            // lblOrderID
+            // rbPaid
             // 
-            this.lblOrderID.AutoSize = true;
-            this.lblOrderID.Location = new System.Drawing.Point(180, 35);
-            this.lblOrderID.Name = "lblOrderID";
-            this.lblOrderID.Size = new System.Drawing.Size(42, 24);
-            this.lblOrderID.TabIndex = 1;
-            this.lblOrderID.Text = "N/A";
+            this.rbPaid.AutoSize = true;
+            this.rbPaid.Location = new System.Drawing.Point(184, 76);
+            this.rbPaid.Name = "rbPaid";
+            this.rbPaid.Size = new System.Drawing.Size(65, 28);
+            this.rbPaid.TabIndex = 6;
+            this.rbPaid.TabStop = true;
+            this.rbPaid.Text = "Paid";
+            this.rbPaid.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(477, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 24);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Notes:";
+            // 
+            // txtNotes
+            // 
+            this.txtNotes.Location = new System.Drawing.Point(558, 35);
+            this.txtNotes.Multiline = true;
+            this.txtNotes.Name = "txtNotes";
+            this.txtNotes.Size = new System.Drawing.Size(361, 106);
+            this.txtNotes.TabIndex = 4;
             // 
             // label3
             // 
@@ -88,22 +110,23 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Order Status:";
             // 
-            // txtNotes
+            // lblOrderID
             // 
-            this.txtNotes.Location = new System.Drawing.Point(558, 35);
-            this.txtNotes.Multiline = true;
-            this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(361, 106);
-            this.txtNotes.TabIndex = 4;
+            this.lblOrderID.AutoSize = true;
+            this.lblOrderID.Location = new System.Drawing.Point(180, 35);
+            this.lblOrderID.Name = "lblOrderID";
+            this.lblOrderID.Size = new System.Drawing.Size(42, 24);
+            this.lblOrderID.TabIndex = 1;
+            this.lblOrderID.Text = "N/A";
             // 
-            // label2
+            // label1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(477, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 24);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Notes:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(42, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Order ID:";
             // 
             // dgvOrderItems
             // 
@@ -146,33 +169,23 @@
             this.lblTotalPrice.TabIndex = 6;
             this.lblTotalPrice.Text = "0";
             // 
-            // rbPaid
+            // btnOrderNow
             // 
-            this.rbPaid.AutoSize = true;
-            this.rbPaid.Location = new System.Drawing.Point(184, 76);
-            this.rbPaid.Name = "rbPaid";
-            this.rbPaid.Size = new System.Drawing.Size(65, 28);
-            this.rbPaid.TabIndex = 6;
-            this.rbPaid.TabStop = true;
-            this.rbPaid.Text = "Paid";
-            this.rbPaid.UseVisualStyleBackColor = true;
-            // 
-            // rbNew
-            // 
-            this.rbNew.AutoSize = true;
-            this.rbNew.Location = new System.Drawing.Point(291, 76);
-            this.rbNew.Name = "rbNew";
-            this.rbNew.Size = new System.Drawing.Size(67, 28);
-            this.rbNew.TabIndex = 7;
-            this.rbNew.TabStop = true;
-            this.rbNew.Text = "New";
-            this.rbNew.UseVisualStyleBackColor = true;
+            this.btnOrderNow.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrderNow.ForeColor = System.Drawing.Color.IndianRed;
+            this.btnOrderNow.Location = new System.Drawing.Point(940, 532);
+            this.btnOrderNow.Name = "btnOrderNow";
+            this.btnOrderNow.Size = new System.Drawing.Size(151, 42);
+            this.btnOrderNow.TabIndex = 8;
+            this.btnOrderNow.Text = "Order Now";
+            this.btnOrderNow.UseVisualStyleBackColor = true;
             // 
             // frmOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1103, 557);
+            this.ClientSize = new System.Drawing.Size(1103, 580);
+            this.Controls.Add(this.btnOrderNow);
             this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.TotalPrice);
             this.Controls.Add(this.btnAddItem);
@@ -202,5 +215,6 @@
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.RadioButton rbNew;
         private System.Windows.Forms.RadioButton rbPaid;
+        private System.Windows.Forms.Button btnOrderNow;
     }
 }

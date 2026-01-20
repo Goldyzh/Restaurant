@@ -63,6 +63,16 @@ namespace Restaurant.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _53748245_2506642936325210_8273804709588893696_n {
+            get {
+                object obj = ResourceManager.GetObject("53748245_2506642936325210_8273804709588893696_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap account_settings_64 {
             get {
                 object obj = ResourceManager.GetObject("account_settings 64", resourceCulture);
