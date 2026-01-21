@@ -76,11 +76,26 @@ namespace Restaurant.orders
         {
             _Item = clsItems.Find(ItemID);
 
-            //Console.WriteLine("_Item.Price==============================");
-            //Console.WriteLine(_Item.Price);
-            //Console.WriteLine("_Item.Price==============================");
         }
-        
+
+        private void CalculatePrice(decimal Price, int Quantity)
+        {
+
+            int.TryParse(txtQuantity.Text, out Quantity);
+
+            if (string.IsNullOrWhiteSpace(txtQuantity.Text))
+                return;
+
+            decimal TotalPrice = Price * Quantity;
+
+            lblPrice.Text = TotalPrice.ToString();
+
+            Console.WriteLine("_Item.Price in CalculatePrice==============================");
+            Console.WriteLine(TotalPrice);
+            Console.WriteLine("_Item.Price in CalculatePrice==============================");
+            lblPrice.Text = TotalPrice.ToString();
+        }
+
 
         private void cbItem_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -89,40 +104,48 @@ namespace Restaurant.orders
 
             GetItem(ItemID);
 
+            int Quantity = 1;
+
+            CalculatePrice(_Item.Price, Quantity);
+
 
         }
 
         private void txtQuantity_TextChanged(object sender, EventArgs e)
         {
 
-           //decimal TotalPrice = _Item.Price * decimal.Parse(txtQuantity.Text);
+            //decimal TotalPrice = _Item.Price * decimal.Parse(txtQuantity.Text);
 
             int Quantity = 1;
 
             int.TryParse(txtQuantity.Text, out Quantity);
-           
+
             if (string.IsNullOrWhiteSpace(txtQuantity.Text))
                 return;
 
-            decimal TotalPrice = _Item.Price * Quantity;
+            Quantity = int.Parse(txtQuantity.Text);
 
-            lblPrice.Text = TotalPrice.ToString();
+            CalculatePrice(_Item.Price, Quantity);
+
+
 
 
             //  lblPrice.Text = _Item.Price.ToString();
 
-            Console.WriteLine("_Item.Price");
-            Console.WriteLine(_Item.Price);
-            Console.WriteLine("_Item.Price");
-
-            Console.WriteLine("txtQuantity_TextChanged");
-            Console.WriteLine(txtQuantity.Text);
-            Console.WriteLine("txtQuantity_TextChanged");
 
 
-            Console.WriteLine("_Item.Price");
-            Console.WriteLine(TotalPrice);
-            Console.WriteLine("_Item.Price");
+            //Console.WriteLine("_Item.Price");
+            //Console.WriteLine(_Item.Price);
+            //Console.WriteLine("_Item.Price");
+
+            //Console.WriteLine("txtQuantity_TextChanged");
+            //Console.WriteLine(txtQuantity.Text);
+            //Console.WriteLine("txtQuantity_TextChanged");
+
+
+            //Console.WriteLine("_Item.Price");
+            //Console.WriteLine(TotalPrice);
+            //Console.WriteLine("_Item.Price");
 
 
         }
