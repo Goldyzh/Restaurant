@@ -73,7 +73,23 @@ namespace Restaurant_DataAccess
                 SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             //string query = "SELECT * FROM OrderItems Order BY ID DESC";
-            string query = "SELECT * FROM OrderItems Order BY ID";
+            //string query = "SELECT * FROM OrderItems Order BY ID";
+
+            string query =
+              @"SELECT 
+    OrderItems.ID,
+    OrderItems.OrderID,
+    OrderItems.ItemID,
+    Items.ItemName,
+    OrderItems.Quantity,
+    OrderItems.Price
+FROM OrderItems
+INNER JOIN Items
+    ON OrderItems.ItemID = Items.ItemID
+ORDER BY OrderItems.ID;
+";
+
+
 
 
 
@@ -148,7 +164,7 @@ namespace Restaurant_DataAccess
 
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                Console.WriteLine("Error in AddNewOrderItems---------------------: " + ex.Message);
 
             }
 

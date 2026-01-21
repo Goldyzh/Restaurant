@@ -1,5 +1,7 @@
 ﻿using Restaurant.People;
+using Restaurant.Properties;
 using Restaurant_Buisness;
+using Restaurant_DataAccess;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +20,10 @@ namespace Restaurant.orders
         clsOrder _Order;
         decimal OrderTotalPrice = 0;
 
+        public enum enMode { AddNew = 0, Update = 1 };
+        private enMode _Mode;
+
+
 
 
         private DataTable _dtOrders;
@@ -27,42 +33,14 @@ namespace Restaurant.orders
         public frmOrders()
         {
             InitializeComponent();
-        }
-
-        private void btnAddItem_Click(object sender, EventArgs e)
-        {
-            frmAddItemToOrder frm1 = new frmAddItemToOrder();
-
-            frm1.DataBack += Frm_DataBack;
-
-            frm1.ShowDialog();
-            //_RefreshItemsOrderList();
+            //_Mode = enMode.AddNew;
 
         }
 
      
 
-        private void Frm_DataBack(object sender, int orderID)
-        {
-          
-
-            Console.WriteLine("orderID Frm_DataBack---------- ");
-            Console.WriteLine(orderID.ToString());
-            Console.WriteLine("orderID Frm_DataBack---------- ");
-
-            _OrderID = orderID;
-            _Order = clsOrder.FindBaseOrder(orderID);
-
-            
-
-            Console.WriteLine("_Order.OrderID Frm_DataBack---------- ");
-            Console.WriteLine(_Order.OrderID.ToString());
-            Console.WriteLine("_Order.OrderID Frm_DataBack---------- ");
 
 
-
-
-        }
 
 
         private void PendingOrders()
@@ -122,13 +100,68 @@ namespace Restaurant.orders
 
         }
 
+        private void btnAddItem_Click(object sender, EventArgs e)
+        {
+            frmAddItemToOrder frm1 = new frmAddItemToOrder();
 
+            frm1.DataBack += Frm_DataBack;
+
+            frm1.OnOrderItemsChanged += () =>
+            {
+                OrderItems();
+                PendingOrders();
+            };
+
+
+            frm1.ShowDialog();
+
+        }
+
+
+
+        private void Frm_DataBack(object sender, int orderID)
+        {
+
+            _OrderID = orderID;
+            _Order = clsOrder.FindBaseOrder(orderID);
+
+            lblOrderID.Text = _Order.OrderID.ToString();
+
+            lblTotalPrice.Text = _Order.TotalPrice.ToString();
+
+
+
+        }
+
+
+
+        private void _ResetDefualtValues()
+        {
+          
+
+            if (_Mode == enMode.AddNew)
+            {
+                _Order = new clsOrder();
+            }
+
+
+            lblTotalPrice.Text = "0";
+
+            rbPending.Checked = true;
+
+            txtNotes.Text = "";
+
+            textOrderNmae.Text = "";
+
+
+
+
+        }
 
 
         private void frmOrders_Load(object sender, EventArgs e)
         {
-
-            rbPending.Checked = true;
+            _ResetDefualtValues();
 
             PendingOrders();
 
@@ -171,5 +204,6 @@ namespace Restaurant.orders
 
 
         }
+
     }
 }

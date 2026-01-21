@@ -1,4 +1,6 @@
-﻿using Restaurant_Buisness;
+﻿using Restaurant.Properties;
+using Restaurant_Buisness;
+using Restaurant_DataAccess;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Restaurant.orders.frmAddItemToOrder;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Restaurant.orders
@@ -19,6 +22,7 @@ namespace Restaurant.orders
         public delegate void DataBackEventHandler(object sender, int orderID);
         public event DataBackEventHandler DataBack;
 
+        public event Action OnOrderItemsChanged;
 
 
         private int _ItemID = -1;
@@ -54,10 +58,39 @@ namespace Restaurant.orders
             _OrderMode = OrderMode.AddNew;
             _OrderItemsMode = OrderItemsMode.AddNew;
 
-
         }
 
+        private void _ResetDefualtValues()
+        {
 
+            if (_OrderMode == OrderMode.AddNew)
+            {
+                _Order = new clsOrder();
+            }
+            //else
+            //{
+            //    lblTitle.Text = "Update Person";
+            //}
+
+        
+
+            if (_OrderItemsMode == OrderItemsMode.AddNew)
+            {
+                _OrderItems = new clsOrderItems();
+            }
+            //else
+            //{
+            //    lblTitle.Text = "Update Person";
+            //}
+
+
+            
+
+
+            txtQuantity.Text = "1";
+
+
+        }
 
 
         private void _FillCategoriesInComoboBox()
@@ -153,6 +186,8 @@ namespace Restaurant.orders
         private void frmAddItemToOrder_Load(object sender, EventArgs e)
         {
             _FillCategoriesInComoboBox();
+            _ResetDefualtValues();
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -167,7 +202,7 @@ namespace Restaurant.orders
                 MessageBox.Show("Please select a Item", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (int.Parse(txtQuantity.Text) > 1)
+            if (int.Parse(txtQuantity.Text) < 0)
             {
                 MessageBox.Show("Please Quantity a valid Quantity", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -176,6 +211,7 @@ namespace Restaurant.orders
 
             _Order.OrderDate = DateTime.Now;
             _Order.TotalPrice = OrderTotalPrice;
+
             _Order.Status = "Pending";
 
             //for now 1
@@ -197,6 +233,7 @@ namespace Restaurant.orders
                     // lblCategoryID.Text = _Category.CategoryID.ToString();
                     //change form mode to update.
                     _OrderMode = OrderMode.Update;
+                    _OrderID = _Order.OrderID;
 
 
                     // Trigger the event to send data back to the caller form.
@@ -212,9 +249,15 @@ namespace Restaurant.orders
             }
 
            
+
           
             if (IsOrderSaved)
             {
+                _OrderItems.OrderID = _OrderID;
+                _OrderItems.ItemID = _ItemID;
+                _OrderItems.Quantity = int.Parse(txtQuantity.Text);
+                _OrderItems.Price = OrderItemsTotalPrice;
+                
                 if (_OrderItems.Save())
                 {
                     _OrderItemsMode = OrderItemsMode.Update;
@@ -231,6 +274,8 @@ namespace Restaurant.orders
 
             }
 
+            OnOrderItemsChanged?.Invoke();
+
             this.Close();
 
         }
@@ -239,6 +284,8 @@ namespace Restaurant.orders
         {
             this.Close();
         }
+
+
 
       
     }

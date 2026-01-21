@@ -168,9 +168,9 @@ namespace Restaurant_DataAccess
 
             string query = @"INSERT INTO Orders ( 
                             OrderDate,TotalPrice,
-                            Status,Notes, OrderName,
-                            CreatedBy)
-                             VALUES (@OrderDate,@TotalPrice,@OrderTypeID,
+                            Status,Notes,CreatedBy,
+                            OrderName)
+                             VALUES (@OrderDate,@TotalPrice,
                                       @Status,@Notes,
                                       @CreatedBy, @OrderName);
                              SELECT SCOPE_IDENTITY();";
@@ -201,7 +201,7 @@ namespace Restaurant_DataAccess
 
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                Console.WriteLine("Error: in AddNewOrder-------------------- " + ex.Message);
 
             }
 

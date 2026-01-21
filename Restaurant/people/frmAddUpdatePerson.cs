@@ -38,7 +38,7 @@ namespace Restaurant.People
         public frmAddUpdatePerson()
         {
             InitializeComponent();
-            _Mode = enMode.AddNew;
+            
 
         }
 

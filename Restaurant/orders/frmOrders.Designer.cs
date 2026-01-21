@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textOrderNmae = new System.Windows.Forms.TextBox();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.rbFinished = new System.Windows.Forms.RadioButton();
@@ -49,8 +51,6 @@
             this.lblOrderItemsRecordsCount = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textOrderNmae = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
@@ -72,10 +72,27 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1079, 116);
+            this.groupBox1.Size = new System.Drawing.Size(1067, 117);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order Info";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(505, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(120, 24);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Order Nmae:";
+            // 
+            // textOrderNmae
+            // 
+            this.textOrderNmae.Location = new System.Drawing.Point(650, 20);
+            this.textOrderNmae.Multiline = true;
+            this.textOrderNmae.Name = "textOrderNmae";
+            this.textOrderNmae.Size = new System.Drawing.Size(395, 33);
+            this.textOrderNmae.TabIndex = 10;
             // 
             // lblTotalPrice
             // 
@@ -128,10 +145,10 @@
             // 
             // txtNotes
             // 
-            this.txtNotes.Location = new System.Drawing.Point(650, 56);
+            this.txtNotes.Location = new System.Drawing.Point(650, 59);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(395, 48);
+            this.txtNotes.Size = new System.Drawing.Size(395, 45);
             this.txtNotes.TabIndex = 4;
             // 
             // label3
@@ -186,7 +203,7 @@
             this.RecordsCount.AutoSize = true;
             this.RecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RecordsCount.ForeColor = System.Drawing.Color.DimGray;
-            this.RecordsCount.Location = new System.Drawing.Point(8, 808);
+            this.RecordsCount.Location = new System.Drawing.Point(12, 808);
             this.RecordsCount.Name = "RecordsCount";
             this.RecordsCount.Size = new System.Drawing.Size(134, 20);
             this.RecordsCount.TabIndex = 7;
@@ -276,23 +293,6 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(505, 25);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 24);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Order Nmae:";
-            // 
-            // textOrderNmae
-            // 
-            this.textOrderNmae.Location = new System.Drawing.Point(650, 25);
-            this.textOrderNmae.Multiline = true;
-            this.textOrderNmae.Name = "textOrderNmae";
-            this.textOrderNmae.Size = new System.Drawing.Size(395, 25);
-            this.textOrderNmae.TabIndex = 10;
             // 
             // frmOrders
             // 
