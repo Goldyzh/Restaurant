@@ -14,6 +14,12 @@ namespace Restaurant.orders
 {
     public partial class frmAddItemToOrder : Form
     {
+
+        private int _ItemID = -1;
+        clsItems _Item;
+
+        
+
         public enum enMode { AddNew = 0, Update = 1 };
 
         private enMode _Mode;
@@ -24,6 +30,9 @@ namespace Restaurant.orders
             _Mode = enMode.AddNew;
 
         }
+
+      
+
 
         private void _FillCategoriesInComoboBox()
         {
@@ -67,6 +76,20 @@ namespace Restaurant.orders
 
         }
 
+        private void cbItem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int ItemID = cbItem.SelectedIndex + 1;
+
+            _Item = clsItems.Find(ItemID);
+
+            Console.WriteLine("_Item==============================");
+            Console.WriteLine(ItemID);
+            Console.WriteLine("_Item==============================");
+
+
+
+        }
+
 
 
         private void frmAddItemToOrder_Load(object sender, EventArgs e)
@@ -85,6 +108,6 @@ namespace Restaurant.orders
 
         }
 
-  
+      
     }
 }

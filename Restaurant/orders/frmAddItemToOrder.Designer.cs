@@ -88,6 +88,7 @@
             this.cbItem.Name = "cbItem";
             this.cbItem.Size = new System.Drawing.Size(186, 21);
             this.cbItem.TabIndex = 4;
+            this.cbItem.SelectedIndexChanged += new System.EventHandler(this.cbItem_SelectedIndexChanged);
             // 
             // txtQuantity
             // 
