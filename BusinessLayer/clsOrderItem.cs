@@ -19,6 +19,10 @@ namespace Restaurant_Buisness
 
         public int ItemID { set; get; }
 
+        public int Quantity { set; get; }
+
+        public decimal Price { set; get; }
+
 
         public clsOrder Order;
 
@@ -28,17 +32,21 @@ namespace Restaurant_Buisness
             this.ID = -1;
             this.OrderID = -1;
             this.ItemID = -1;
+            this.Quantity = -1;
+            this.Price = -1;
 
             Mode = enMode.AddNew;
 
         }
 
-        private clsOrderItems(int ID, int OrderID ,int ItemID)
+        private clsOrderItems(int ID, int OrderID ,int ItemID , int Quantity, decimal Price)
 
         {
             this.ID = ID;
             this.OrderID = OrderID;
             this.ItemID = ItemID;
+            this.Quantity = Quantity;
+            this.Price = Price;
             Mode = enMode.Update;
         }
 
@@ -47,7 +55,7 @@ namespace Restaurant_Buisness
             //call DataAccess Layer 
 
             this.ID = clsOrderItemsData.AddNewOrderItems(
-                this.OrderID, this.ItemID);
+                this.OrderID, this.ItemID, this.Quantity, this.Price);
 
             return (this.ID != -1);
         }
@@ -56,7 +64,7 @@ namespace Restaurant_Buisness
         {
             //call DataAccess Layer 
 
-            return clsOrderItemsData.UpdateOrderItems(this.ID, this.OrderID, this.ItemID);
+            return clsOrderItemsData.UpdateOrderItems(this.ID, this.OrderID, this.ItemID, this.Quantity, this.Price);
            
         }
 
@@ -64,18 +72,23 @@ namespace Restaurant_Buisness
         {
             int OrderID=-1 ;
             int ItemID = -1;
+            int Quantity = -1 ;
+            decimal Price = -1 ;
 
             bool IsFound = clsOrderItemsData.GetOrderItemsInfoByID
                                 (
                                     ID, ref OrderID , 
-                                    ref ItemID
+                                    ref ItemID ,
+                                     ref Quantity,
+                                    ref Price
+
 
                                 );
 
             if (IsFound)
                 //we return new object of that person with the right data
                 return new clsOrderItems(ID, OrderID,
-                                     ItemID);
+                                     ItemID, Quantity, Price);
             else
                 return null;
         }

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.rbFinished = new System.Windows.Forms.RadioButton();
             this.rbPending = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,8 +48,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblOrderItemsRecordsCount = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.lblTotalPrice = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
@@ -71,6 +72,24 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order Info";
+            // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.Location = new System.Drawing.Point(398, 28);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(20, 24);
+            this.lblTotalPrice.TabIndex = 9;
+            this.lblTotalPrice.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(278, 28);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(104, 24);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Total Price:";
             // 
             // rbFinished
             // 
@@ -149,7 +168,7 @@
             // btnAddItem
             // 
             this.btnAddItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddItem.ForeColor = System.Drawing.Color.IndianRed;
+            this.btnAddItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnAddItem.Location = new System.Drawing.Point(928, 432);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(151, 56);
@@ -182,7 +201,7 @@
             // btnOrderNow
             // 
             this.btnOrderNow.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrderNow.ForeColor = System.Drawing.Color.IndianRed;
+            this.btnOrderNow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnOrderNow.Location = new System.Drawing.Point(928, 811);
             this.btnOrderNow.Name = "btnOrderNow";
             this.btnOrderNow.Size = new System.Drawing.Size(151, 56);
@@ -241,29 +260,24 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Records Count:";
             // 
-            // lblTotalPrice
+            // btnCancel
             // 
-            this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Location = new System.Drawing.Point(398, 28);
-            this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(20, 24);
-            this.lblTotalPrice.TabIndex = 9;
-            this.lblTotalPrice.Text = "0";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(278, 28);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(104, 24);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Total Price:";
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.IndianRed;
+            this.btnCancel.Location = new System.Drawing.Point(741, 811);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(151, 56);
+            this.btnCancel.TabIndex = 14;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1092, 875);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblOrderItemsRecordsCount);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -309,5 +323,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

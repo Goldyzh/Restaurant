@@ -48,11 +48,10 @@ namespace Restaurant.orders
 
         private void _FillItemsInComoboBox(int CategoryID)
         {
-            Console.WriteLine("==============================");
-            Console.WriteLine("_FillItemsInComoboBox Called" );
-            Console.WriteLine("CategoryID==============================");
-            Console.WriteLine(CategoryID);
-            Console.WriteLine("CategoryID==============================");
+            //Console.WriteLine("==============================");
+            //Console.WriteLine("CategoryID==============================");
+            //Console.WriteLine(CategoryID);
+            //Console.WriteLine("CategoryID==============================");
 
 
             dtItems = clsItems.GetAllItemsForComboBox(CategoryID);
@@ -66,9 +65,6 @@ namespace Restaurant.orders
 
         private void cbCategory_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            Console.WriteLine("selected==============================");
-            Console.WriteLine(cbCategory.SelectedIndex);
-            Console.WriteLine("selected==============================");
 
             int CategoryID = cbCategory.SelectedIndex + 1;
 
@@ -76,16 +72,57 @@ namespace Restaurant.orders
 
         }
 
-        private void cbItem_SelectedIndexChanged(object sender, EventArgs e)
+        private void GetItem(int ItemID)
         {
-            int ItemID = cbItem.SelectedIndex + 1;
-
             _Item = clsItems.Find(ItemID);
 
-            Console.WriteLine("_Item==============================");
-            Console.WriteLine(ItemID);
-            Console.WriteLine("_Item==============================");
+            //Console.WriteLine("_Item.Price==============================");
+            //Console.WriteLine(_Item.Price);
+            //Console.WriteLine("_Item.Price==============================");
+        }
+        
 
+        private void cbItem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            int ItemID = clsItems.FindItemByItemName(cbItem.Text).ItemID;
+
+            GetItem(ItemID);
+
+
+        }
+
+        private void txtQuantity_TextChanged(object sender, EventArgs e)
+        {
+
+           //decimal TotalPrice = _Item.Price * decimal.Parse(txtQuantity.Text);
+
+            int Quantity = 1;
+
+            int.TryParse(txtQuantity.Text, out Quantity);
+           
+            if (string.IsNullOrWhiteSpace(txtQuantity.Text))
+                return;
+
+            decimal TotalPrice = _Item.Price * Quantity;
+
+            lblPrice.Text = TotalPrice.ToString();
+
+
+            //  lblPrice.Text = _Item.Price.ToString();
+
+            Console.WriteLine("_Item.Price");
+            Console.WriteLine(_Item.Price);
+            Console.WriteLine("_Item.Price");
+
+            Console.WriteLine("txtQuantity_TextChanged");
+            Console.WriteLine(txtQuantity.Text);
+            Console.WriteLine("txtQuantity_TextChanged");
+
+
+            Console.WriteLine("_Item.Price");
+            Console.WriteLine(TotalPrice);
+            Console.WriteLine("_Item.Price");
 
 
         }
@@ -106,6 +143,11 @@ namespace Restaurant.orders
             }
 
 
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
       

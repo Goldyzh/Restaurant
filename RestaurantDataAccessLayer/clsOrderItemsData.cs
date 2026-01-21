@@ -13,7 +13,7 @@ namespace Restaurant_DataAccess
     {
         
 
-        public static bool GetOrderItemsInfoByID(int ID, ref int OrderID, ref int ItemID)
+        public static bool GetOrderItemsInfoByID(int ID, ref int OrderID, ref int ItemID, ref int Quantity, ref decimal Price)
             {
                 bool isFound = false;
 
@@ -39,7 +39,8 @@ namespace Restaurant_DataAccess
                         ID = (int)reader["ID"];
                         OrderID = (int)reader["OrderID"];
                         ItemID = (int)reader["ItemID"];
-
+                        Quantity = (int)reader["Quantity"];
+                        Price = (decimal)reader["Price"];
 
                 }
                 else
@@ -71,7 +72,8 @@ namespace Restaurant_DataAccess
                 DataTable dt = new DataTable();
                 SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-                  string query = "SELECT * FROM OrderItems Order BY ID";
+            //string query = "SELECT * FROM OrderItems Order BY ID DESC";
+            string query = "SELECT * FROM OrderItems Order BY ID";
 
 
 
@@ -111,7 +113,7 @@ namespace Restaurant_DataAccess
 
 
 
-        public static int AddNewOrderItems(int OrderID,  int ItemID)
+        public static int AddNewOrderItems(int OrderID,  int ItemID, int Quantity, decimal Price)
         {
 
             //this function will return the new person id if succeeded and -1 if not.
@@ -120,15 +122,16 @@ namespace Restaurant_DataAccess
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query = @"INSERT INTO OrderItems ( 
-                            OrderID,ItemID)
-                             VALUES (@OrderID,@ItemID);
+                            OrderID,ItemID ,Quantity, Price)
+                             VALUES (@OrderID,@ItemID,@Quantity ,@Price);
                              SELECT SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(query, connection);
 
             command.Parameters.AddWithValue("OrderID", @OrderID);
             command.Parameters.AddWithValue("ItemID", @ItemID);
-
+            command.Parameters.AddWithValue("Quantity", Quantity);
+            command.Parameters.AddWithValue("Price", Price);
 
 
             try
@@ -159,7 +162,7 @@ namespace Restaurant_DataAccess
         }
 
 
-        public static bool UpdateOrderItems(int ID, int OrderID, int ItemID)
+        public static bool UpdateOrderItems(int ID, int OrderID, int ItemID, int Quantity, decimal Price)
         {
 
             int rowsAffected = 0;
@@ -167,7 +170,10 @@ namespace Restaurant_DataAccess
 
             string query = @"Update  OrderItems  
                             set OrderID = @OrderID,
-                                ItemID = @ItemID
+                                ItemID = @ItemID,
+                                Quantity = @Quantity,
+                                Price = @Price
+
                             where ID=@ID";
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -175,6 +181,8 @@ namespace Restaurant_DataAccess
             command.Parameters.AddWithValue("@ID", ID);
             command.Parameters.AddWithValue("OrderID", OrderID);
             command.Parameters.AddWithValue("ItemID", ItemID);
+            command.Parameters.AddWithValue("Quantity", Quantity);
+            command.Parameters.AddWithValue("Price", Price);
 
 
 

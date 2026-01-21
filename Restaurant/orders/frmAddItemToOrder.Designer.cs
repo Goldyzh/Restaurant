@@ -37,6 +37,7 @@
             this.lblPrice = new System.Windows.Forms.Label();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -72,10 +73,10 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.IndianRed;
-            this.btnSave.Location = new System.Drawing.Point(78, 373);
+            this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSave.Location = new System.Drawing.Point(269, 370);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(326, 55);
+            this.btnSave.Size = new System.Drawing.Size(135, 55);
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -99,6 +100,7 @@
             this.txtQuantity.Size = new System.Drawing.Size(84, 29);
             this.txtQuantity.TabIndex = 5;
             this.txtQuantity.Text = "1";
+            this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
             // 
             // lblPrice
             // 
@@ -129,11 +131,24 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Category:";
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.IndianRed;
+            this.btnCancel.Location = new System.Drawing.Point(78, 370);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(135, 55);
+            this.btnCancel.TabIndex = 9;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // frmAddItemToOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(478, 487);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblPrice);
@@ -162,5 +177,6 @@
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
