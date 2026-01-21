@@ -38,13 +38,14 @@
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(73, 148);
+            this.label1.Location = new System.Drawing.Point(76, 220);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 25);
             this.label1.TabIndex = 0;
@@ -54,7 +55,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(73, 302);
+            this.label2.Location = new System.Drawing.Point(76, 374);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 25);
             this.label2.TabIndex = 1;
@@ -64,7 +65,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(73, 229);
+            this.label3.Location = new System.Drawing.Point(76, 301);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 25);
             this.label3.TabIndex = 2;
@@ -74,7 +75,7 @@
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnSave.Location = new System.Drawing.Point(269, 370);
+            this.btnSave.Location = new System.Drawing.Point(272, 442);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(135, 55);
             this.btnSave.TabIndex = 3;
@@ -85,7 +86,7 @@
             // cbItem
             // 
             this.cbItem.FormattingEnabled = true;
-            this.cbItem.Location = new System.Drawing.Point(218, 154);
+            this.cbItem.Location = new System.Drawing.Point(221, 226);
             this.cbItem.Name = "cbItem";
             this.cbItem.Size = new System.Drawing.Size(186, 21);
             this.cbItem.TabIndex = 4;
@@ -94,7 +95,7 @@
             // txtQuantity
             // 
             this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(249, 229);
+            this.txtQuantity.Location = new System.Drawing.Point(252, 301);
             this.txtQuantity.Multiline = true;
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(84, 29);
@@ -106,7 +107,7 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(273, 302);
+            this.lblPrice.Location = new System.Drawing.Point(276, 374);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(25, 25);
             this.lblPrice.TabIndex = 6;
@@ -115,7 +116,7 @@
             // cbCategory
             // 
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(218, 66);
+            this.cbCategory.Location = new System.Drawing.Point(221, 138);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(186, 21);
             this.cbCategory.TabIndex = 8;
@@ -125,7 +126,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(73, 60);
+            this.label4.Location = new System.Drawing.Point(76, 132);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(114, 25);
             this.label4.TabIndex = 7;
@@ -135,7 +136,7 @@
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.IndianRed;
-            this.btnCancel.Location = new System.Drawing.Point(78, 370);
+            this.btnCancel.Location = new System.Drawing.Point(81, 442);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(135, 55);
             this.btnCancel.TabIndex = 9;
@@ -143,11 +144,23 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblTitle.Location = new System.Drawing.Point(149, 45);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(176, 29);
+            this.lblTitle.TabIndex = 10;
+            this.lblTitle.Text = "Add New Item";
+            // 
             // frmAddItemToOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 487);
+            this.ClientSize = new System.Drawing.Size(478, 527);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.label4);
@@ -178,5 +191,6 @@
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

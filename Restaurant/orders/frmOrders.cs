@@ -14,6 +14,11 @@ namespace Restaurant.orders
 {
     public partial class frmOrders : Form
     {
+        private int _OrderID = -1;
+        clsOrder _Order;
+        decimal OrderTotalPrice = 0;
+
+
 
         private DataTable _dtOrders;
 
@@ -26,11 +31,39 @@ namespace Restaurant.orders
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
-            Form frm1 = new frmAddItemToOrder();
+            frmAddItemToOrder frm1 = new frmAddItemToOrder();
+
+            frm1.DataBack += Frm_DataBack;
+
             frm1.ShowDialog();
             //_RefreshItemsOrderList();
-            
+
         }
+
+     
+
+        private void Frm_DataBack(object sender, int orderID)
+        {
+          
+
+            Console.WriteLine("orderID Frm_DataBack---------- ");
+            Console.WriteLine(orderID.ToString());
+            Console.WriteLine("orderID Frm_DataBack---------- ");
+
+            _OrderID = orderID;
+            _Order = clsOrder.FindBaseOrder(orderID);
+
+            
+
+            Console.WriteLine("_Order.OrderID Frm_DataBack---------- ");
+            Console.WriteLine(_Order.OrderID.ToString());
+            Console.WriteLine("_Order.OrderID Frm_DataBack---------- ");
+
+
+
+
+        }
+
 
         private void PendingOrders()
         {
@@ -95,6 +128,8 @@ namespace Restaurant.orders
         private void frmOrders_Load(object sender, EventArgs e)
         {
 
+            rbPending.Checked = true;
+
             PendingOrders();
 
             OrderItems();
@@ -104,6 +139,37 @@ namespace Restaurant.orders
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnOrderNow_Click(object sender, EventArgs e)
+        {
+            if (int.Parse(lblOrderItemsRecordsCount.Text) < 0){
+                MessageBox.Show("Please add Items to the Order", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            _Order.OrderDate = DateTime.Now;
+            //_Order.TotalPrice = 0;
+            if (rbPending.Checked == true)
+            {
+                _Order.Status = "Pending";
+
+            }
+            if (rbFinished.Checked == true) {
+            
+                _Order.Status = "Finished";
+            
+            }
+
+            _Order.Notes = txtNotes.Text;
+
+            if(textOrderNmae.Text != "")
+            {
+                _Order.OrderName = textOrderNmae.Text;
+            }
+            
+
+
         }
     }
 }

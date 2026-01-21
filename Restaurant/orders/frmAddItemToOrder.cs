@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,23 +16,48 @@ namespace Restaurant.orders
     public partial class frmAddItemToOrder : Form
     {
 
+        public delegate void DataBackEventHandler(object sender, int orderID);
+        public event DataBackEventHandler DataBack;
+
+
+
         private int _ItemID = -1;
         clsItems _Item;
 
+        private int _OrderItemsID = -1;
+        clsOrderItems _OrderItems;
+
+        decimal OrderItemsTotalPrice = 0;
+
+
+        private int _OrderID = -1;
+        clsOrder _Order;
+        decimal OrderTotalPrice = 0;
+
+
+
         
 
-        public enum enMode { AddNew = 0, Update = 1 };
+        public enum OrderMode { AddNew = 0, Update = 1 };
 
-        private enMode _Mode;
+        private OrderMode _OrderMode;
+
+
+        public enum OrderItemsMode { AddNew = 0, Update = 1 };
+
+        private OrderItemsMode _OrderItemsMode;
+
 
         public frmAddItemToOrder()
         {
             InitializeComponent();
-            _Mode = enMode.AddNew;
+            _OrderMode = OrderMode.AddNew;
+            _OrderItemsMode = OrderItemsMode.AddNew;
+
 
         }
 
-      
+
 
 
         private void _FillCategoriesInComoboBox()
@@ -48,10 +74,6 @@ namespace Restaurant.orders
 
         private void _FillItemsInComoboBox(int CategoryID)
         {
-            //Console.WriteLine("==============================");
-            //Console.WriteLine("CategoryID==============================");
-            //Console.WriteLine(CategoryID);
-            //Console.WriteLine("CategoryID==============================");
 
 
             dtItems = clsItems.GetAllItemsForComboBox(CategoryID);
@@ -86,23 +108,19 @@ namespace Restaurant.orders
             if (string.IsNullOrWhiteSpace(txtQuantity.Text))
                 return;
 
-            decimal TotalPrice = Price * Quantity;
+             OrderItemsTotalPrice = Price * Quantity;
 
-            lblPrice.Text = TotalPrice.ToString();
+            lblPrice.Text = OrderItemsTotalPrice.ToString();
 
-            Console.WriteLine("_Item.Price in CalculatePrice==============================");
-            Console.WriteLine(TotalPrice);
-            Console.WriteLine("_Item.Price in CalculatePrice==============================");
-            lblPrice.Text = TotalPrice.ToString();
         }
 
 
         private void cbItem_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            int ItemID = clsItems.FindItemByItemName(cbItem.Text).ItemID;
+            _ItemID = clsItems.FindItemByItemName(cbItem.Text).ItemID;
 
-            GetItem(ItemID);
+            GetItem(_ItemID);
 
             int Quantity = 1;
 
@@ -114,7 +132,6 @@ namespace Restaurant.orders
         private void txtQuantity_TextChanged(object sender, EventArgs e)
         {
 
-            //decimal TotalPrice = _Item.Price * decimal.Parse(txtQuantity.Text);
 
             int Quantity = 1;
 
@@ -127,25 +144,6 @@ namespace Restaurant.orders
 
             CalculatePrice(_Item.Price, Quantity);
 
-
-
-
-            //  lblPrice.Text = _Item.Price.ToString();
-
-
-
-            //Console.WriteLine("_Item.Price");
-            //Console.WriteLine(_Item.Price);
-            //Console.WriteLine("_Item.Price");
-
-            //Console.WriteLine("txtQuantity_TextChanged");
-            //Console.WriteLine(txtQuantity.Text);
-            //Console.WriteLine("txtQuantity_TextChanged");
-
-
-            //Console.WriteLine("_Item.Price");
-            //Console.WriteLine(TotalPrice);
-            //Console.WriteLine("_Item.Price");
 
 
         }
@@ -164,7 +162,76 @@ namespace Restaurant.orders
                 MessageBox.Show("Please select a Category", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (cbItem.Text == "")
+            {
+                MessageBox.Show("Please select a Item", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (int.Parse(txtQuantity.Text) > 1)
+            {
+                MessageBox.Show("Please Quantity a valid Quantity", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+
+            _Order.OrderDate = DateTime.Now;
+            _Order.TotalPrice = OrderTotalPrice;
+            _Order.Status = "Pending";
+
+            //for now 1
+            _Order.CreatedBy = 1;
+
+
+
+
+
+
+
+            bool IsOrderSaved = false;
+
+            if (_OrderMode == OrderMode.AddNew)
+            {
+                if (_Order.Save())
+                {
+                    //لازم نرجع الايدي للكالد فورم
+                    // lblCategoryID.Text = _Category.CategoryID.ToString();
+                    //change form mode to update.
+                    _OrderMode = OrderMode.Update;
+
+
+                    // Trigger the event to send data back to the caller form.
+                    DataBack?.Invoke(this, _Order.OrderID);
+
+                    IsOrderSaved = true;
+                }
+                else
+                {
+                    MessageBox.Show("Error: Data Is not Saved Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    IsOrderSaved = false;
+                }
+            }
+
+           
+          
+            if (IsOrderSaved)
+            {
+                if (_OrderItems.Save())
+                {
+                    _OrderItemsMode = OrderItemsMode.Update;
+                    lblTitle.Text = "Update Order Item";
+
+                    MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // زايد
+                    // Trigger the event to send data back to the caller form.
+                    //  DataBack?.Invoke(this, _OrderItems.ItemID);
+                }
+                else
+                    MessageBox.Show("Error: Data Is not Saved Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+            this.Close();
 
         }
 

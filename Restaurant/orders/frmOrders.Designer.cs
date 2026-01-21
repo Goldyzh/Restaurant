@@ -49,6 +49,8 @@
             this.lblOrderItemsRecordsCount = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textOrderNmae = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
@@ -56,6 +58,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.textOrderNmae);
             this.groupBox1.Controls.Add(this.lblTotalPrice);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.rbFinished);
@@ -116,7 +120,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(565, 28);
+            this.label2.Location = new System.Drawing.Point(561, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 24);
             this.label2.TabIndex = 5;
@@ -124,10 +128,10 @@
             // 
             // txtNotes
             // 
-            this.txtNotes.Location = new System.Drawing.Point(654, 28);
+            this.txtNotes.Location = new System.Drawing.Point(650, 56);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(395, 70);
+            this.txtNotes.Size = new System.Drawing.Size(395, 48);
             this.txtNotes.TabIndex = 4;
             // 
             // label3
@@ -208,6 +212,7 @@
             this.btnOrderNow.TabIndex = 8;
             this.btnOrderNow.Text = "Order Now";
             this.btnOrderNow.UseVisualStyleBackColor = true;
+            this.btnOrderNow.Click += new System.EventHandler(this.btnOrderNow_Click);
             // 
             // dgvOrders
             // 
@@ -272,6 +277,23 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(505, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(120, 24);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Order Nmae:";
+            // 
+            // textOrderNmae
+            // 
+            this.textOrderNmae.Location = new System.Drawing.Point(650, 25);
+            this.textOrderNmae.Multiline = true;
+            this.textOrderNmae.Name = "textOrderNmae";
+            this.textOrderNmae.Size = new System.Drawing.Size(395, 25);
+            this.textOrderNmae.TabIndex = 10;
+            // 
             // frmOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -324,5 +346,7 @@
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textOrderNmae;
     }
 }
