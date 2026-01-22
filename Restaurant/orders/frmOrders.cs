@@ -132,7 +132,6 @@ namespace Restaurant.orders
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAddItemToOrder frm1 = new frmAddItemToOrder(_OrderID , (int)dgvOrderItems.CurrentRow.Cells[0].Value);
-            frm1.ShowDialog();
 
             frm1.DataBack += Frm_DataBack;
 

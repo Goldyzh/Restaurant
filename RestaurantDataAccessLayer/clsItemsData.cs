@@ -32,16 +32,13 @@ namespace Restaurant_DataAccess
                     isFound = true;
 
                     ItemName = (string)reader["ItemName"];
+
                     Price = (decimal)reader["Price"];
 
-
-
- 
                     CreatedAt = (DateTime)reader["CreatedAt"];
 
                     Description = (string)reader["Description"];
                   
-
                     CategoryID = (int)reader["CategoryID"];
 
                     //ImagePath: allows null in database so we should handle null

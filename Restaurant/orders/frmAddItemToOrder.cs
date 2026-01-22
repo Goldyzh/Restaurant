@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using static Restaurant.orders.frmAddItemToOrder;
 using static System.Net.Mime.MediaTypeNames;
 
+
 namespace Restaurant.orders
 {
     public partial class frmAddItemToOrder : Form
@@ -40,7 +41,7 @@ namespace Restaurant.orders
 
 
 
-        
+
 
         public enum OrderMode { AddNew = 0, Update = 1 };
 
@@ -80,7 +81,7 @@ namespace Restaurant.orders
             {
                 _OrderItemsMode = OrderItemsMode.Update;
                 _OrderItemsID = OrderItemsID;
-
+                _OrderID = OrderID;
             }
             else
             {
@@ -152,11 +153,7 @@ namespace Restaurant.orders
 
         }
 
-        private void GetItem(int ItemID)
-        {
-            _Item = clsItems.Find(ItemID);
-
-        }
+      
 
         private void CalculatePrice(decimal Price, int Quantity)
         {
@@ -173,23 +170,24 @@ namespace Restaurant.orders
         }
 
 
+
         private void cbItem_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            _ItemID = clsItems.FindItemByItemName(cbItem.Text).ItemID;
+            _Item = clsItems.FindItemByItemName(cbItem.Text);
 
-            GetItem(_ItemID);
+            _ItemID = _Item.ItemID;
 
-            int Quantity = 1;
 
-            CalculatePrice(_Item.Price, Quantity);
+
+            CalculatePrice(_Item.Price, 1);
 
 
         }
 
         private void txtQuantity_TextChanged(object sender, EventArgs e)
         {
-
+           
 
             int Quantity = 1;
 
@@ -198,8 +196,23 @@ namespace Restaurant.orders
             if (string.IsNullOrWhiteSpace(txtQuantity.Text))
                 return;
 
-            Quantity = int.Parse(txtQuantity.Text);
+           // Quantity = int.Parse(txtQuantity.Text);
 
+            if (!int.TryParse(txtQuantity.Text, out int value))
+            {
+                MessageBox.Show(
+                    "الكمية المدخلة أكبر من الحد المسموح به",
+                    "تحذير",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+
+                txtQuantity.Text = int.MaxValue.ToString();
+                txtQuantity.SelectionStart = txtQuantity.Text.Length;
+            }
+
+            if (_Item == null)
+                return;
             CalculatePrice(_Item.Price, Quantity);
 
 
@@ -226,22 +239,56 @@ namespace Restaurant.orders
             {
                 _OrderItems = clsOrderItems.FindBaseOrder(_OrderItemsID);
 
+
                 if (_OrderItems == null)
                 {
-                    MessageBox.Show("No Item with ID = " + _OrderItemsID, "Order Not Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("No OrderItem with ID = " + _OrderItemsID, "Order Not Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    this.Close();
+                    return;
+                }
+                else
+                {
+                    _ItemID = _OrderItems.ItemID;
+                }
+
+                _Item = clsItems.Find(_ItemID);
+
+
+                if (_Item == null)
+                {
+                    MessageBox.Show("No Item with ID = " + _ItemID, "Order Not Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     this.Close();
                     return;
                 }
 
+                //MessageBox.Show(_Item.ItemName);
+
+
+
+                _FillItemsInComoboBox(_Item.CategoryID);
+
+                cbItem.SelectedIndex = cbItem.FindString(_Item.ItemName);
+
+                cbCategory.Text = _Item.CountryInfo.Name;
+
+
+
+                lblTitle.Text = "Update Item";
+
+                lblPrice.Text = _OrderItems.Price.ToString();
+
+                txtQuantity.Text = _OrderItems.Quantity.ToString();
+
+
+
+
+                Console.WriteLine("cbItem.SelectedIndex");
+                Console.WriteLine(cbItem.SelectedIndex);
+                Console.WriteLine("cbItem.SelectedIndex");
+
             }
 
-
-
-            lblPrice.Text = _OrderItems.Price.ToString();
-            //txtQuantity.Text = _OrderItems.Quantity.ToString();
-
-
-            //cbItem.SelectedIndex = cbItem.FindString(_Item.ItemName);
+           
 
 
 
@@ -251,6 +298,11 @@ namespace Restaurant.orders
         {
             _FillCategoriesInComoboBox();
             _ResetDefualtValues();
+
+            //if (_OrderItemsMode == OrderItemsMode.Update)
+            //{
+            //    _LoadData();
+            //}
             _LoadData();
 
 
