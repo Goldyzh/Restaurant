@@ -18,7 +18,7 @@ namespace Restaurant.orders
     {
         private int _OrderID = -1;
         clsOrder _Order;
-        decimal OrderTotalPrice = 0;
+        private decimal OrderTotalPrice = 0;
 
         public enum enMode { AddNew = 0, Update = 1 };
         private enMode _Mode;
@@ -80,7 +80,8 @@ namespace Restaurant.orders
 
         private void OrderItems()
         {
-            _dtOrderItems = clsOrderItems.GetOrderItems();
+
+            _dtOrderItems = clsOrderItems.GetOrderItems(_OrderID);
             dgvOrderItems.DataSource = _dtOrderItems;
 
             lblOrderItemsRecordsCount.Text = dgvOrderItems.Rows.Count.ToString();
@@ -96,13 +97,23 @@ namespace Restaurant.orders
                 dgvOrderItems.Columns[2].HeaderText = "Item ID";
                 dgvOrderItems.Columns[2].Width = 80;
 
+                 OrderTotalPrice = dgvOrderItems.Rows.Cast<DataGridViewRow>()
+                                                     .Where(r => !r.IsNewRow)
+                                                     .Sum(r => Convert.ToDecimal(r.Cells[5].Value ?? 0));
+                                                    
             }
+
+            lblTotalPrice.Text = OrderTotalPrice.ToString();
+
 
         }
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
-            frmAddItemToOrder frm1 = new frmAddItemToOrder();
+          
+            frmAddItemToOrder frm1 = new frmAddItemToOrder(_OrderID , -1);
+            
+            //frmAddItemToOrder frm1 = new frmAddItemToOrder();
 
             frm1.DataBack += Frm_DataBack;
 
@@ -117,6 +128,24 @@ namespace Restaurant.orders
 
         }
 
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddItemToOrder frm1 = new frmAddItemToOrder(_OrderID , (int)dgvOrderItems.CurrentRow.Cells[0].Value);
+            frm1.ShowDialog();
+
+            frm1.DataBack += Frm_DataBack;
+
+            frm1.OnOrderItemsChanged += () =>
+            {
+                OrderItems();
+                PendingOrders();
+            };
+
+
+            frm1.ShowDialog();
+
+        }
 
 
         private void Frm_DataBack(object sender, int orderID)
@@ -205,5 +234,27 @@ namespace Restaurant.orders
 
         }
 
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to delete Item [" + dgvOrderItems.CurrentRow.Cells[0].Value + "]", "Confirm Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+
+            {
+
+                //Perform Delele and refresh
+                if (clsOrderItems.DeleteOrderItems((int)dgvOrderItems.CurrentRow.Cells[0].Value))
+                {
+                    MessageBox.Show("Item Deleted Successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    OrderItems();
+                }
+
+                else
+                    MessageBox.Show("Item was not deleted because it has data linked to it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+    
+
+     
     }
 }

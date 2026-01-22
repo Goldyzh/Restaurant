@@ -52,11 +52,43 @@ namespace Restaurant.orders
         private OrderItemsMode _OrderItemsMode;
 
 
-        public frmAddItemToOrder()
+        //public frmAddItemToOrder()
+        //{
+        //    InitializeComponent();
+        //    _OrderMode = OrderMode.AddNew;
+        //    _OrderItemsMode = OrderItemsMode.AddNew;
+
+        //}
+
+        public frmAddItemToOrder(int OrderID , int OrderItemsID)
         {
             InitializeComponent();
-            _OrderMode = OrderMode.AddNew;
-            _OrderItemsMode = OrderItemsMode.AddNew;
+
+            if (OrderID != -1)
+            {
+               _OrderMode = OrderMode.Update;
+               _OrderID = OrderID;
+
+            }
+            else
+            {
+                _OrderMode = OrderMode.AddNew;
+
+            }
+
+            if (OrderItemsID != -1)
+            {
+                _OrderItemsMode = OrderItemsMode.Update;
+                _OrderItemsID = OrderItemsID;
+
+            }
+            else
+            {
+                _OrderItemsMode = OrderItemsMode.AddNew;
+
+            }
+
+
 
         }
 
@@ -78,16 +110,9 @@ namespace Restaurant.orders
             {
                 _OrderItems = new clsOrderItems();
             }
-            //else
-            //{
-            //    lblTitle.Text = "Update Person";
-            //}
+          
 
-
-            
-
-
-            txtQuantity.Text = "1";
+            //txtQuantity.Text = "1";
 
 
         }
@@ -181,12 +206,53 @@ namespace Restaurant.orders
 
         }
 
+        private void _LoadData()
+        {
+            if (_OrderMode == OrderMode.Update)
+            {
+                _Order = clsOrder.FindBaseOrder(_OrderID);
 
+                if (_Order == null)
+                {
+                    MessageBox.Show("No Order with ID = " + _OrderID, "Order Not Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    this.Close();
+                    return;
+                }
+
+            }
+
+
+            if (_OrderItemsMode == OrderItemsMode.Update)
+            {
+                _OrderItems = clsOrderItems.FindBaseOrder(_OrderItemsID);
+
+                if (_OrderItems == null)
+                {
+                    MessageBox.Show("No Item with ID = " + _OrderItemsID, "Order Not Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    this.Close();
+                    return;
+                }
+
+            }
+
+
+
+            lblPrice.Text = _OrderItems.Price.ToString();
+            //txtQuantity.Text = _OrderItems.Quantity.ToString();
+
+
+            //cbItem.SelectedIndex = cbItem.FindString(_Item.ItemName);
+
+
+
+        }
 
         private void frmAddItemToOrder_Load(object sender, EventArgs e)
         {
             _FillCategoriesInComoboBox();
             _ResetDefualtValues();
+            _LoadData();
+
 
         }
 
@@ -225,8 +291,8 @@ namespace Restaurant.orders
 
             bool IsOrderSaved = false;
 
-            if (_OrderMode == OrderMode.AddNew)
-            {
+            //if (_OrderMode == OrderMode.AddNew)
+            //{
                 if (_Order.Save())
                 {
                     //لازم نرجع الايدي للكالد فورم
@@ -246,7 +312,7 @@ namespace Restaurant.orders
                     MessageBox.Show("Error: Data Is not Saved Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     IsOrderSaved = false;
                 }
-            }
+            //}
 
            
 

@@ -66,7 +66,7 @@ namespace Restaurant_DataAccess
                 return isFound;
             }
 
-        public static DataTable GetOrderItems()
+        public static DataTable GetOrderItems(int OrderID)
             {
 
                 DataTable dt = new DataTable();
@@ -75,28 +75,32 @@ namespace Restaurant_DataAccess
             //string query = "SELECT * FROM OrderItems Order BY ID DESC";
             //string query = "SELECT * FROM OrderItems Order BY ID";
 
-            string query =
-              @"SELECT 
-    OrderItems.ID,
-    OrderItems.OrderID,
-    OrderItems.ItemID,
-    Items.ItemName,
-    OrderItems.Quantity,
-    OrderItems.Price
-FROM OrderItems
-INNER JOIN Items
-    ON OrderItems.ItemID = Items.ItemID
-ORDER BY OrderItems.ID;
-";
+            string query = @"SELECT 
+                 OrderItems.ID,
+                 OrderItems.OrderID,
+                 OrderItems.ItemID,
+                 Items.ItemName,
+                 OrderItems.Quantity,
+                 OrderItems.Price
+                                  FROM OrderItems
+                  INNER JOIN Items
+                                   ON OrderItems.ItemID = Items.ItemID
+                  where OrderItems.OrderID = @OrderID
+                  ORDER BY OrderItems.ID;";
+                                  
 
 
 
 
+           
 
             SqlCommand command = new SqlCommand(query, connection);
 
-                try
-                {
+            command.Parameters.AddWithValue("@OrderID", OrderID);
+
+
+            try
+            {
                     connection.Open();
 
                     SqlDataReader reader = command.ExecuteReader();

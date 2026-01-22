@@ -22,13 +22,7 @@ namespace Restaurant.orders
             InitializeComponent();
         }
 
-        private void btnAddItem_Click(object sender, EventArgs e)
-        {
-            Form frm1 = new frmAddItemToOrder();
-            frm1.ShowDialog();
-            //_RefreshItemsOrderList();
-
-        }
+     
 
         private void frmFinishedOrders_Load(object sender, EventArgs e)
         {

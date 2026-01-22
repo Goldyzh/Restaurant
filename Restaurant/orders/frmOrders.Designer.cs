@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textOrderNmae = new System.Windows.Forms.TextBox();
@@ -51,9 +52,15 @@
             this.lblOrderItemsRecordsCount = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.cmsItemsOrder = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
+            this.cmsItemsOrder.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -88,7 +95,7 @@
             // 
             // textOrderNmae
             // 
-            this.textOrderNmae.Location = new System.Drawing.Point(650, 20);
+            this.textOrderNmae.Location = new System.Drawing.Point(650, 19);
             this.textOrderNmae.Multiline = true;
             this.textOrderNmae.Name = "textOrderNmae";
             this.textOrderNmae.Size = new System.Drawing.Size(395, 33);
@@ -148,7 +155,7 @@
             this.txtNotes.Location = new System.Drawing.Point(650, 59);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(395, 45);
+            this.txtNotes.Size = new System.Drawing.Size(395, 52);
             this.txtNotes.TabIndex = 4;
             // 
             // label3
@@ -181,6 +188,7 @@
             // dgvOrderItems
             // 
             this.dgvOrderItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrderItems.ContextMenuStrip = this.cmsItemsOrder;
             this.dgvOrderItems.Location = new System.Drawing.Point(12, 170);
             this.dgvOrderItems.Name = "dgvOrderItems";
             this.dgvOrderItems.Size = new System.Drawing.Size(1067, 256);
@@ -294,6 +302,44 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // cmsItemsOrder
+            // 
+            this.cmsItemsOrder.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator2,
+            this.editToolStripMenuItem,
+            this.deleteToolStripMenuItem,
+            this.toolStripSeparator1});
+            this.cmsItemsOrder.Name = "contextMenuStrip1";
+            this.cmsItemsOrder.Size = new System.Drawing.Size(197, 114);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(163, 6);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Image = global::Restaurant.Properties.Resources.edit_32;
+            this.editToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.editToolStripMenuItem.Text = "&Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Image = global::Restaurant.Properties.Resources.Delete_32;
+            this.deleteToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(166, 38);
+            this.deleteToolStripMenuItem.Text = "&Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(163, 6);
+            // 
             // frmOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,6 +364,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
+            this.cmsItemsOrder.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,5 +395,10 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textOrderNmae;
+        private System.Windows.Forms.ContextMenuStrip cmsItemsOrder;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

@@ -121,19 +121,20 @@ namespace Restaurant_Buisness
             return false;
         }
 
-        public  bool Delete()
+        public static bool DeleteOrderItems(int ID)
         {
-            return clsOrderItemsData.DeleteOrderItems(this.ID); 
+            return clsOrderItemsData.DeleteOrderItems(ID); 
         }
+    
 
         public static bool IsApplicationExist(int ID)
         {
            return clsOrderItemsData.IsOrderItemsExist(ID);
         }
 
-        public static DataTable GetOrderItems()
+        public static DataTable GetOrderItems(int OrderID)
         {
-            return clsOrderItemsData.GetOrderItems();
+            return clsOrderItemsData.GetOrderItems(OrderID);
         }
 
 
