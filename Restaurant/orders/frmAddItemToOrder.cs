@@ -31,8 +31,7 @@ namespace Restaurant.orders
 
         private int _OrderItemsID = -1;
         clsOrderItems _OrderItems;
-
-        decimal OrderItemsTotalPrice = 0;
+        decimal _OrderItemsTotalPrice = 0;
 
 
         private int _OrderID = -1;
@@ -72,16 +71,13 @@ namespace Restaurant.orders
             {
                _OrderMode = OrderMode.Update;
                _OrderID = OrderID;
-               
-               
-                
+             
 
             }
             else
             {
                 _OrderMode = OrderMode.AddNew;
-                
-               
+    
             }
 
             if (OrderItemsID != -1)
@@ -99,6 +95,8 @@ namespace Restaurant.orders
             _OrderName = OrderNmae;
             _Notes = Notes;
             _OrderTotalPrice = OrderTotalPrice;
+
+           
 
 
 
@@ -192,9 +190,9 @@ namespace Restaurant.orders
             if (string.IsNullOrWhiteSpace(txtQuantity.Text))
                 return;
 
-             OrderItemsTotalPrice = Price * Quantity;
+             _OrderItemsTotalPrice = Price * Quantity;
 
-            lblPrice.Text = OrderItemsTotalPrice.ToString();
+            lblPrice.Text = _OrderItemsTotalPrice.ToString();
 
         }
 
@@ -351,16 +349,19 @@ namespace Restaurant.orders
 
 
             _Order.OrderDate = DateTime.Now;
-            _Order.TotalPrice = _OrderTotalPrice;
             _Order.Status = "Pending";
             _Order.Notes = _Notes;
             _Order.OrderName = _OrderName;
 
-
             //for now 1
             _Order.CreatedBy = 1;
 
+            _OrderTotalPrice += _OrderItemsTotalPrice;
 
+            _Order.TotalPrice = _OrderTotalPrice;
+
+
+         
 
 
 
@@ -372,10 +373,13 @@ namespace Restaurant.orders
             //{
                 if (_Order.Save())
                 {
-                    //لازم نرجع الايدي للكالد فورم
-                    // lblCategoryID.Text = _Category.CategoryID.ToString();
-                    //change form mode to update.
-                    _OrderMode = OrderMode.Update;
+                Console.WriteLine("_Order.TotalPrice=");
+                Console.WriteLine(_Order.TotalPrice);
+
+                //لازم نرجع الايدي للكالد فورم
+                // lblCategoryID.Text = _Category.CategoryID.ToString();
+                //change form mode to update.
+                _OrderMode = OrderMode.Update;
                     _OrderID = _Order.OrderID;
 
 
@@ -399,7 +403,7 @@ namespace Restaurant.orders
                 _OrderItems.OrderID = _OrderID;
                 _OrderItems.ItemID = _ItemID;
                 _OrderItems.Quantity = int.Parse(txtQuantity.Text);
-                _OrderItems.Price = OrderItemsTotalPrice;
+                _OrderItems.Price = _OrderItemsTotalPrice;
                 
                 if (_OrderItems.Save())
                 {

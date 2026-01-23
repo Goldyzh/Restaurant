@@ -347,12 +347,7 @@ namespace Restaurant.orders
 
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            _LoadOrderForEdit();
-
-
-        }
+       
 
         private void dgvOrders_CellClick(object sender, DataGridViewCellEventArgs e)
         {
