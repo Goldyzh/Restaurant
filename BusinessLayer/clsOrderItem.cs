@@ -125,7 +125,13 @@ namespace Restaurant_Buisness
         {
             return clsOrderItemsData.DeleteOrderItems(ID); 
         }
-    
+
+        public static bool DeleteOrderItemsByOrderID(int OrderID)
+        {
+            return clsOrderItemsData.DeleteOrderItemsByOrderID(OrderID);
+        }
+        
+
 
         public static bool IsApplicationExist(int ID)
         {

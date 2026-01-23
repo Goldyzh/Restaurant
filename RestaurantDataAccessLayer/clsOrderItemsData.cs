@@ -263,6 +263,42 @@ namespace Restaurant_DataAccess
 
         }
 
+        public static bool DeleteOrderItemsByOrderID(int OrderID)
+        {
+
+            int rowsAffected = 0;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"Delete OrderItems 
+                                where OrderID = @OrderID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@OrderID", OrderID);
+
+            try
+            {
+                connection.Open();
+
+                rowsAffected = command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+
+                connection.Close();
+
+            }
+
+            return (rowsAffected > 0);
+
+        }
+
         public static bool IsOrderItemsExist(int ID)
         {
             bool isFound = false;

@@ -144,9 +144,9 @@ namespace Restaurant_Buisness
             return false;
         }
 
-        public  bool Delete()
+        public static bool DeleteOrder(int OrderID)
         {
-            return clsOrderData.DeleteOrder(this.OrderID); 
+            return clsOrderData.DeleteOrder(OrderID); 
         }
 
         public static bool IsApplicationExist(int OrderID)

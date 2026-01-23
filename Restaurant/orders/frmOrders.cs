@@ -252,8 +252,27 @@ namespace Restaurant.orders
             }
         }
 
-    
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to delete Order [" + dgvOrders.CurrentRow.Cells[0].Value + "]", "Confirm Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
 
-     
+                //Perform Deleleand refresh
+                if (clsOrderItems.DeleteOrderItemsByOrderID((int)dgvOrders.CurrentRow.Cells[0].Value))
+                {
+                    if (clsOrder.DeleteOrder((int)dgvOrders.CurrentRow.Cells[0].Value))
+                    {
+                        MessageBox.Show("Order Deleted Successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        OrderItems();
+                        PendingOrders();
+
+                    }
+
+                }
+            }
+            else
+                MessageBox.Show("Order was not deleted because it has data linked to it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
     }
 }
