@@ -48,7 +48,15 @@ namespace Restaurant.orders
             _dtOrders = clsOrder.GetOrdersForOrdersScreen();
             dgvOrders.DataSource = _dtOrders;
 
-            lbllblOrdersRecordsCount.Text = (dgvOrders.Rows.Count - 1).ToString();
+            if (dgvOrders.Rows.Count <= 0)
+            {
+                lbllblOrdersRecordsCount.Text = "0";
+            }
+            else
+            {
+                lbllblOrdersRecordsCount.Text = (dgvOrders.Rows.Count - 1).ToString();
+            }
+
             if (dgvOrders.Rows.Count > 0)
             {
 
@@ -84,7 +92,15 @@ namespace Restaurant.orders
             _dtOrderItems = clsOrderItems.GetOrderItems(_OrderID);
             dgvOrderItems.DataSource = _dtOrderItems;
 
-            lblOrderItemsRecordsCount.Text = (dgvOrderItems.Rows.Count - 1).ToString();
+            if (dgvOrderItems.Rows.Count <= 0)
+            {
+                lblOrderItemsRecordsCount.Text = "0";
+            }
+            else
+            {
+                lblOrderItemsRecordsCount.Text = (dgvOrderItems.Rows.Count - 1).ToString();
+            }
+
             if (dgvOrderItems.Rows.Count > 0)
             {
 

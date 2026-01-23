@@ -28,7 +28,15 @@ namespace Restaurant.orders
             _dtOrders = clsOrder.GetIOrdersForKitchen();
             dgvInProgressOrders.DataSource = _dtOrders;
 
-            lbllblOrdersRecordsCount.Text = (dgvInProgressOrders.Rows.Count - 1).ToString();
+            if (dgvInProgressOrders.Rows.Count <= 0)
+            {
+                lbllblOrdersRecordsCount.Text = "0";
+            }
+            else
+            {
+                lbllblOrdersRecordsCount.Text = (dgvInProgressOrders.Rows.Count - 1).ToString();
+            }
+
             if (dgvInProgressOrders.Rows.Count > 0)
             {
 

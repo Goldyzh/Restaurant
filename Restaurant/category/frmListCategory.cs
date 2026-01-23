@@ -48,7 +48,14 @@ namespace Restaurant.Category
         {
             dgvCategory.DataSource = _dtCategory;
             cbFilterBy.SelectedIndex = 0;
-            lblRecordsCount.Text = dgvCategory.Rows.Count.ToString();
+            if (dgvCategory.Rows.Count <= 0)
+            {
+                lblRecordsCount.Text = "0";
+            }
+            else
+            {
+                lblRecordsCount.Text = (dgvCategory.Rows.Count - 1).ToString();
+            }
             if (dgvCategory.Rows.Count > 0)
             {
 

@@ -34,7 +34,6 @@
             this.RecordsCount = new System.Windows.Forms.Label();
             this.dgvInProgressOrders = new System.Windows.Forms.DataGridView();
             this.cmsOrdersKitchen = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.setFinishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInProgressOrders)).BeginInit();
@@ -85,16 +84,10 @@
             // cmsOrdersKitchen
             // 
             this.cmsOrdersKitchen.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSeparator3,
             this.toolStripSeparator4,
             this.setFinishToolStripMenuItem});
             this.cmsOrdersKitchen.Name = "contextMenuStrip1";
-            this.cmsOrdersKitchen.Size = new System.Drawing.Size(126, 38);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.cmsOrdersKitchen.Size = new System.Drawing.Size(181, 54);
             // 
             // toolStripSeparator4
             // 
@@ -134,7 +127,6 @@
         private System.Windows.Forms.Label RecordsCount;
         private System.Windows.Forms.DataGridView dgvInProgressOrders;
         private System.Windows.Forms.ContextMenuStrip cmsOrdersKitchen;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem setFinishToolStripMenuItem;
     }
