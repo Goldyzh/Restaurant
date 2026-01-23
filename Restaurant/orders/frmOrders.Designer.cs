@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textOrderNmae = new System.Windows.Forms.TextBox();
+            this.txtOrderName = new System.Windows.Forms.TextBox();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.rbFinished = new System.Windows.Forms.RadioButton();
@@ -58,13 +58,13 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.cancelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setFinishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblOrderItemsRecordsCount = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.setFinishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).BeginInit();
             this.cmsItemsOrder.SuspendLayout();
@@ -75,7 +75,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textOrderNmae);
+            this.groupBox1.Controls.Add(this.txtOrderName);
             this.groupBox1.Controls.Add(this.lblTotalPrice);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.rbFinished);
@@ -102,13 +102,14 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Order Nmae:";
             // 
-            // textOrderNmae
+            // txtOrderName
             // 
-            this.textOrderNmae.Location = new System.Drawing.Point(650, 19);
-            this.textOrderNmae.Multiline = true;
-            this.textOrderNmae.Name = "textOrderNmae";
-            this.textOrderNmae.Size = new System.Drawing.Size(395, 33);
-            this.textOrderNmae.TabIndex = 10;
+            this.txtOrderName.Location = new System.Drawing.Point(650, 19);
+            this.txtOrderName.Multiline = true;
+            this.txtOrderName.Name = "txtOrderName";
+            this.txtOrderName.Size = new System.Drawing.Size(395, 33);
+            this.txtOrderName.TabIndex = 10;
+            this.txtOrderName.TextChanged += new System.EventHandler(this.textOrderNmae_TextChanged);
             // 
             // lblTotalPrice
             // 
@@ -166,6 +167,7 @@
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.Size = new System.Drawing.Size(395, 52);
             this.txtNotes.TabIndex = 4;
+            this.txtNotes.TextChanged += new System.EventHandler(this.txtNotes_TextChanged);
             // 
             // label3
             // 
@@ -306,19 +308,19 @@
             this.cancelToolStripMenuItem,
             this.setFinishToolStripMenuItem});
             this.cmsOrders.Name = "contextMenuStrip1";
-            this.cmsOrders.Size = new System.Drawing.Size(197, 190);
+            this.cmsOrders.Size = new System.Drawing.Size(141, 168);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(193, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(137, 6);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Image = global::Restaurant.Properties.Resources.edit_32;
             this.toolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(140, 38);
             this.toolStripMenuItem1.Text = "&Edit";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -327,21 +329,28 @@
             this.toolStripMenuItem2.Image = global::Restaurant.Properties.Resources.Delete_32;
             this.toolStripMenuItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(196, 38);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(140, 38);
             this.toolStripMenuItem2.Text = "&Delete";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(193, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(137, 6);
             // 
             // cancelToolStripMenuItem
             // 
             this.cancelToolStripMenuItem.Name = "cancelToolStripMenuItem";
-            this.cancelToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.cancelToolStripMenuItem.Size = new System.Drawing.Size(140, 38);
             this.cancelToolStripMenuItem.Text = "Cancel";
             this.cancelToolStripMenuItem.Click += new System.EventHandler(this.cancelToolStripMenuItem_Click);
+            // 
+            // setFinishToolStripMenuItem
+            // 
+            this.setFinishToolStripMenuItem.Name = "setFinishToolStripMenuItem";
+            this.setFinishToolStripMenuItem.Size = new System.Drawing.Size(140, 38);
+            this.setFinishToolStripMenuItem.Text = "Set Finish";
+            this.setFinishToolStripMenuItem.Click += new System.EventHandler(this.setFinishToolStripMenuItem_Click);
             // 
             // label4
             // 
@@ -410,13 +419,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnNewOrder);
             // 
-            // setFinishToolStripMenuItem
-            // 
-            this.setFinishToolStripMenuItem.Name = "setFinishToolStripMenuItem";
-            this.setFinishToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
-            this.setFinishToolStripMenuItem.Text = "Set Finish";
-            this.setFinishToolStripMenuItem.Click += new System.EventHandler(this.setFinishToolStripMenuItem_Click);
-            // 
             // frmOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -473,7 +475,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textOrderNmae;
+        private System.Windows.Forms.TextBox txtOrderName;
         private System.Windows.Forms.ContextMenuStrip cmsItemsOrder;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;

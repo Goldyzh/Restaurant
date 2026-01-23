@@ -37,6 +37,8 @@ namespace Restaurant.orders
 
         private int _OrderID = -1;
         clsOrder _Order;
+        private string _OrderName = "";
+        private string _Notes = "";
         decimal OrderTotalPrice = 0;
 
 
@@ -61,7 +63,7 @@ namespace Restaurant.orders
 
         //}
 
-        public frmAddItemToOrder(int OrderID , int OrderItemsID)
+        public frmAddItemToOrder(int OrderID , int OrderItemsID , string OrderNmae, string Notes)
         {
             InitializeComponent();
 
@@ -69,12 +71,16 @@ namespace Restaurant.orders
             {
                _OrderMode = OrderMode.Update;
                _OrderID = OrderID;
+               _OrderName = OrderNmae;
+               _Notes = Notes;
+                Console.WriteLine(OrderNmae);
+                Console.WriteLine(Notes);
+                
 
             }
             else
             {
                 _OrderMode = OrderMode.AddNew;
-
             }
 
             if (OrderItemsID != -1)
@@ -346,8 +352,10 @@ namespace Restaurant.orders
 
             _Order.OrderDate = DateTime.Now;
             _Order.TotalPrice = OrderTotalPrice;
-
             _Order.Status = "Pending";
+           // _Order.Notes = _Notes;
+            //_Order.OrderName = _OrderName;
+
 
             //for now 1
             _Order.CreatedBy = 1;

@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Restaurant.orders
 {
@@ -18,6 +19,8 @@ namespace Restaurant.orders
     {
         private int _OrderID = -1;
         clsOrder _Order;
+        private string _OrderName = "";
+        private string _Notes = "";
         private decimal OrderTotalPrice = 0;
 
         public enum enMode { AddNew = 0, Update = 1 };
@@ -127,8 +130,9 @@ namespace Restaurant.orders
         private void btnAddItem_Click(object sender, EventArgs e)
         {
           
-            frmAddItemToOrder frm1 = new frmAddItemToOrder(_OrderID , -1);
-            
+            frmAddItemToOrder frm1 = new frmAddItemToOrder(_OrderID , -1 , _OrderName , _Notes);
+           
+
             //frmAddItemToOrder frm1 = new frmAddItemToOrder();
 
             frm1.DataBack += Frm_DataBack;
@@ -147,7 +151,7 @@ namespace Restaurant.orders
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAddItemToOrder frm1 = new frmAddItemToOrder(_OrderID , (int)dgvOrderItems.CurrentRow.Cells[0].Value);
+            frmAddItemToOrder frm1 = new frmAddItemToOrder(_OrderID , (int)dgvOrderItems.CurrentRow.Cells[0].Value ,  _OrderName,  _Notes);
 
             frm1.DataBack += Frm_DataBack;
 
@@ -202,9 +206,9 @@ namespace Restaurant.orders
 
             rbPending.Checked = true;
 
-            txtNotes.Text = "";
+           // txtNotes.Text = "";
 
-            textOrderNmae.Text = "";
+            //txtOrderName.Text = "";
 
 
 
@@ -249,9 +253,9 @@ namespace Restaurant.orders
 
             _Order.Notes = txtNotes.Text;
 
-            if(textOrderNmae.Text != "")
+            if(txtOrderName.Text != "")
             {
-                _Order.OrderName = textOrderNmae.Text;
+                _Order.OrderName = txtOrderName.Text;
             }
 
             if (clsOrder.SetInProgress((int)dgvOrders.CurrentRow.Cells[0].Value))
@@ -335,7 +339,7 @@ namespace Restaurant.orders
             }
             if (_Order.OrderName != "")
             {
-                textOrderNmae.Text = _Order.OrderName.ToString();
+                txtOrderName.Text = _Order.OrderName.ToString();
 
             }
 
@@ -385,7 +389,7 @@ namespace Restaurant.orders
 
             _ResetDefualtValues();
 
-            frmAddItemToOrder frm1 = new frmAddItemToOrder(_OrderID, -1);
+            frmAddItemToOrder frm1 = new frmAddItemToOrder(_OrderID, -1 , _OrderName, _Notes);
 
             //frmAddItemToOrder frm1 = new frmAddItemToOrder();
 
@@ -422,6 +426,18 @@ namespace Restaurant.orders
 
 
             }
+        }
+
+        private void textOrderNmae_TextChanged(object sender, EventArgs e)
+        {
+            _OrderName = txtOrderName.Text;
+           
+        }
+
+        private void txtNotes_TextChanged(object sender, EventArgs e)
+        {
+            _Notes = txtNotes.Text;
+           
         }
     }
 }
