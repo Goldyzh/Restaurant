@@ -124,6 +124,8 @@ namespace Restaurant.orders
 
             lblTotalPrice.Text = _OrderTotalPrice.ToString();
 
+            
+
 
         }
 
@@ -204,9 +206,9 @@ namespace Restaurant.orders
 
             lblTotalPrice.Text = "0";
 
-            rbPending.Checked = true;
+            lblOrderStatus.Text = "N/A";
 
-           // txtNotes.Text = "";
+            // txtNotes.Text = "";
 
             //txtOrderName.Text = "";
 
@@ -240,16 +242,11 @@ namespace Restaurant.orders
 
             _Order.OrderDate = DateTime.Now;
 
-            if (rbPending.Checked == true)
-            {
+            
                 _Order.Status = "Pending";
 
-            }
-            if (rbFinished.Checked == true) {
             
-                _Order.Status = "Finished";
-            
-            }
+          
 
             _Order.Notes = txtNotes.Text;
 
@@ -331,6 +328,8 @@ namespace Restaurant.orders
 
             //4- load Data in form
             lblOrderID.Text = _OrderID.ToString();
+
+            lblOrderStatus.Text = _Order.Status.ToString();
 
             if (_Order.Notes != "")
             {
