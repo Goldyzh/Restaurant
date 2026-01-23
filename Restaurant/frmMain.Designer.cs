@@ -36,6 +36,7 @@
             this.lblRestaurantNmae = new System.Windows.Forms.Label();
             this.btnCategories = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnKitchenScreen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,12 +142,26 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // btnKitchenScreen
+            // 
+            this.btnKitchenScreen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKitchenScreen.Font = new System.Drawing.Font("Jokerman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKitchenScreen.ForeColor = System.Drawing.Color.Red;
+            this.btnKitchenScreen.Location = new System.Drawing.Point(23, 170);
+            this.btnKitchenScreen.Name = "btnKitchenScreen";
+            this.btnKitchenScreen.Size = new System.Drawing.Size(214, 118);
+            this.btnKitchenScreen.TabIndex = 8;
+            this.btnKitchenScreen.Text = "Kitchen Screen";
+            this.btnKitchenScreen.UseVisualStyleBackColor = true;
+            this.btnKitchenScreen.Click += new System.EventHandler(this.btnKitchenScreen_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(1632, 846);
+            this.Controls.Add(this.btnKitchenScreen);
             this.Controls.Add(this.btnCategories);
             this.Controls.Add(this.lblRestaurantNmae);
             this.Controls.Add(this.btmPeople);
@@ -173,6 +188,7 @@
         private System.Windows.Forms.Label lblRestaurantNmae;
         private System.Windows.Forms.Button btnCategories;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnKitchenScreen;
     }
 }
 

@@ -30,7 +30,7 @@ namespace Restaurant.orders
             _dtOrders = clsOrder.GetFinishedOrders();
             dgvOrders.DataSource = _dtOrders;
 
-            lbllblOrdersRecordsCount.Text = dgvOrders.Rows.Count.ToString();
+            lbllblOrdersRecordsCount.Text = (dgvOrders.Rows.Count - 1).ToString();
             if (dgvOrders.Rows.Count > 0)
             {
 

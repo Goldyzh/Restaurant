@@ -44,3 +44,4 @@ C:\Users\g\source\repos\Restaurant\Restaurant\obj\Debug\Restaurant.Item.frmAddUp
 C:\Users\g\source\repos\Restaurant\Restaurant\obj\Debug\Restaurant.orders.frmOrders.resources
 C:\Users\g\source\repos\Restaurant\Restaurant\obj\Debug\Restaurant.orders.frmAddItemToOrder.resources
 C:\Users\g\source\repos\Restaurant\Restaurant\obj\Debug\Restaurant.orders.frmFinishedOrders.resources
+C:\Users\g\source\repos\Restaurant\Restaurant\obj\Debug\Restaurant.orders.frmKitchenScreen.resources

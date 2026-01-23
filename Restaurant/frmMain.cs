@@ -110,5 +110,11 @@ namespace Restaurant
             frm.ShowDialog();
 
         }
+
+        private void btnKitchenScreen_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmKitchenScreen();
+            frm.ShowDialog();
+        }
     }
 }

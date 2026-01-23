@@ -126,6 +126,15 @@ namespace Restaurant_Buisness
             return clsOrderData.UpdateStatus(_OrderID, NewStatus);
         }
 
+        public static bool SetReady(int _OrderID)
+        {
+            string NewStatus = "Ready";
+
+            return clsOrderData.UpdateStatus(_OrderID, NewStatus);
+        }
+
+        
+
         public bool Save()
         {
             switch (Mode)
@@ -164,9 +173,9 @@ namespace Restaurant_Buisness
            return clsOrderData.IsOrderExist(OrderID);
         }
 
-        public static DataTable GetPendingOrders()
+        public static DataTable GetOrdersForOrdersScreen()
         {
-            return clsOrderData.GetPendingOrders();
+            return clsOrderData.GetOrdersForOrdersScreen();
         }
 
 
@@ -175,7 +184,10 @@ namespace Restaurant_Buisness
         {
             return clsOrderData.GetFinishedOrders();
         }
-
+        public static DataTable GetIOrdersForKitchen()
+        {
+            return clsOrderData.GetIOrdersForKitchen();
+        }
 
     }
 }

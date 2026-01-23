@@ -70,13 +70,13 @@ namespace Restaurant_DataAccess
                 return isFound;
             }
 
-        public static DataTable GetPendingOrders()
+        public static DataTable GetOrdersForOrdersScreen()
             {
 
                 DataTable dt = new DataTable();
                 SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-                  string query = "SELECT * FROM Orders WHERE Status = 'Pending' or Status = 'InProgress'  ORDER BY OrderID DESC";
+                  string query = "SELECT * FROM Orders WHERE Status = 'Pending' or Status = 'InProgress' or Status = 'Ready' ORDER BY OrderID DESC";
 
 
 
@@ -119,6 +119,48 @@ namespace Restaurant_DataAccess
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query = "SELECT * FROM Orders WHERE Status = 'Cancelled' or Status = 'Finished' ORDER BY OrderID DESC";
+
+
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+
+                {
+                    dt.Load(reader);
+                }
+
+                reader.Close();
+
+
+            }
+
+            catch (Exception ex)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return dt;
+
+        }
+
+        public static DataTable GetIOrdersForKitchen()
+        {
+
+            DataTable dt = new DataTable();
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = "SELECT * FROM Orders WHERE Status = 'InProgress' or Status = 'Ready' ORDER BY OrderID DESC";
 
 
 

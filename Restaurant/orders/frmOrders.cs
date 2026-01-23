@@ -45,10 +45,10 @@ namespace Restaurant.orders
 
         private void PendingOrders()
         {
-            _dtOrders = clsOrder.GetPendingOrders();
+            _dtOrders = clsOrder.GetOrdersForOrdersScreen();
             dgvOrders.DataSource = _dtOrders;
 
-            lbllblOrdersRecordsCount.Text = dgvOrders.Rows.Count.ToString();
+            lbllblOrdersRecordsCount.Text = (dgvOrders.Rows.Count - 1).ToString();
             if (dgvOrders.Rows.Count > 0)
             {
 
@@ -84,7 +84,7 @@ namespace Restaurant.orders
             _dtOrderItems = clsOrderItems.GetOrderItems(_OrderID);
             dgvOrderItems.DataSource = _dtOrderItems;
 
-            lblOrderItemsRecordsCount.Text = dgvOrderItems.Rows.Count.ToString();
+            lblOrderItemsRecordsCount.Text = (dgvOrderItems.Rows.Count - 1).ToString();
             if (dgvOrderItems.Rows.Count > 0)
             {
 

@@ -98,6 +98,12 @@
     <Compile Include="orders\frmFinishedOrders.Designer.cs">
       <DependentUpon>frmFinishedOrders.cs</DependentUpon>
     </Compile>
+    <Compile Include="orders\frmKitchenScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="orders\frmKitchenScreen.Designer.cs">
+      <DependentUpon>frmKitchenScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="orders\frmOrders.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="orders\frmFinishedOrders.resx">
       <DependentUpon>frmFinishedOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="orders\frmKitchenScreen.resx">
+      <DependentUpon>frmKitchenScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="orders\frmOrders.resx">
       <DependentUpon>frmOrders.cs</DependentUpon>

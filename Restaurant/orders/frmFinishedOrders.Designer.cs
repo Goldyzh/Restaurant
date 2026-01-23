@@ -31,6 +31,7 @@
             this.dgvOrders = new System.Windows.Forms.DataGridView();
             this.lbllblOrdersRecordsCount = new System.Windows.Forms.Label();
             this.RecordsCount = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,11 +64,23 @@
             this.RecordsCount.TabIndex = 9;
             this.RecordsCount.Text = "Records Count:";
             // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblTitle.Location = new System.Drawing.Point(407, 50);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(222, 31);
+            this.lblTitle.TabIndex = 11;
+            this.lblTitle.Text = "Finished Orders";
+            // 
             // frmFinishedOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1076, 556);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lbllblOrdersRecordsCount);
             this.Controls.Add(this.RecordsCount);
             this.Controls.Add(this.dgvOrders);
@@ -85,5 +98,6 @@
         private System.Windows.Forms.DataGridView dgvOrders;
         private System.Windows.Forms.Label lbllblOrdersRecordsCount;
         private System.Windows.Forms.Label RecordsCount;
+        private System.Windows.Forms.Label lblTitle;
     }
 }
