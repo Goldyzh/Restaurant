@@ -172,6 +172,13 @@ namespace Restaurant.orders
                 _Order = new clsOrder();
             }
 
+            _OrderID = -1;
+
+            dgvOrderItems.DataSource = null;
+
+            _Order = null;
+
+             OrderTotalPrice = 0;
 
             lblOrderID.Text = "N/A";
 
@@ -300,15 +307,22 @@ namespace Restaurant.orders
             //3- find clsOrder _Order;
             _Order = clsOrder.FindBaseOrder(_OrderID);
 
+            
+
             //4- load Data in form
             lblOrderID.Text = _OrderID.ToString();
-            txtNotes.Text = _Order.Notes.ToString();
-            textOrderNmae.Text = _Order.OrderName.ToString();
 
-            Console.WriteLine("_Order.Notes=======================");
-            Console.WriteLine(_Order.Notes);
-            Console.WriteLine("_Order.OrderName=======================");
-            Console.WriteLine(_Order.OrderName);
+            if (_Order.Notes != "")
+            {
+                txtNotes.Text = _Order.Notes.ToString();
+
+            }
+            if (_Order.OrderName != "")
+            {
+                textOrderNmae.Text = _Order.OrderName.ToString();
+
+            }
+
 
 
         }
@@ -331,14 +345,16 @@ namespace Restaurant.orders
             {
 
           
-                    if (clsOrder.Cancel((int)dgvOrders.CurrentRow.Cells[0].Value))
-                    {
-                        MessageBox.Show("Order Deleted Successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        PendingOrders();
+                 if (clsOrder.Cancel((int)dgvOrders.CurrentRow.Cells[0].Value))
+                 {
+                    MessageBox.Show("Order Cancelled Successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    OrderItems();
+                    PendingOrders();
+                    _ResetDefualtValues();
 
-                    }
-                else
-                    MessageBox.Show("Order was not deleted because it has data linked to it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 }
+                 else
+                 MessageBox.Show("Order was not Cancelled.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
 
@@ -379,6 +395,8 @@ namespace Restaurant.orders
                 if (clsOrder.SetFinished((int)dgvOrders.CurrentRow.Cells[0].Value))
                 {
                     MessageBox.Show("Order set Finished Successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    OrderItems();
                     PendingOrders();
 
                 }
