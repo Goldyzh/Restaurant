@@ -39,7 +39,8 @@ namespace Restaurant.orders
         clsOrder _Order;
         private string _OrderName = "";
         private string _Notes = "";
-        decimal OrderTotalPrice = 0;
+        decimal _OrderTotalPrice = 0;
+
 
 
 
@@ -63,7 +64,7 @@ namespace Restaurant.orders
 
         //}
 
-        public frmAddItemToOrder(int OrderID , int OrderItemsID , string OrderNmae, string Notes)
+        public frmAddItemToOrder(int OrderID , int OrderItemsID , string OrderNmae, string Notes , decimal OrderTotalPrice)
         {
             InitializeComponent();
 
@@ -71,16 +72,16 @@ namespace Restaurant.orders
             {
                _OrderMode = OrderMode.Update;
                _OrderID = OrderID;
-               _OrderName = OrderNmae;
-               _Notes = Notes;
-                Console.WriteLine(OrderNmae);
-                Console.WriteLine(Notes);
+               
+               
                 
 
             }
             else
             {
                 _OrderMode = OrderMode.AddNew;
+                
+               
             }
 
             if (OrderItemsID != -1)
@@ -94,6 +95,11 @@ namespace Restaurant.orders
                 _OrderItemsMode = OrderItemsMode.AddNew;
 
             }
+
+            _OrderName = OrderNmae;
+            _Notes = Notes;
+            _OrderTotalPrice = OrderTotalPrice;
+
 
 
 
@@ -303,12 +309,6 @@ namespace Restaurant.orders
                 txtQuantity.Text = _OrderItems.Quantity.ToString();
 
 
-
-
-                Console.WriteLine("cbItem.SelectedIndex");
-                Console.WriteLine(cbItem.SelectedIndex);
-                Console.WriteLine("cbItem.SelectedIndex");
-
             }
 
            
@@ -351,10 +351,10 @@ namespace Restaurant.orders
 
 
             _Order.OrderDate = DateTime.Now;
-            _Order.TotalPrice = OrderTotalPrice;
+            _Order.TotalPrice = _OrderTotalPrice;
             _Order.Status = "Pending";
-           // _Order.Notes = _Notes;
-            //_Order.OrderName = _OrderName;
+            _Order.Notes = _Notes;
+            _Order.OrderName = _OrderName;
 
 
             //for now 1

@@ -21,7 +21,7 @@ namespace Restaurant.orders
         clsOrder _Order;
         private string _OrderName = "";
         private string _Notes = "";
-        private decimal OrderTotalPrice = 0;
+        private decimal _OrderTotalPrice = 0;
 
         public enum enMode { AddNew = 0, Update = 1 };
         private enMode _Mode;
@@ -116,13 +116,13 @@ namespace Restaurant.orders
                 dgvOrderItems.Columns[2].HeaderText = "Item ID";
                 dgvOrderItems.Columns[2].Width = 80;
 
-                 OrderTotalPrice = dgvOrderItems.Rows.Cast<DataGridViewRow>()
+                 _OrderTotalPrice = dgvOrderItems.Rows.Cast<DataGridViewRow>()
                                                      .Where(r => !r.IsNewRow)
                                                      .Sum(r => Convert.ToDecimal(r.Cells[5].Value ?? 0));
                                                     
             }
 
-            lblTotalPrice.Text = OrderTotalPrice.ToString();
+            lblTotalPrice.Text = _OrderTotalPrice.ToString();
 
 
         }
@@ -130,7 +130,7 @@ namespace Restaurant.orders
         private void btnAddItem_Click(object sender, EventArgs e)
         {
           
-            frmAddItemToOrder frm1 = new frmAddItemToOrder(_OrderID , -1 , _OrderName , _Notes);
+            frmAddItemToOrder frm1 = new frmAddItemToOrder(_OrderID , -1 , _OrderName , _Notes , _OrderTotalPrice);
            
 
             //frmAddItemToOrder frm1 = new frmAddItemToOrder();
@@ -151,7 +151,7 @@ namespace Restaurant.orders
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAddItemToOrder frm1 = new frmAddItemToOrder(_OrderID , (int)dgvOrderItems.CurrentRow.Cells[0].Value ,  _OrderName,  _Notes);
+            frmAddItemToOrder frm1 = new frmAddItemToOrder(_OrderID , (int)dgvOrderItems.CurrentRow.Cells[0].Value ,  _OrderName,  _Notes, _OrderTotalPrice);
 
             frm1.DataBack += Frm_DataBack;
 
@@ -198,7 +198,7 @@ namespace Restaurant.orders
 
             _Order = null;
 
-             OrderTotalPrice = 0;
+             _OrderTotalPrice = 0;
 
             lblOrderID.Text = "N/A";
 
@@ -389,7 +389,7 @@ namespace Restaurant.orders
 
             _ResetDefualtValues();
 
-            frmAddItemToOrder frm1 = new frmAddItemToOrder(_OrderID, -1 , _OrderName, _Notes);
+            frmAddItemToOrder frm1 = new frmAddItemToOrder(_OrderID, -1 , _OrderName, _Notes, _OrderTotalPrice);
 
             //frmAddItemToOrder frm1 = new frmAddItemToOrder();
 
