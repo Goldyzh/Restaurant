@@ -7,11 +7,10 @@
       "RelativeMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|solutionrelative:orders\\frmadditemtoorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\g\\Downloads\\Restaurant-main\\Restaurant-main\\Restaurant\\orders\\frmAddItemToOrder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D469A2E6-9355-4BB0-A7C1-E2459299DF87}|..\\BusinessLayer\\Business.csproj|c:\\users\\g\\source\\repos\\restaurant\\businesslayer\\clsitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|c:\\users\\g\\source\\repos\\restaurant\\restaurant\\orders\\frmadditemtoorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|solutionrelative:orders\\frmadditemtoorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{0B6CB737-3EBB-47BB-8218-B34C89D0120F}|..\\RestaurantDataAccessLayer\\RestaurantDataAccess.csproj|c:\\users\\g\\source\\repos\\restaurant\\restaurantdataaccesslayer\\clsitemsdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,100 +20,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "3957a40d-4b65-47e1-a852-2bba6010e2f7",
-        "Display": 0,
-        "X": 953,
-        "Y": 57,
-        "Width": 832,
-        "Height": 787,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmAddItemToOrder.cs",
-              "DocumentMoniker": "C:\\Users\\g\\Downloads\\Restaurant-main\\Restaurant-main\\Restaurant\\orders\\frmAddItemToOrder.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\Downloads\\Restaurant-main\\Restaurant-main\\Restaurant\\orders\\frmAddItemToOrder.cs",
-              "ToolTip": "C:\\Users\\g\\Downloads\\Restaurant-main\\Restaurant-main\\Restaurant\\orders\\frmAddItemToOrder.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\Downloads\\Restaurant-main\\Restaurant-main\\Restaurant\\orders\\frmAddItemToOrder.cs",
-              "ViewState": "AgIAAO8AAAAAAAAAAAAjwNQAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T20:31:26.964Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "b2a8ce0b-c8ae-451a-9b51-60276ee8427d",
-        "Display": 1,
-        "X": 1148,
-        "Y": 62,
-        "Width": 704,
-        "Height": 790,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "frmAddItemToOrder.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\orders\\frmAddItemToOrder.cs",
-              "RelativeDocumentMoniker": "orders\\frmAddItemToOrder.cs",
-              "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\orders\\frmAddItemToOrder.cs [Design]",
-              "RelativeToolTip": "orders\\frmAddItemToOrder.cs [Design]",
+              "Title": "clsItemsData.cs",
+              "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\RestaurantDataAccessLayer\\clsItemsData.cs",
+              "RelativeDocumentMoniker": "..\\RestaurantDataAccessLayer\\clsItemsData.cs",
+              "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\RestaurantDataAccessLayer\\clsItemsData.cs",
+              "RelativeToolTip": "..\\RestaurantDataAccessLayer\\clsItemsData.cs",
+              "ViewState": "AgIAAHABAAAAAAAAAAAAAEoBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T02:25:36.042Z",
-              "EditorCaption": " [Design]"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "7796b5c8-4763-4c14-b822-87c2cb43c73a",
-        "Display": 0,
-        "X": 240,
-        "Y": 207,
-        "Width": 954,
-        "Height": 690,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
+              "WhenOpened": "2026-01-22T21:13:31.512Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "clsItems.cs",
+              "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\BusinessLayer\\clsItems.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLayer\\clsItems.cs",
+              "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\BusinessLayer\\clsItems.cs",
+              "RelativeToolTip": "..\\BusinessLayer\\clsItems.cs",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAAwKkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T21:13:18.707Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -123,9 +58,9 @@
               "RelativeDocumentMoniker": "orders\\frmAddItemToOrder.cs",
               "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\orders\\frmAddItemToOrder.cs",
               "RelativeToolTip": "orders\\frmAddItemToOrder.cs",
-              "ViewState": "AgIAAAMBAAAAAAAAAAAlwBMBAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAgwJwAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T20:33:17.409Z",
+              "WhenOpened": "2026-01-22T21:10:16.74Z",
               "EditorCaption": ""
             }
           ]

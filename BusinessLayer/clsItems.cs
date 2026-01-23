@@ -158,14 +158,16 @@ namespace Restaurant_Buisness
             return clsItemsData.GetAllItems();
         }
 
-        //public static DataTable GetAllItemsForComboBox()
-        //{
-        //    return clsItemsData.GetAllItemsForComboBox();
-        //}
+        
 
-        public static DataTable GetAllItemsForComboBox(int CategoryID)
+        public static DataTable FillItemsInComoboBoxByCategoryID(int CategoryID)
         {
-            return clsItemsData.GetAllItemsForComboBox(CategoryID);
+            return clsItemsData.FillItemsInComoboBoxByCategoryID(CategoryID);
+        }
+
+        public static DataTable GetAllItemsForComboBox(string CategoryName)
+        {
+            return clsItemsData.GetAllItemsForComboBox(CategoryName);
         }
 
 

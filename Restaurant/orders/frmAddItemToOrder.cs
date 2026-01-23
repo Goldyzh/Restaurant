@@ -131,11 +131,11 @@ namespace Restaurant.orders
 
         DataTable dtItems = new DataTable();
 
-        private void _FillItemsInComoboBox(int CategoryID)
+        private void _FillItemsInComoboBox(string CategoryName)
         {
 
 
-            dtItems = clsItems.GetAllItemsForComboBox(CategoryID);
+            dtItems = clsItems.GetAllItemsForComboBox(CategoryName);
 
             cbItem.Items.Clear();
             foreach (DataRow row in dtItems.Rows)
@@ -144,16 +144,33 @@ namespace Restaurant.orders
             }
         }
 
+        private void _FillItemsInComoboBoxByCategoryID(int CategoryID)
+        {
+
+
+            dtItems = clsItems.FillItemsInComoboBoxByCategoryID(CategoryID);
+
+            cbItem.Items.Clear();
+            foreach (DataRow row in dtItems.Rows)
+            {
+                cbItem.Items.Add(row["ItemName"]);
+            }
+        }
+
+
+        
+
         private void cbCategory_SelectionChangeCommitted(object sender, EventArgs e)
         {
 
-            int CategoryID = cbCategory.SelectedIndex + 1;
+            string CategoryName = cbCategory.SelectedItem.ToString();
 
-            _FillItemsInComoboBox(CategoryID);
+            _FillItemsInComoboBox(CategoryName);
+
 
         }
 
-      
+
 
         private void CalculatePrice(decimal Price, int Quantity)
         {
@@ -265,7 +282,7 @@ namespace Restaurant.orders
 
 
 
-                _FillItemsInComoboBox(_Item.CategoryID);
+                _FillItemsInComoboBoxByCategoryID(_Item.CategoryID);
 
                 cbItem.SelectedIndex = cbItem.FindString(_Item.ItemName);
 

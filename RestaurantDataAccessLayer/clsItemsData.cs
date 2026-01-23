@@ -327,7 +327,7 @@ namespace Restaurant_DataAccess
 
         }
 
-        public static DataTable GetAllItemsForComboBox(int CategoryID)
+        public static DataTable FillItemsInComoboBoxByCategoryID(int CategoryID)
         {
 
             DataTable dt = new DataTable();
@@ -361,6 +361,50 @@ namespace Restaurant_DataAccess
             catch (Exception ex)
             {
                  Console.WriteLine("Error:------------------ " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return dt;
+
+        }
+
+        public static DataTable GetAllItemsForComboBox(string CategoryName)
+        {
+
+            DataTable dt = new DataTable();
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"SELECT * FROM View_ItemsByCategoryName where Name = @CategoryName";
+            // string query = @"SELECT * FROM Items where CategoryID = @CategoryID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@CategoryName", CategoryName);
+
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+
+                {
+                    dt.Load(reader);
+                }
+
+                reader.Close();
+
+
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error:------------------ " + ex.Message);
             }
             finally
             {
