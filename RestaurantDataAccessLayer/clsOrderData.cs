@@ -76,7 +76,7 @@ namespace Restaurant_DataAccess
                 DataTable dt = new DataTable();
                 SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-                  string query = "SELECT * FROM Orders WHERE Status = 'Pending' ORDER BY OrderID DESC";
+                  string query = "SELECT * FROM Orders WHERE Status = 'Pending' or Status = 'InProgress'  ORDER BY OrderID DESC";
 
 
 
@@ -118,7 +118,7 @@ namespace Restaurant_DataAccess
             DataTable dt = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = "SELECT * FROM Orders WHERE Status != 'Pending' ORDER BY OrderID DESC";
+            string query = "SELECT * FROM Orders WHERE Status = 'Cancelled' or Status = 'Finished' ORDER BY OrderID DESC";
 
 
 
@@ -299,7 +299,8 @@ namespace Restaurant_DataAccess
             return (rowsAffected > 0);
 
         }
-
+        
+       
         public static bool IsOrderExist(int OrderID)
         {
             bool isFound = false;

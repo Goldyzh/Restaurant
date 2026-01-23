@@ -173,6 +173,8 @@ namespace Restaurant.orders
             }
 
 
+            lblOrderID.Text = "N/A";
+
             lblTotalPrice.Text = "0";
 
             rbPending.Checked = true;
@@ -210,7 +212,7 @@ namespace Restaurant.orders
             }
 
             _Order.OrderDate = DateTime.Now;
-            //_Order.TotalPrice = 0;
+
             if (rbPending.Checked == true)
             {
                 _Order.Status = "Pending";
@@ -228,7 +230,18 @@ namespace Restaurant.orders
             {
                 _Order.OrderName = textOrderNmae.Text;
             }
-            
+
+            if (clsOrder.SetInProgress((int)dgvOrders.CurrentRow.Cells[0].Value))
+            {
+                MessageBox.Show("Order set In Progress Successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                PendingOrders();
+
+            }
+            else
+                MessageBox.Show("Order was not set In Progress.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+
 
 
         }
@@ -269,10 +282,112 @@ namespace Restaurant.orders
                     }
 
                 }
-            }
-            else
-                MessageBox.Show("Order was not deleted because it has data linked to it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show("Order was not deleted because it has data linked to it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            }
+
+        }
+
+        void _LoadOrderForEdit()
+        {
+            //1- set _OrderID = ;
+            _OrderID = (int)dgvOrders.CurrentRow.Cells[0].Value;
+
+            //2- LoadOrderIems in OrderIemsdgv OrderItems();
+            OrderItems();
+
+            //3- find clsOrder _Order;
+            _Order = clsOrder.FindBaseOrder(_OrderID);
+
+            //4- load Data in form
+            lblOrderID.Text = _OrderID.ToString();
+            txtNotes.Text = _Order.Notes.ToString();
+            textOrderNmae.Text = _Order.OrderName.ToString();
+
+            Console.WriteLine("_Order.Notes=======================");
+            Console.WriteLine(_Order.Notes);
+            Console.WriteLine("_Order.OrderName=======================");
+            Console.WriteLine(_Order.OrderName);
+
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            _LoadOrderForEdit();
+
+
+        }
+
+        private void dgvOrders_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            _LoadOrderForEdit();
+        }
+
+        private void cancelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to Cancel Order [" + dgvOrders.CurrentRow.Cells[0].Value + "]", "Confirm Cancel", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+
+          
+                    if (clsOrder.Cancel((int)dgvOrders.CurrentRow.Cells[0].Value))
+                    {
+                        MessageBox.Show("Order Deleted Successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        PendingOrders();
+
+                    }
+                else
+                    MessageBox.Show("Order was not deleted because it has data linked to it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+
+            }
+        }
+
+        private void btnNewOrder(object sender, EventArgs e)
+        {
+            _OrderID = -1;
+
+            OrderItems();
+
+            _ResetDefualtValues();
+
+            frmAddItemToOrder frm1 = new frmAddItemToOrder(_OrderID, -1);
+
+            //frmAddItemToOrder frm1 = new frmAddItemToOrder();
+
+            frm1.DataBack += Frm_DataBack;
+
+            frm1.OnOrderItemsChanged += () =>
+            {
+                OrderItems();
+                PendingOrders();
+            };
+
+
+            frm1.ShowDialog();
+
+        }
+
+        private void setFinishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to set Finish Order [" + dgvOrders.CurrentRow.Cells[0].Value + "]", "Confirm Cancel", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+
+
+                if (clsOrder.SetFinished((int)dgvOrders.CurrentRow.Cells[0].Value))
+                {
+                    MessageBox.Show("Order set Finished Successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    PendingOrders();
+
+                }
+                else
+                    MessageBox.Show("Order was not set Finished.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+
+            }
         }
     }
 }

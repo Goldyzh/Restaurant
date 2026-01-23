@@ -106,17 +106,24 @@ namespace Restaurant_Buisness
                 return null;
         }
 
-        public bool Cancel()
+        public static bool Cancel(int _OrderID)
         {
             string NewStatus = "Cancelled";
-            return clsOrderData.UpdateStatus (OrderID, NewStatus);
+            return clsOrderData.UpdateStatus (_OrderID, NewStatus);
         }
 
-        public bool SetComplete()
+        public static bool SetInProgress(int _OrderID)
+        {
+            string NewStatus = "InProgress";
+            return clsOrderData.UpdateStatus(_OrderID, NewStatus);
+        }
+
+
+        public static bool SetFinished(int _OrderID)
         {
             string NewStatus = "Finished";
 
-            return clsOrderData.UpdateStatus(OrderID, NewStatus);
+            return clsOrderData.UpdateStatus(_OrderID, NewStatus);
         }
 
         public bool Save()
@@ -148,6 +155,9 @@ namespace Restaurant_Buisness
         {
             return clsOrderData.DeleteOrder(OrderID); 
         }
+
+    
+        
 
         public static bool IsApplicationExist(int OrderID)
         {
