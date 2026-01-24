@@ -53,6 +53,8 @@ namespace Restaurant.Controls
             else
                 lblIsActive.Text = "No";
 
+            lblPermissions.Text = _User.Permissions.ToString();
+
         }
 
         private void _ResetPersonInfo()
@@ -62,6 +64,7 @@ namespace Restaurant.Controls
             lblUserID.Text = "[???]";
             lblUserName.Text = "[???]";
             lblIsActive.Text = "[???]";
+            lblPermissions.Text = "[???]";
         }
     }
 }

@@ -16,7 +16,11 @@ namespace Restaurant_Buisness
         public string UserName { set; get; }
         public string Password { set; get; }
         public bool IsActive { set; get; }
-     
+
+        public string Permissions { set; get; }
+
+
+
         public clsUser()
 
         {     
@@ -24,11 +28,12 @@ namespace Restaurant_Buisness
             this.UserName = "";
             this.Password = "";
             this.IsActive = true;
+            this.Permissions = "";
             Mode = enMode.AddNew;
         }
 
         private clsUser(int UserID, int PersonID, string Username,string Password,
-            bool IsActive)
+            bool IsActive, string Permissions)
 
         {
             this.UserID = UserID; 
@@ -37,6 +42,7 @@ namespace Restaurant_Buisness
             this.UserName = Username;
             this.Password = Password;
             this.IsActive = IsActive;
+            this.Permissions = Permissions;
              
             Mode = enMode.Update;
         }
@@ -46,7 +52,7 @@ namespace Restaurant_Buisness
             //call DataAccess Layer 
 
             this.UserID = clsUserData.AddNewUser(this.PersonID,this.UserName,
-                this.Password,this.IsActive);
+                this.Password,this.IsActive , this.Permissions);
 
             return (this.UserID != -1);
         }
@@ -55,35 +61,35 @@ namespace Restaurant_Buisness
             //call DataAccess Layer 
 
             return clsUserData.UpdateUser(this.UserID,this.PersonID,this.UserName,
-                this.Password,this.IsActive);
+                this.Password,this.IsActive, this.Permissions);
         }
         public static clsUser FindByUserID(int UserID)
         {
             int PersonID = -1;
-            string UserName = "", Password = "";
+            string UserName = "", Password = "", Permissions = "";
             bool IsActive = false;
 
             bool IsFound = clsUserData.GetUserInfoByUserID
-                                ( UserID,ref PersonID, ref UserName,ref Password,ref IsActive);
+                                ( UserID,ref PersonID, ref UserName,ref Password,ref IsActive , ref Permissions);
 
             if (IsFound)
                 //we return new object of that User with the right data
-                return new clsUser(UserID,PersonID,UserName,Password,IsActive);
+                return new clsUser(UserID,PersonID,UserName,Password,IsActive , Permissions);
             else
                 return null;
         }
         public static clsUser FindByPersonID(int PersonID)
         {
             int UserID = -1;
-            string UserName = "", Password = "";
+            string UserName = "", Password = "", Permissions = "";
             bool IsActive = false;
 
             bool IsFound = clsUserData.GetUserInfoByPersonID
-                                (PersonID, ref UserID, ref UserName, ref Password, ref IsActive);
+                                (PersonID, ref UserID, ref UserName, ref Password, ref IsActive, ref Permissions);
 
             if (IsFound)
                 //we return new object of that User with the right data
-                return new clsUser(UserID, UserID, UserName, Password, IsActive);
+                return new clsUser(UserID, UserID, UserName, Password, IsActive, Permissions);
             else
                 return null;
         }
@@ -91,15 +97,17 @@ namespace Restaurant_Buisness
         {
             int UserID = -1;
             int PersonID=-1;
+            string Permissions = "";
+
 
             bool IsActive = false;
 
             bool IsFound = clsUserData.GetUserInfoByUsernameAndPassword
-                                (UserName , Password,ref UserID,ref PersonID, ref IsActive);
+                                (UserName , Password,ref UserID,ref PersonID, ref IsActive , ref Permissions);
 
             if (IsFound)
                 //we return new object of that User with the right data
-                return new clsUser(UserID, PersonID, UserName, Password, IsActive);
+                return new clsUser(UserID, PersonID, UserName, Password, IsActive, Permissions);
             else
                 return null;
         }

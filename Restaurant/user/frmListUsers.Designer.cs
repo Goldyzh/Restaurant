@@ -60,7 +60,7 @@
             // 
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTitle.Location = new System.Drawing.Point(376, 212);
+            this.lblTitle.Location = new System.Drawing.Point(401, 215);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(239, 39);
             this.lblTitle.TabIndex = 100;
@@ -70,7 +70,7 @@
             // lblRecordsCount
             // 
             this.lblRecordsCount.AutoSize = true;
-            this.lblRecordsCount.Location = new System.Drawing.Point(152, 690);
+            this.lblRecordsCount.Location = new System.Drawing.Point(131, 693);
             this.lblRecordsCount.Name = "lblRecordsCount";
             this.lblRecordsCount.Size = new System.Drawing.Size(27, 20);
             this.lblRecordsCount.TabIndex = 98;
@@ -80,7 +80,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(50, 690);
+            this.label2.Location = new System.Drawing.Point(29, 693);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 20);
             this.label2.TabIndex = 97;
@@ -97,7 +97,7 @@
             "Person ID",
             "Full Name",
             "Is Active"});
-            this.cbFilterBy.Location = new System.Drawing.Point(133, 270);
+            this.cbFilterBy.Location = new System.Drawing.Point(112, 273);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(210, 28);
             this.cbFilterBy.TabIndex = 96;
@@ -106,7 +106,7 @@
             // txtFilterValue
             // 
             this.txtFilterValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFilterValue.Location = new System.Drawing.Point(350, 270);
+            this.txtFilterValue.Location = new System.Drawing.Point(468, 274);
             this.txtFilterValue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtFilterValue.Name = "txtFilterValue";
             this.txtFilterValue.Size = new System.Drawing.Size(256, 26);
@@ -119,7 +119,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(50, 273);
+            this.label1.Location = new System.Drawing.Point(29, 276);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 20);
             this.label1.TabIndex = 94;
@@ -220,7 +220,7 @@
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsers.ContextMenuStrip = this.cmsUsers;
             this.dgvUsers.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvUsers.Location = new System.Drawing.Point(48, 309);
+            this.dgvUsers.Location = new System.Drawing.Point(27, 312);
             this.dgvUsers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvUsers.MultiSelect = false;
             this.dgvUsers.Name = "dgvUsers";
@@ -234,7 +234,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvUsers.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsers.Size = new System.Drawing.Size(895, 371);
+            this.dgvUsers.Size = new System.Drawing.Size(994, 371);
             this.dgvUsers.TabIndex = 93;
             this.dgvUsers.TabStop = false;
             this.dgvUsers.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentDoubleClick);
@@ -247,7 +247,7 @@
             "All",
             "Yes",
             "No"});
-            this.cbIsActive.Location = new System.Drawing.Point(350, 270);
+            this.cbIsActive.Location = new System.Drawing.Point(329, 273);
             this.cbIsActive.Name = "cbIsActive";
             this.cbIsActive.Size = new System.Drawing.Size(121, 28);
             this.cbIsActive.TabIndex = 103;
@@ -260,7 +260,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::Restaurant.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(808, 690);
+            this.btnClose.Location = new System.Drawing.Point(886, 691);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(135, 36);
             this.btnClose.TabIndex = 102;
@@ -272,7 +272,7 @@
             // 
             this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddUser.Image = global::Restaurant.Properties.Resources.Add_New_User_72;
-            this.btnAddUser.Location = new System.Drawing.Point(855, 229);
+            this.btnAddUser.Location = new System.Drawing.Point(933, 235);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(88, 69);
             this.btnAddUser.TabIndex = 101;
@@ -284,7 +284,7 @@
             this.pbPersonImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbPersonImage.Image = global::Restaurant.Properties.Resources.Users_2_400;
             this.pbPersonImage.InitialImage = null;
-            this.pbPersonImage.Location = new System.Drawing.Point(386, 14);
+            this.pbPersonImage.Location = new System.Drawing.Point(411, 17);
             this.pbPersonImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbPersonImage.Name = "pbPersonImage";
             this.pbPersonImage.Size = new System.Drawing.Size(220, 189);
@@ -300,7 +300,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::Restaurant.Properties.Resources._813M9p5FvEL;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(974, 750);
+            this.ClientSize = new System.Drawing.Size(1063, 750);
             this.Controls.Add(this.cbIsActive);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAddUser);

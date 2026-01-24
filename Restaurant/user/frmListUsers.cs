@@ -49,7 +49,10 @@ namespace Restaurant.User
             dgvUsers.Columns[4].HeaderText = "Is Active";
             dgvUsers.Columns[4].Width = 120;
 
-           
+            dgvUsers.Columns[4].HeaderText = "Permissions";
+            dgvUsers.Columns[4].Width = 150;
+
+
         }
 
         private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)

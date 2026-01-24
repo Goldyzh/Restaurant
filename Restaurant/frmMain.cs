@@ -34,15 +34,25 @@ namespace Restaurant
             InitializeComponent();
             _frmLogin = frm;
 
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
+            timer1.Start();
+
+            lblCurrentTime.Text = "Time: " + DateTime.Now.ToString("hh:mm tt");
+            lblCurrentDate.Text = "Date: " + DateTime.Now.ToShortDateString();
+
         }
 
-        public frmMain()
+
+
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            InitializeComponent();
+            lblCurrentTime.Text = "Time: " + DateTime.Now.ToString("hh:mm tt");
+            lblCurrentDate.Text = "Date: " + DateTime.Now.ToShortDateString();
 
         }
 
-    
+
 
         private void currentUserInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -115,6 +125,13 @@ namespace Restaurant
         {
             Form frm = new frmKitchenScreen();
             frm.ShowDialog();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            this.BackColor = Color.White;
+            lblCurrentUser.Text = "User: " + clsGlobal.CurrentUser.UserName;
+            this.Refresh();
         }
     }
 }

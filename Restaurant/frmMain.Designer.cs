@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnOrders = new System.Windows.Forms.Button();
             this.btnItems = new System.Windows.Forms.Button();
             this.btnFinishedOrders = new System.Windows.Forms.Button();
@@ -36,6 +37,10 @@
             this.lblRestaurantNmae = new System.Windows.Forms.Label();
             this.btnCategories = new System.Windows.Forms.Button();
             this.btnKitchenScreen = new System.Windows.Forms.Button();
+            this.lblCurrentDate = new System.Windows.Forms.Label();
+            this.lblCurrentTime = new System.Windows.Forms.Label();
+            this.lblCurrentUser = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnOrders
@@ -144,13 +149,49 @@
             this.btnKitchenScreen.UseVisualStyleBackColor = true;
             this.btnKitchenScreen.Click += new System.EventHandler(this.btnKitchenScreen_Click);
             // 
+            // lblCurrentDate
+            // 
+            this.lblCurrentDate.AutoSize = true;
+            this.lblCurrentDate.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblCurrentDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrentDate.Location = new System.Drawing.Point(23, 32);
+            this.lblCurrentDate.Name = "lblCurrentDate";
+            this.lblCurrentDate.Size = new System.Drawing.Size(57, 25);
+            this.lblCurrentDate.TabIndex = 10;
+            this.lblCurrentDate.Text = "Date";
+            // 
+            // lblCurrentTime
+            // 
+            this.lblCurrentTime.AutoSize = true;
+            this.lblCurrentTime.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblCurrentTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrentTime.Location = new System.Drawing.Point(23, 83);
+            this.lblCurrentTime.Name = "lblCurrentTime";
+            this.lblCurrentTime.Size = new System.Drawing.Size(59, 25);
+            this.lblCurrentTime.TabIndex = 12;
+            this.lblCurrentTime.Text = "Time";
+            // 
+            // lblCurrentUser
+            // 
+            this.lblCurrentUser.AutoSize = true;
+            this.lblCurrentUser.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblCurrentUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrentUser.Location = new System.Drawing.Point(1676, 23);
+            this.lblCurrentUser.Name = "lblCurrentUser";
+            this.lblCurrentUser.Size = new System.Drawing.Size(57, 25);
+            this.lblCurrentUser.TabIndex = 13;
+            this.lblCurrentUser.Text = "User";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.BackgroundImage = global::Restaurant.Properties.Resources._813M9p5FvEL;
-            this.ClientSize = new System.Drawing.Size(1950, 1020);
+            this.ClientSize = new System.Drawing.Size(1922, 653);
+            this.Controls.Add(this.lblCurrentUser);
+            this.Controls.Add(this.lblCurrentTime);
+            this.Controls.Add(this.lblCurrentDate);
             this.Controls.Add(this.btnKitchenScreen);
             this.Controls.Add(this.btnCategories);
             this.Controls.Add(this.lblRestaurantNmae);
@@ -161,6 +202,7 @@
             this.Controls.Add(this.btnOrders);
             this.Name = "frmMain";
             this.Text = "Main Screen";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,6 +218,10 @@
         private System.Windows.Forms.Label lblRestaurantNmae;
         private System.Windows.Forms.Button btnCategories;
         private System.Windows.Forms.Button btnKitchenScreen;
+        private System.Windows.Forms.Label lblCurrentDate;
+        private System.Windows.Forms.Label lblCurrentTime;
+        private System.Windows.Forms.Label lblCurrentUser;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

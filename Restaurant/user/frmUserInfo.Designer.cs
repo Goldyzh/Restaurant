@@ -79,8 +79,7 @@
         }
 
         #endregion
-
-        private Controls.ctrlUserCard ctrlUserCard1;
         private System.Windows.Forms.Button btnClose;
+        private Controls.ctrlUserCard ctrlUserCard1;
     }
 }

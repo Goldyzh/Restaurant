@@ -9,7 +9,7 @@ namespace Restaurant_DataAccess
     {
        
         public static bool GetUserInfoByUserID(int UserID, ref int PersonID, ref string UserName,
-            ref string Password, ref bool IsActive)
+            ref string Password, ref bool IsActive , ref string Permissions)
         {
             bool isFound = false;
 
@@ -35,7 +35,8 @@ namespace Restaurant_DataAccess
                     UserName = (string)reader["UserName"];
                     Password = (string)reader["Password"];
                     IsActive = (bool)reader["IsActive"];
-                    
+                    Permissions = (string)reader["Permissions"];
+
 
                 }
                 else
@@ -64,7 +65,7 @@ namespace Restaurant_DataAccess
 
 
         public static bool GetUserInfoByPersonID(int PersonID, ref int UserID, ref string UserName,
-          ref string Password,ref bool IsActive)
+          ref string Password,ref bool IsActive, ref string Permissions)
         {
             bool isFound = false;
 
@@ -90,6 +91,7 @@ namespace Restaurant_DataAccess
                     UserName = (string)reader["UserName"];
                     Password = (string)reader["Password"];
                     IsActive = (bool)reader["IsActive"];
+                    Permissions = (string)reader["Permissions"];
 
 
                 }
@@ -117,7 +119,7 @@ namespace Restaurant_DataAccess
         }
 
         public static bool GetUserInfoByUsernameAndPassword(string UserName,  string Password, 
-            ref int UserID, ref int PersonID, ref bool IsActive)
+            ref int UserID, ref int PersonID, ref bool IsActive , ref string Permissions)
         {
             bool isFound = false;
 
@@ -145,6 +147,7 @@ namespace Restaurant_DataAccess
                     UserName = (string)reader["UserName"];
                     Password = (string)reader["Password"];
                     IsActive = (bool)reader["IsActive"];
+                    Permissions = (string)reader["Permissions"];
 
 
                 }
@@ -173,15 +176,15 @@ namespace Restaurant_DataAccess
         }
 
         public static int AddNewUser(int PersonID,  string UserName,
-             string Password,  bool IsActive)
+             string Password,  bool IsActive, string Permissions)
         {
             //this function will return the new person id if succeeded and -1 if not.
             int UserID = -1;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"INSERT INTO Users (PersonID,UserName,Password,IsActive)
-                             VALUES (@PersonID, @UserName,@Password,@IsActive);
+            string query = @"INSERT INTO Users (PersonID,UserName,Password,IsActive ,Permissions)
+                             VALUES (@PersonID, @UserName,@Password,@IsActive, @Permissions);
                              SELECT SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -190,6 +193,7 @@ namespace Restaurant_DataAccess
             command.Parameters.AddWithValue("@UserName", UserName);
             command.Parameters.AddWithValue("@Password", Password);
             command.Parameters.AddWithValue("@IsActive", IsActive);
+            command.Parameters.AddWithValue("@Permissions", Permissions);
 
             try
             {
@@ -219,7 +223,7 @@ namespace Restaurant_DataAccess
 
 
         public static bool UpdateUser(int UserID, int PersonID, string UserName,
-             string Password, bool IsActive)
+             string Password, bool IsActive, string Permissions)
         {
 
             int rowsAffected = 0;
@@ -229,7 +233,8 @@ namespace Restaurant_DataAccess
                             set PersonID = @PersonID,
                                 UserName = @UserName,
                                 Password = @Password,
-                                IsActive = @IsActive
+                                IsActive = @IsActive,
+                                Permissions = @Permissions
                                 where UserID = @UserID";
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -239,6 +244,7 @@ namespace Restaurant_DataAccess
             command.Parameters.AddWithValue("@Password", Password);
             command.Parameters.AddWithValue("@IsActive", IsActive);
             command.Parameters.AddWithValue("@UserID", UserID);
+            command.Parameters.AddWithValue("@Permissions", Permissions);
 
 
             try
@@ -270,7 +276,7 @@ namespace Restaurant_DataAccess
 
             string query = @"SELECT  Users.UserID, Users.PersonID,
                             FullName = People.FirstName + ' ' + People.SecondName + ' ' + ISNULL( People.ThirdName,'') +' ' + People.LastName,
-                             Users.UserName, Users.IsActive
+                             Users.UserName, Users.IsActive,Users.Permissions
                              FROM  Users INNER JOIN
                                     People ON Users.PersonID = People.PersonID";
 
