@@ -54,10 +54,16 @@ namespace Restaurant.Login
                     return;
                 }
 
-                 clsGlobal.CurrentUser = user;
-                 this.Hide();
+                clsGlobal.CurrentUser = user;
+                this.Hide();
                 frmMain frm = new frmMain(this);
                 frm.ShowDialog();
+
+                if(clsGlobal.CurrentUser == null)
+                {
+                    this.Close();
+                    Console.WriteLine("Called");
+                }
 
 
             } else

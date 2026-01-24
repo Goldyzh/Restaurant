@@ -168,5 +168,16 @@ namespace Restaurant
             lblCurrentUser.Text = "User: " + clsGlobal.CurrentUser.UserName;
             this.Refresh();
         }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            clsGlobal.CurrentUser = null;
+            this.Close();
+            frmLogin frm = new frmLogin();
+            frm.Show();
+
+
+
+        }
     }
 }

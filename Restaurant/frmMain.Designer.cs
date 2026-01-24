@@ -41,6 +41,7 @@
             this.lblCurrentTime = new System.Windows.Forms.Label();
             this.lblCurrentUser = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnOrders
@@ -153,10 +154,10 @@
             // 
             this.lblCurrentDate.AutoSize = true;
             this.lblCurrentDate.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblCurrentDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrentDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrentDate.Location = new System.Drawing.Point(23, 32);
             this.lblCurrentDate.Name = "lblCurrentDate";
-            this.lblCurrentDate.Size = new System.Drawing.Size(57, 25);
+            this.lblCurrentDate.Size = new System.Drawing.Size(72, 31);
             this.lblCurrentDate.TabIndex = 10;
             this.lblCurrentDate.Text = "Date";
             // 
@@ -164,10 +165,10 @@
             // 
             this.lblCurrentTime.AutoSize = true;
             this.lblCurrentTime.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblCurrentTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrentTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrentTime.Location = new System.Drawing.Point(23, 83);
             this.lblCurrentTime.Name = "lblCurrentTime";
-            this.lblCurrentTime.Size = new System.Drawing.Size(59, 25);
+            this.lblCurrentTime.Size = new System.Drawing.Size(74, 31);
             this.lblCurrentTime.TabIndex = 12;
             this.lblCurrentTime.Text = "Time";
             // 
@@ -175,12 +176,25 @@
             // 
             this.lblCurrentUser.AutoSize = true;
             this.lblCurrentUser.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblCurrentUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrentUser.Location = new System.Drawing.Point(1676, 23);
+            this.lblCurrentUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrentUser.Location = new System.Drawing.Point(1679, 69);
             this.lblCurrentUser.Name = "lblCurrentUser";
-            this.lblCurrentUser.Size = new System.Drawing.Size(57, 25);
+            this.lblCurrentUser.Size = new System.Drawing.Size(72, 31);
             this.lblCurrentUser.TabIndex = 13;
             this.lblCurrentUser.Text = "User";
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogOut.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnLogOut.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnLogOut.Location = new System.Drawing.Point(1676, 12);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(234, 35);
+            this.btnLogOut.TabIndex = 14;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // frmMain
             // 
@@ -189,6 +203,7 @@
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.BackgroundImage = global::Restaurant.Properties.Resources._813M9p5FvEL;
             this.ClientSize = new System.Drawing.Size(1922, 653);
+            this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.lblCurrentUser);
             this.Controls.Add(this.lblCurrentTime);
             this.Controls.Add(this.lblCurrentDate);
@@ -222,6 +237,7 @@
         private System.Windows.Forms.Label lblCurrentTime;
         private System.Windows.Forms.Label lblCurrentUser;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }
 
