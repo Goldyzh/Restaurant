@@ -50,7 +50,7 @@
             this.btnOrders.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOrders.Font = new System.Drawing.Font("Jokerman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrders.ForeColor = System.Drawing.Color.Red;
-            this.btnOrders.Location = new System.Drawing.Point(26, 162);
+            this.btnOrders.Location = new System.Drawing.Point(51, 163);
             this.btnOrders.Name = "btnOrders";
             this.btnOrders.Size = new System.Drawing.Size(214, 118);
             this.btnOrders.TabIndex = 0;
@@ -142,7 +142,7 @@
             this.btnKitchenScreen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnKitchenScreen.Font = new System.Drawing.Font("Jokerman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKitchenScreen.ForeColor = System.Drawing.Color.Red;
-            this.btnKitchenScreen.Location = new System.Drawing.Point(252, 163);
+            this.btnKitchenScreen.Location = new System.Drawing.Point(271, 163);
             this.btnKitchenScreen.Name = "btnKitchenScreen";
             this.btnKitchenScreen.Size = new System.Drawing.Size(214, 118);
             this.btnKitchenScreen.TabIndex = 8;

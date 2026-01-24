@@ -1,4 +1,5 @@
-﻿using Restaurant.Properties;
+﻿using Restaurant.Classes;
+using Restaurant.Properties;
 using Restaurant_Buisness;
 using Restaurant_DataAccess;
 using System;
@@ -354,7 +355,7 @@ namespace Restaurant.orders
             _Order.OrderName = _OrderName;
 
             //for now 1
-            _Order.CreatedBy = 1;
+            _Order.CreatedBy = clsGlobal.CurrentUser.UserID;
 
             _OrderTotalPrice += _OrderItemsTotalPrice;
 
