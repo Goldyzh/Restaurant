@@ -69,6 +69,8 @@ namespace Restaurant.User
             txtPassword.Text = "";
             txtConfirmPassword.Text = "";
             chkIsActive.Checked = true; 
+            rbCashier.Checked = true;
+
 
 
         }
@@ -96,6 +98,19 @@ namespace Restaurant.User
             txtConfirmPassword.Text = _User.Password;
             chkIsActive.Checked = _User.IsActive;
             ctrlPersonCardWithFilter1.LoadPersonInfo(_User.PersonID);
+            if (_User.Permissions == "Manager")   
+            {
+                rbManager.Checked = true;
+            }
+            else if (_User.Permissions == "Cashier")
+            {
+                rbCashier.Checked = true;
+            }
+            else if (_User.Permissions == "Chef")
+            {
+                rbChef.Checked = true;
+            }
+
         }
 
         private void frmAddUpdateUser_Load(object sender, EventArgs e)
@@ -123,6 +138,19 @@ namespace Restaurant.User
             _User.UserName = txtUserName.Text.Trim();
             _User.Password = txtPassword.Text.Trim();
             _User.IsActive = chkIsActive.Checked;
+
+            if (rbManager.Checked == true)
+            {
+                _User.Permissions = "Manager";
+            }
+            else if (rbCashier.Checked == true)
+            {
+                _User.Permissions = "Cashier";
+            }
+            else if (rbChef.Checked == true )
+            {
+                _User.Permissions = "Chef";
+            }
 
 
             if (_User.Save())

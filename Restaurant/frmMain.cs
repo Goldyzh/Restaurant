@@ -83,12 +83,34 @@ namespace Restaurant
 
         private void btmPeople_Click(object sender, EventArgs e)
         {
+            if (clsGlobal.CurrentUser.Permissions != "Manager")
+            {
+                MessageBox.Show(
+                    "You Do Not Have Access to this Section",
+                    "Higher Permissions Required",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+
             Form frm = new frmListPeople();
             frm.ShowDialog();
         }
 
         private void btnUsers_Click(object sender, EventArgs e)
         {
+            if (clsGlobal.CurrentUser.Permissions != "Manager")
+            {
+                MessageBox.Show(
+                    "You Do Not Have Access to this Section",
+                    "Higher Permissions Required",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
             Form frm = new frmListUsers();
             frm.ShowDialog();
         }
@@ -108,6 +130,19 @@ namespace Restaurant
 
         private void btnOrders_Click(object sender, EventArgs e)
         {
+            if (clsGlobal.CurrentUser.Permissions != "Manager"
+                && clsGlobal.CurrentUser.Permissions != "Cashier")
+            {
+
+                MessageBox.Show(
+                    "You Do Not Have Access to this Section",
+                    "Higher Permissions Required",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+
+                return;
+            }
 
             Form frm = new frmOrders();
             frm.ShowDialog();

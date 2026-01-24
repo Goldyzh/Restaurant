@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.tcUserInfo = new System.Windows.Forms.TabControl();
             this.tpPersonalInfo = new System.Windows.Forms.TabPage();
+            this.ctrlPersonCardWithFilter1 = new Restaurant.Controls.ctrlPersonCardWithFilter();
             this.btnPersonInfoNext = new System.Windows.Forms.Button();
             this.tpLoginInfo = new System.Windows.Forms.TabPage();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -50,7 +51,10 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.ctrlPersonCardWithFilter1 = new Restaurant.Controls.ctrlPersonCardWithFilter();
+            this.label5 = new System.Windows.Forms.Label();
+            this.rbManager = new System.Windows.Forms.RadioButton();
+            this.rbCashier = new System.Windows.Forms.RadioButton();
+            this.rbChef = new System.Windows.Forms.RadioButton();
             this.tcUserInfo.SuspendLayout();
             this.tpPersonalInfo.SuspendLayout();
             this.tpLoginInfo.SuspendLayout();
@@ -83,6 +87,19 @@
             this.tpPersonalInfo.Text = "Personal Info";
             this.tpPersonalInfo.UseVisualStyleBackColor = true;
             // 
+            // ctrlPersonCardWithFilter1
+            // 
+            this.ctrlPersonCardWithFilter1.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.ctrlPersonCardWithFilter1.BackColor = System.Drawing.Color.White;
+            this.ctrlPersonCardWithFilter1.FilterEnabled = true;
+            this.ctrlPersonCardWithFilter1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(11, 11);
+            this.ctrlPersonCardWithFilter1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
+            this.ctrlPersonCardWithFilter1.ShowAddPerson = true;
+            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(837, 399);
+            this.ctrlPersonCardWithFilter1.TabIndex = 121;
+            // 
             // btnPersonInfoNext
             // 
             this.btnPersonInfoNext.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -99,6 +116,10 @@
             // 
             // tpLoginInfo
             // 
+            this.tpLoginInfo.Controls.Add(this.rbChef);
+            this.tpLoginInfo.Controls.Add(this.rbCashier);
+            this.tpLoginInfo.Controls.Add(this.rbManager);
+            this.tpLoginInfo.Controls.Add(this.label5);
             this.tpLoginInfo.Controls.Add(this.pictureBox2);
             this.tpLoginInfo.Controls.Add(this.lblUserID);
             this.tpLoginInfo.Controls.Add(this.label4);
@@ -303,18 +324,49 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // ctrlPersonCardWithFilter1
+            // label5
             // 
-            this.ctrlPersonCardWithFilter1.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ctrlPersonCardWithFilter1.BackColor = System.Drawing.Color.White;
-            this.ctrlPersonCardWithFilter1.FilterEnabled = true;
-            this.ctrlPersonCardWithFilter1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(11, 11);
-            this.ctrlPersonCardWithFilter1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
-            this.ctrlPersonCardWithFilter1.ShowAddPerson = true;
-            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(837, 399);
-            this.ctrlPersonCardWithFilter1.TabIndex = 121;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(63, 258);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(110, 20);
+            this.label5.TabIndex = 131;
+            this.label5.Text = "Permissions:";
+            // 
+            // rbManager
+            // 
+            this.rbManager.AutoSize = true;
+            this.rbManager.Location = new System.Drawing.Point(200, 258);
+            this.rbManager.Name = "rbManager";
+            this.rbManager.Size = new System.Drawing.Size(90, 24);
+            this.rbManager.TabIndex = 132;
+            this.rbManager.TabStop = true;
+            this.rbManager.Text = "Manager";
+            this.rbManager.UseVisualStyleBackColor = true;
+            // 
+            // rbCashier
+            // 
+            this.rbCashier.AutoSize = true;
+            this.rbCashier.Location = new System.Drawing.Point(337, 258);
+            this.rbCashier.Name = "rbCashier";
+            this.rbCashier.Size = new System.Drawing.Size(81, 24);
+            this.rbCashier.TabIndex = 133;
+            this.rbCashier.TabStop = true;
+            this.rbCashier.Text = "Cashier";
+            this.rbCashier.UseVisualStyleBackColor = true;
+            // 
+            // rbChef
+            // 
+            this.rbChef.AutoSize = true;
+            this.rbChef.Location = new System.Drawing.Point(480, 258);
+            this.rbChef.Name = "rbChef";
+            this.rbChef.Size = new System.Drawing.Size(61, 24);
+            this.rbChef.TabIndex = 134;
+            this.rbChef.TabStop = true;
+            this.rbChef.Text = "Chef";
+            this.rbChef.UseVisualStyleBackColor = true;
             // 
             // frmAddUpdateUser
             // 
@@ -373,5 +425,9 @@
         private System.Windows.Forms.Button btnPersonInfoNext;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Controls.ctrlPersonCardWithFilter ctrlPersonCardWithFilter1;
+        private System.Windows.Forms.RadioButton rbChef;
+        private System.Windows.Forms.RadioButton rbCashier;
+        private System.Windows.Forms.RadioButton rbManager;
+        private System.Windows.Forms.Label label5;
     }
 }
