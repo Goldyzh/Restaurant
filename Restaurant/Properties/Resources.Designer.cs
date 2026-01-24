@@ -73,6 +73,16 @@ namespace Restaurant.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _813M9p5FvEL {
+            get {
+                object obj = ResourceManager.GetObject("813M9p5FvEL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap account_settings_64 {
             get {
                 object obj = ResourceManager.GetObject("account_settings 64", resourceCulture);
