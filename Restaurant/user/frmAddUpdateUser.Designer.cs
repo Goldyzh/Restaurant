@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.tcUserInfo = new System.Windows.Forms.TabControl();
             this.tpPersonalInfo = new System.Windows.Forms.TabPage();
-            this.ctrlPersonCardWithFilter1 = new Restaurant.Controls.ctrlPersonCardWithFilter();
             this.btnPersonInfoNext = new System.Windows.Forms.Button();
             this.tpLoginInfo = new System.Windows.Forms.TabPage();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -51,6 +50,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.ctrlPersonCardWithFilter1 = new Restaurant.Controls.ctrlPersonCardWithFilter();
             this.tcUserInfo.SuspendLayout();
             this.tpPersonalInfo.SuspendLayout();
             this.tpLoginInfo.SuspendLayout();
@@ -83,19 +83,6 @@
             this.tpPersonalInfo.Text = "Personal Info";
             this.tpPersonalInfo.UseVisualStyleBackColor = true;
             // 
-            // ctrlPersonCardWithFilter1
-            // 
-            this.ctrlPersonCardWithFilter1.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ctrlPersonCardWithFilter1.BackColor = System.Drawing.Color.White;
-            this.ctrlPersonCardWithFilter1.FilterEnabled = true;
-            this.ctrlPersonCardWithFilter1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(11, 11);
-            this.ctrlPersonCardWithFilter1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
-            this.ctrlPersonCardWithFilter1.ShowAddPerson = true;
-            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(837, 399);
-            this.ctrlPersonCardWithFilter1.TabIndex = 121;
-             // 
             // btnPersonInfoNext
             // 
             this.btnPersonInfoNext.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -280,7 +267,7 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(863, 39);
             this.lblTitle.TabIndex = 118;
-            this.lblTitle.Text = "Edit Application Type";
+            this.lblTitle.Text = "Edit User";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // errorProvider1
@@ -315,6 +302,19 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // ctrlPersonCardWithFilter1
+            // 
+            this.ctrlPersonCardWithFilter1.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.ctrlPersonCardWithFilter1.BackColor = System.Drawing.Color.White;
+            this.ctrlPersonCardWithFilter1.FilterEnabled = true;
+            this.ctrlPersonCardWithFilter1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(11, 11);
+            this.ctrlPersonCardWithFilter1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
+            this.ctrlPersonCardWithFilter1.ShowAddPerson = true;
+            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(837, 399);
+            this.ctrlPersonCardWithFilter1.TabIndex = 121;
             // 
             // frmAddUpdateUser
             // 

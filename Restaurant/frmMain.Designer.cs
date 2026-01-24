@@ -36,12 +36,11 @@
             this.lblRestaurantNmae = new System.Windows.Forms.Label();
             this.btnCategories = new System.Windows.Forms.Button();
             this.btnKitchenScreen = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOrders
             // 
+            this.btnOrders.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnOrders.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOrders.Font = new System.Drawing.Font("Jokerman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrders.ForeColor = System.Drawing.Color.Red;
@@ -50,7 +49,7 @@
             this.btnOrders.Size = new System.Drawing.Size(214, 118);
             this.btnOrders.TabIndex = 0;
             this.btnOrders.Text = "Orders";
-            this.btnOrders.UseVisualStyleBackColor = true;
+            this.btnOrders.UseVisualStyleBackColor = false;
             this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
             // 
             // btnItems
@@ -110,6 +109,7 @@
             // 
             this.lblRestaurantNmae.AutoSize = true;
             this.lblRestaurantNmae.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblRestaurantNmae.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblRestaurantNmae.Font = new System.Drawing.Font("Snap ITC", 68.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRestaurantNmae.ForeColor = System.Drawing.Color.Red;
             this.lblRestaurantNmae.Location = new System.Drawing.Point(438, 23);
@@ -144,22 +144,12 @@
             this.btnKitchenScreen.UseVisualStyleBackColor = true;
             this.btnKitchenScreen.Click += new System.EventHandler(this.btnKitchenScreen_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Restaurant.Properties.Resources._813M9p5FvEL;
-            this.pictureBox1.InitialImage = global::Restaurant.Properties.Resources._53748245_2506642936325210_8273804709588893696_n;
-            this.pictureBox1.Location = new System.Drawing.Point(-4, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1963, 1051);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
+            this.BackgroundImage = global::Restaurant.Properties.Resources._813M9p5FvEL;
             this.ClientSize = new System.Drawing.Size(1950, 1020);
             this.Controls.Add(this.btnKitchenScreen);
             this.Controls.Add(this.btnCategories);
@@ -169,10 +159,8 @@
             this.Controls.Add(this.btnFinishedOrders);
             this.Controls.Add(this.btnItems);
             this.Controls.Add(this.btnOrders);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "frmMain";
             this.Text = "Main Screen";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,7 +175,6 @@
         private System.Windows.Forms.Button btmPeople;
         private System.Windows.Forms.Label lblRestaurantNmae;
         private System.Windows.Forms.Button btnCategories;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnKitchenScreen;
     }
 }

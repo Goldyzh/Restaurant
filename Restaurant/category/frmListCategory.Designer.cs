@@ -265,6 +265,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackgroundImage = global::Restaurant.Properties.Resources._813M9p5FvEL;
             this.ClientSize = new System.Drawing.Size(708, 749);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAddPerson);

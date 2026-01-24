@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gbIndianRed = new System.Windows.Forms.GroupBox();
+            this.lblOrderStatus = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtOrderName = new System.Windows.Forms.TextBox();
             this.lblTotalPrice = new System.Windows.Forms.Label();
@@ -62,7 +63,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.lblOrderStatus = new System.Windows.Forms.Label();
             this.gbIndianRed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).BeginInit();
             this.cmsItemsOrder.SuspendLayout();
@@ -91,6 +91,15 @@
             this.gbIndianRed.TabStop = false;
             this.gbIndianRed.Text = "Order Info";
             // 
+            // lblOrderStatus
+            // 
+            this.lblOrderStatus.AutoSize = true;
+            this.lblOrderStatus.Location = new System.Drawing.Point(160, 81);
+            this.lblOrderStatus.Name = "lblOrderStatus";
+            this.lblOrderStatus.Size = new System.Drawing.Size(42, 24);
+            this.lblOrderStatus.TabIndex = 12;
+            this.lblOrderStatus.Text = "N/A";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -117,6 +126,7 @@
             this.lblTotalPrice.Size = new System.Drawing.Size(20, 24);
             this.lblTotalPrice.TabIndex = 9;
             this.lblTotalPrice.Text = "0";
+            this.lblTotalPrice.Click += new System.EventHandler(this.lblTotalPrice_Click);
             // 
             // label8
             // 
@@ -376,7 +386,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Red;
+            this.button1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.button1.Location = new System.Drawing.Point(525, 811);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(151, 56);
@@ -385,19 +395,11 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnNewOrder);
             // 
-            // lblOrderStatus
-            // 
-            this.lblOrderStatus.AutoSize = true;
-            this.lblOrderStatus.Location = new System.Drawing.Point(160, 81);
-            this.lblOrderStatus.Name = "lblOrderStatus";
-            this.lblOrderStatus.Size = new System.Drawing.Size(42, 24);
-            this.lblOrderStatus.TabIndex = 12;
-            this.lblOrderStatus.Text = "N/A";
-            // 
             // frmOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Restaurant.Properties.Resources._813M9p5FvEL;
             this.ClientSize = new System.Drawing.Size(1148, 875);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCancel);

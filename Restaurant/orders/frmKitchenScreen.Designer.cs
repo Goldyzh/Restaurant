@@ -164,6 +164,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Restaurant.Properties.Resources._813M9p5FvEL;
             this.ClientSize = new System.Drawing.Size(1633, 544);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

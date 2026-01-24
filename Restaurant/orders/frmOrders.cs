@@ -433,5 +433,10 @@ namespace Restaurant.orders
             _Notes = txtNotes.Text;
            
         }
+
+        private void lblTotalPrice_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
