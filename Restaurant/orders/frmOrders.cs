@@ -129,26 +129,6 @@ namespace Restaurant.orders
 
         }
 
-        private void btnAddItem_Click(object sender, EventArgs e)
-        {
-          
-            frmAddItemToOrder frm1 = new frmAddItemToOrder(_OrderID , -1 , _OrderName , _Notes , _OrderTotalPrice);
-           
-
-            //frmAddItemToOrder frm1 = new frmAddItemToOrder();
-
-            frm1.DataBack += Frm_DataBack;
-
-            frm1.OnOrderItemsChanged += () =>
-            {
-                OrderItems();
-                PendingOrders();
-            };
-
-
-            frm1.ShowDialog();
-
-        }
 
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
@@ -437,6 +417,37 @@ namespace Restaurant.orders
         private void lblTotalPrice_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            frmAddItemToOrder frm1 = new frmAddItemToOrder(_OrderID, -1, _OrderName, _Notes, _OrderTotalPrice);
+
+            frm1.DataBack += Frm_DataBack;
+
+            frm1.OnOrderItemsChanged += () =>
+            {
+                OrderItems();
+                PendingOrders();
+            };
+
+            frm1.ShowDialog();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            frmAddItemToOrder frm1 = new frmAddItemToOrder(_OrderID, -1, _OrderName, _Notes, _OrderTotalPrice);
+
+            frm1.DataBack += Frm_DataBack;
+
+            frm1.OnOrderItemsChanged += () =>
+            {
+                OrderItems();
+                PendingOrders();
+            };
+
+            frm1.ShowDialog();
         }
     }
 }

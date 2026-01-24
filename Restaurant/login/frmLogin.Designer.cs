@@ -103,10 +103,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Restaurant.Properties.Resources.IconLogo;
-            this.pictureBox1.Location = new System.Drawing.Point(87, 35);
+            this.pictureBox1.Image = global::Restaurant.Properties.Resources._813M9p5FvEL;
+            this.pictureBox1.Location = new System.Drawing.Point(74, 41);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(218, 201);
+            this.pictureBox1.Size = new System.Drawing.Size(254, 181);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 136;
             this.pictureBox1.TabStop = false;
@@ -120,9 +120,9 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(363, 33);
             this.label3.TabIndex = 2;
-            this.label3.Text = "(DVLD) System";
+            this.label3.Text = "(Resturant) System";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-              // 
+            // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Stencil", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -132,9 +132,9 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(369, 69);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Driving && Vehicle License Department";
+            this.label2.Text = "Goldyz";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-             // 
+            // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Stencil", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

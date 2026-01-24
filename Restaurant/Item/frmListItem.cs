@@ -226,17 +226,12 @@ namespace Restaurant.Item
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
-        private void btnAddItem_Click(object sender, EventArgs e)
+     
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             Form frm1 = new frmAddUpdatedItems();
             frm1.ShowDialog();
             _RefreshItemsList();
         }
-
-  
-
- 
-
-     
     }
 }

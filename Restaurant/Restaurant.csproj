@@ -279,6 +279,9 @@
     <Content Include="Resources\Add Person 40.png" />
     <Content Include="Resources\Add Person 72.png" />
     <Content Include="Resources\AddAppointment 32.png" />
+    <None Include="Resources\addbutton.png" />
+    <None Include="Resources\addbutton2.png" />
+    <None Include="Resources\addbutton21.png" />
     <Content Include="Resources\AddPerson 32.png" />
     <Content Include="Resources\Address 32.png" />
     <Content Include="Resources\Application Types 512.png" />
@@ -318,6 +321,7 @@
     <Content Include="Resources\IconLogo.png" />
     <Content Include="Resources\International 32.png" />
     <Content Include="Resources\IssueDrivingLicense 32.png" />
+    <None Include="Resources\istockphoto-1829241109-612x612.jpg" />
     <Content Include="Resources\License Type 32.png" />
     <Content Include="Resources\License View 32.png" />
     <Content Include="Resources\LicenseView 400.png" />

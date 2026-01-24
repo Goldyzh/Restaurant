@@ -46,7 +46,6 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnAddItem = new System.Windows.Forms.Button();
             this.RecordsCount = new System.Windows.Forms.Label();
             this.lbllblOrdersRecordsCount = new System.Windows.Forms.Label();
             this.btnOrderNow = new System.Windows.Forms.Button();
@@ -63,11 +62,15 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.gbIndianRed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).BeginInit();
             this.cmsItemsOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.cmsOrders.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbIndianRed
@@ -84,7 +87,7 @@
             this.gbIndianRed.Controls.Add(this.label1);
             this.gbIndianRed.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbIndianRed.ForeColor = System.Drawing.Color.IndianRed;
-            this.gbIndianRed.Location = new System.Drawing.Point(12, 12);
+            this.gbIndianRed.Location = new System.Drawing.Point(10, 71);
             this.gbIndianRed.Name = "gbIndianRed";
             this.gbIndianRed.Size = new System.Drawing.Size(1116, 127);
             this.gbIndianRed.TabIndex = 0;
@@ -186,7 +189,7 @@
             // 
             this.dgvOrderItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrderItems.ContextMenuStrip = this.cmsItemsOrder;
-            this.dgvOrderItems.Location = new System.Drawing.Point(12, 170);
+            this.dgvOrderItems.Location = new System.Drawing.Point(10, 229);
             this.dgvOrderItems.Name = "dgvOrderItems";
             this.dgvOrderItems.Size = new System.Drawing.Size(623, 256);
             this.dgvOrderItems.TabIndex = 1;
@@ -229,24 +232,12 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(120, 6);
             // 
-            // btnAddItem
-            // 
-            this.btnAddItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnAddItem.Location = new System.Drawing.Point(750, 232);
-            this.btnAddItem.Name = "btnAddItem";
-            this.btnAddItem.Size = new System.Drawing.Size(235, 112);
-            this.btnAddItem.TabIndex = 6;
-            this.btnAddItem.Text = "Add Item";
-            this.btnAddItem.UseVisualStyleBackColor = true;
-            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
-            // 
             // RecordsCount
             // 
             this.RecordsCount.AutoSize = true;
             this.RecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RecordsCount.ForeColor = System.Drawing.Color.DimGray;
-            this.RecordsCount.Location = new System.Drawing.Point(12, 808);
+            this.RecordsCount.Location = new System.Drawing.Point(10, 867);
             this.RecordsCount.Name = "RecordsCount";
             this.RecordsCount.Size = new System.Drawing.Size(134, 20);
             this.RecordsCount.TabIndex = 7;
@@ -256,7 +247,7 @@
             // 
             this.lbllblOrdersRecordsCount.AutoSize = true;
             this.lbllblOrdersRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbllblOrdersRecordsCount.Location = new System.Drawing.Point(162, 808);
+            this.lbllblOrdersRecordsCount.Location = new System.Drawing.Point(160, 867);
             this.lbllblOrdersRecordsCount.Name = "lbllblOrdersRecordsCount";
             this.lbllblOrdersRecordsCount.Size = new System.Drawing.Size(18, 20);
             this.lbllblOrdersRecordsCount.TabIndex = 6;
@@ -266,7 +257,7 @@
             // 
             this.btnOrderNow.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrderNow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnOrderNow.Location = new System.Drawing.Point(977, 811);
+            this.btnOrderNow.Location = new System.Drawing.Point(975, 870);
             this.btnOrderNow.Name = "btnOrderNow";
             this.btnOrderNow.Size = new System.Drawing.Size(151, 56);
             this.btnOrderNow.TabIndex = 8;
@@ -278,7 +269,7 @@
             // 
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrders.ContextMenuStrip = this.cmsOrders;
-            this.dgvOrders.Location = new System.Drawing.Point(10, 502);
+            this.dgvOrders.Location = new System.Drawing.Point(8, 561);
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.Size = new System.Drawing.Size(1118, 303);
             this.dgvOrders.TabIndex = 9;
@@ -333,7 +324,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.IndianRed;
-            this.label4.Location = new System.Drawing.Point(12, 474);
+            this.label4.Location = new System.Drawing.Point(10, 533);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(183, 25);
             this.label4.TabIndex = 10;
@@ -344,7 +335,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.IndianRed;
-            this.label5.Location = new System.Drawing.Point(12, 142);
+            this.label5.Location = new System.Drawing.Point(10, 201);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(141, 25);
             this.label5.TabIndex = 11;
@@ -354,7 +345,7 @@
             // 
             this.lblOrderItemsRecordsCount.AutoSize = true;
             this.lblOrderItemsRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderItemsRecordsCount.Location = new System.Drawing.Point(162, 429);
+            this.lblOrderItemsRecordsCount.Location = new System.Drawing.Point(160, 488);
             this.lblOrderItemsRecordsCount.Name = "lblOrderItemsRecordsCount";
             this.lblOrderItemsRecordsCount.Size = new System.Drawing.Size(18, 20);
             this.lblOrderItemsRecordsCount.TabIndex = 12;
@@ -365,7 +356,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(12, 429);
+            this.label7.Location = new System.Drawing.Point(10, 488);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(134, 20);
             this.label7.TabIndex = 13;
@@ -375,7 +366,7 @@
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.IndianRed;
-            this.btnCancel.Location = new System.Drawing.Point(753, 811);
+            this.btnCancel.Location = new System.Drawing.Point(751, 870);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(151, 56);
             this.btnCancel.TabIndex = 14;
@@ -387,7 +378,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.Location = new System.Drawing.Point(525, 811);
+            this.button1.Location = new System.Drawing.Point(523, 870);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(151, 56);
             this.button1.TabIndex = 15;
@@ -395,12 +386,55 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnNewOrder);
             // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblTitle.Location = new System.Drawing.Point(462, 18);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(215, 31);
+            this.lblTitle.TabIndex = 16;
+            this.lblTitle.Text = "Cashier Screen";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::Restaurant.Properties.Resources.addbutton21;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(683, 285);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(132, 105);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 104;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.SpringGreen;
+            this.label9.Location = new System.Drawing.Point(684, 389);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(131, 33);
+            this.label9.TabIndex = 106;
+            this.label9.Text = "Add Item";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
             // frmOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Restaurant.Properties.Resources._813M9p5FvEL;
-            this.ClientSize = new System.Drawing.Size(1148, 875);
+            this.ClientSize = new System.Drawing.Size(1136, 938);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblOrderItemsRecordsCount);
@@ -411,7 +445,6 @@
             this.Controls.Add(this.btnOrderNow);
             this.Controls.Add(this.lbllblOrdersRecordsCount);
             this.Controls.Add(this.RecordsCount);
-            this.Controls.Add(this.btnAddItem);
             this.Controls.Add(this.dgvOrderItems);
             this.Controls.Add(this.gbIndianRed);
             this.Name = "frmOrders";
@@ -423,6 +456,7 @@
             this.cmsItemsOrder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             this.cmsOrders.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -437,7 +471,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblOrderID;
         private System.Windows.Forms.DataGridView dgvOrderItems;
-        private System.Windows.Forms.Button btnAddItem;
         private System.Windows.Forms.Label RecordsCount;
         private System.Windows.Forms.Label lbllblOrdersRecordsCount;
         private System.Windows.Forms.Button btnOrderNow;
@@ -464,5 +497,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem setFinishToolStripMenuItem;
         private System.Windows.Forms.Label lblOrderStatus;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label9;
     }
 }

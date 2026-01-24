@@ -63,11 +63,11 @@ namespace Restaurant.Category
                 dgvCategory.Columns[0].Width = 50;
 
                 dgvCategory.Columns[1].HeaderText = "Name.";
-                dgvCategory.Columns[1].Width = 150;
+                dgvCategory.Columns[1].Width = 190;
 
 
                 dgvCategory.Columns[2].HeaderText = "Description";
-                dgvCategory.Columns[2].Width = 320;
+                dgvCategory.Columns[2].Width = 380;
 
 
             }
@@ -211,7 +211,9 @@ namespace Restaurant.Category
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
-        private void btnAddPerson_Click_1(object sender, EventArgs e)
+      
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             Form frm1 = new frmAddUpdatedCategory();
             frm1.ShowDialog();
