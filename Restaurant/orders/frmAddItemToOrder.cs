@@ -297,8 +297,10 @@ namespace Restaurant.orders
 
                 cbItem.SelectedIndex = cbItem.FindString(_Item.ItemName);
 
-                cbCategory.Text = _Item.CountryInfo.Name;
+                cbCategory.Text = _Item.CategoryInfo.Name;
 
+                Console.WriteLine("_Item.CategoryInfo.Name=");
+                Console.WriteLine(_Item.CategoryInfo.Name);
 
 
                 lblTitle.Text = "Update Item";

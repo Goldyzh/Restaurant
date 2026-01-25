@@ -237,8 +237,7 @@ namespace Restaurant_DataAccess
                                 ImagePath = @ImagePath, 
                                 IsAvailable = @IsAvailable,
                                 CreatedAt = @CreatedAt,
-                                CategoryID = @CategoryID,
-                                ImagePath =@ImagePath
+                                CategoryID = @CategoryID
                                 where ItemID = @ItemID";
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -249,6 +248,7 @@ namespace Restaurant_DataAccess
             command.Parameters.AddWithValue("@CreatedAt", CreatedAt);
             command.Parameters.AddWithValue("@Description", Description);
             command.Parameters.AddWithValue("@CategoryID", CategoryID);
+            command.Parameters.AddWithValue("@IsAvailable", IsAvailable);
 
             if (ImagePath != "" && ImagePath != null)
                 command.Parameters.AddWithValue("@ImagePath", ImagePath);
@@ -264,7 +264,7 @@ namespace Restaurant_DataAccess
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                Console.WriteLine("Error:======================== " + ex.Message);
                 return false;
             }
 

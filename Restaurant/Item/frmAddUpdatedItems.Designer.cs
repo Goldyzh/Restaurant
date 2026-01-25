@@ -93,6 +93,7 @@
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(167, 21);
             this.cbCategory.TabIndex = 11;
+            this.cbCategory.SelectionChangeCommitted += new System.EventHandler(this.cbCategory_SelectionChangeCommitted);
             // 
             // lblTitle
             // 

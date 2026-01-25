@@ -31,7 +31,7 @@ namespace Restaurant_Buisness
 
         public int CategoryID { set; get; }
 
-        public clsCategory CountryInfo { set; get; }
+        public clsCategory CategoryInfo { set; get; }
 
         public clsItems()
 
@@ -60,7 +60,7 @@ namespace Restaurant_Buisness
             this.IsAvailable = IsAvailable;
             this.CreatedAt = CreatedAt;
             this.CategoryID = CategoryID;
-            this.CountryInfo = clsCategory.Find(CategoryID);
+            this.CategoryInfo = clsCategory.Find(CategoryID);
             Mode = enMode.Update;
         }
 

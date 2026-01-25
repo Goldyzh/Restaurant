@@ -92,6 +92,14 @@ namespace Restaurant.Item
             }
         }
 
+
+        private string CategoryName = "1";
+
+        private void cbCategory_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            CategoryName = cbCategory.SelectedItem.ToString();
+        }
+
         private void _LoadData()
         {
 
@@ -110,6 +118,14 @@ namespace Restaurant.Item
             txtPrice.Text = _Item.Price.ToString();
             chkIsAvailable.Checked = _Item.IsAvailable;
 
+
+            if (_Item.Description != "")
+            {
+                txtDescription.Text = _Item.Description;
+            }
+
+
+            cbCategory.Text = _Item.CategoryInfo.Name;
 
 
 
@@ -182,6 +198,8 @@ namespace Restaurant.Item
             return true;
         }
 
+       
+
         private void btnSave_Click_1(object sender, EventArgs e)
         {
 
@@ -203,14 +221,15 @@ namespace Restaurant.Item
             }
 
             int CategoryID = clsCategory.Find(cbCategory.Text).CategoryID;
-
-
+        
 
             _Item.ItemName = txtItemName.Text.Trim();
             _Item.Price = decimal.Parse(txtPrice.Text) ;
             _Item.Description = txtDescription.Text.Trim();
             _Item.CreatedAt = DateTime.Now;
             _Item.CategoryID = CategoryID;
+
+            //_Item.CategoryID = CategoryName;
 
 
             if (chkIsAvailable.Checked)
@@ -313,7 +332,10 @@ namespace Restaurant.Item
 
         }
 
-   
+
+     
+
+
     }
 }
 
