@@ -51,7 +51,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblTitle.Location = new System.Drawing.Point(750, 9);
+            this.lblTitle.Location = new System.Drawing.Point(805, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(212, 31);
             this.lblTitle.TabIndex = 15;
@@ -61,7 +61,7 @@
             // 
             this.lbllblOrdersRecordsCount.AutoSize = true;
             this.lbllblOrdersRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbllblOrdersRecordsCount.Location = new System.Drawing.Point(172, 491);
+            this.lbllblOrdersRecordsCount.Location = new System.Drawing.Point(177, 491);
             this.lbllblOrdersRecordsCount.Name = "lbllblOrdersRecordsCount";
             this.lbllblOrdersRecordsCount.Size = new System.Drawing.Size(18, 20);
             this.lbllblOrdersRecordsCount.TabIndex = 13;
@@ -72,7 +72,7 @@
             this.RecordsCount.AutoSize = true;
             this.RecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RecordsCount.ForeColor = System.Drawing.Color.DimGray;
-            this.RecordsCount.Location = new System.Drawing.Point(18, 491);
+            this.RecordsCount.Location = new System.Drawing.Point(23, 491);
             this.RecordsCount.Name = "RecordsCount";
             this.RecordsCount.Size = new System.Drawing.Size(134, 20);
             this.RecordsCount.TabIndex = 14;
@@ -84,7 +84,7 @@
             this.dgvInProgressOrders.ContextMenuStrip = this.cmsOrdersKitchen;
             this.dgvInProgressOrders.Location = new System.Drawing.Point(18, 143);
             this.dgvInProgressOrders.Name = "dgvInProgressOrders";
-            this.dgvInProgressOrders.Size = new System.Drawing.Size(1011, 345);
+            this.dgvInProgressOrders.Size = new System.Drawing.Size(1119, 345);
             this.dgvInProgressOrders.TabIndex = 12;
             this.dgvInProgressOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInProgressOrders_CellClick);
             // 
@@ -112,16 +112,16 @@
             // 
             this.dgvOrderItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrderItems.ContextMenuStrip = this.cmsOrdersKitchen;
-            this.dgvOrderItems.Location = new System.Drawing.Point(1044, 143);
+            this.dgvOrderItems.Location = new System.Drawing.Point(1163, 143);
             this.dgvOrderItems.Name = "dgvOrderItems";
-            this.dgvOrderItems.Size = new System.Drawing.Size(568, 345);
+            this.dgvOrderItems.Size = new System.Drawing.Size(584, 345);
             this.dgvOrderItems.TabIndex = 16;
             // 
             // lblOrderItemsRecordsCount
             // 
             this.lblOrderItemsRecordsCount.AutoSize = true;
             this.lblOrderItemsRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderItemsRecordsCount.Location = new System.Drawing.Point(1200, 491);
+            this.lblOrderItemsRecordsCount.Location = new System.Drawing.Point(1318, 491);
             this.lblOrderItemsRecordsCount.Name = "lblOrderItemsRecordsCount";
             this.lblOrderItemsRecordsCount.Size = new System.Drawing.Size(18, 20);
             this.lblOrderItemsRecordsCount.TabIndex = 17;
@@ -132,7 +132,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(1050, 491);
+            this.label7.Location = new System.Drawing.Point(1168, 491);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(134, 20);
             this.label7.TabIndex = 18;
@@ -154,7 +154,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Green;
-            this.label2.Location = new System.Drawing.Point(1252, 100);
+            this.label2.Location = new System.Drawing.Point(1387, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(134, 25);
             this.label2.TabIndex = 20;
@@ -165,7 +165,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Restaurant.Properties.Resources._813M9p5FvEL;
-            this.ClientSize = new System.Drawing.Size(1633, 544);
+            this.ClientSize = new System.Drawing.Size(1772, 544);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblOrderItemsRecordsCount);

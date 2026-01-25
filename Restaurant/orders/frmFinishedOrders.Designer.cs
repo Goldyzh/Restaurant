@@ -40,7 +40,7 @@
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrders.Location = new System.Drawing.Point(12, 160);
             this.dgvOrders.Name = "dgvOrders";
-            this.dgvOrders.Size = new System.Drawing.Size(1051, 345);
+            this.dgvOrders.Size = new System.Drawing.Size(1150, 345);
             this.dgvOrders.TabIndex = 0;
             // 
             // lbllblOrdersRecordsCount
@@ -69,7 +69,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblTitle.Location = new System.Drawing.Point(407, 50);
+            this.lblTitle.Location = new System.Drawing.Point(471, 52);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(222, 31);
             this.lblTitle.TabIndex = 11;
@@ -80,7 +80,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Restaurant.Properties.Resources._813M9p5FvEL;
-            this.ClientSize = new System.Drawing.Size(1076, 556);
+            this.ClientSize = new System.Drawing.Size(1179, 556);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lbllblOrdersRecordsCount);
             this.Controls.Add(this.RecordsCount);

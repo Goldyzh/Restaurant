@@ -67,7 +67,7 @@ namespace Restaurant.Category
 
 
                 dgvCategory.Columns[2].HeaderText = "Description";
-                dgvCategory.Columns[2].Width = 380;
+                dgvCategory.Columns[2].Width = 375;
 
 
             }

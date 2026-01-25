@@ -59,7 +59,7 @@ namespace Restaurant.People
                 dgvPeople.Columns[0].Width = 110;
 
                 dgvPeople.Columns[1].HeaderText = "National No.";
-                dgvPeople.Columns[1].Width = 120;
+                dgvPeople.Columns[1].Width = 130;
 
 
                 dgvPeople.Columns[2].HeaderText = "First Name";
@@ -90,7 +90,7 @@ namespace Restaurant.People
 
 
                 dgvPeople.Columns[10].HeaderText = "Email";
-                dgvPeople.Columns[10].Width = 170;
+                dgvPeople.Columns[10].Width = 200;
             }
 
         }

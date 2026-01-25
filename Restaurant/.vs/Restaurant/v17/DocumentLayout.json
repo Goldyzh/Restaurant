@@ -3,15 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|c:\\users\\g\\source\\repos\\restaurant\\restaurant\\orders\\frmorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|c:\\users\\g\\source\\repos\\restaurant\\restaurant\\orders\\frmfinishedorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|solutionrelative:orders\\frmfinishedorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\orders\\frmfinishedorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|solutionrelative:orders\\frmfinishedorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\orders\\frmorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|solutionrelative:orders\\frmorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B6CB737-3EBB-47BB-8218-B34C89D0120F}|..\\RestaurantDataAccessLayer\\RestaurantDataAccess.csproj|c:\\users\\g\\source\\repos\\restaurant\\restaurantdataaccesslayer\\clsorderdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|c:\\users\\g\\source\\repos\\restaurant\\restaurant\\people\\frmlistpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|solutionrelative:people\\frmlistpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|c:\\users\\g\\source\\repos\\restaurant\\restaurant\\orders\\frmorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|solutionrelative:orders\\frmorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\people\\frmlistpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4D970142-069C-42AB-AB48-8756C4EDF2BE}|Restaurant.csproj|solutionrelative:people\\frmlistpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,40 +39,83 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "clsOrderData.cs",
-              "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\RestaurantDataAccessLayer\\clsOrderData.cs",
-              "RelativeDocumentMoniker": "..\\RestaurantDataAccessLayer\\clsOrderData.cs",
-              "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\RestaurantDataAccessLayer\\clsOrderData.cs",
-              "RelativeToolTip": "..\\RestaurantDataAccessLayer\\clsOrderData.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAmwG8AAAAAAAAAAAAAAA==",
+              "Title": "frmFinishedOrders.cs",
+              "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\orders\\frmFinishedOrders.cs",
+              "RelativeDocumentMoniker": "orders\\frmFinishedOrders.cs",
+              "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\orders\\frmFinishedOrders.cs",
+              "RelativeToolTip": "orders\\frmFinishedOrders.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowCsAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-25T20:25:50.62Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmOrders.cs",
-              "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\orders\\frmOrders.cs",
-              "RelativeDocumentMoniker": "orders\\frmOrders.cs",
-              "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\orders\\frmOrders.cs",
-              "RelativeToolTip": "orders\\frmOrders.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAewD8AAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-25T19:48:47.946Z",
+              "WhenOpened": "2026-01-25T20:45:40.527Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "frmFinishedOrders.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\orders\\frmFinishedOrders.cs",
+              "RelativeDocumentMoniker": "orders\\frmFinishedOrders.cs",
+              "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\orders\\frmFinishedOrders.cs [Design]",
+              "RelativeToolTip": "orders\\frmFinishedOrders.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T20:44:14.292Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "frmOrders.cs [Design]",
               "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\orders\\frmOrders.cs",
               "RelativeDocumentMoniker": "orders\\frmOrders.cs",
               "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\orders\\frmOrders.cs [Design]",
               "RelativeToolTip": "orders\\frmOrders.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-25T19:47:02.883Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-01-25T20:43:56.643Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "117d0d99-4302-440b-9002-bee2d205e8bf",
+        "Display": 1,
+        "X": 171,
+        "Y": 149,
+        "Width": 1605,
+        "Height": 964,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmListPeople.cs",
+              "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\people\\frmListPeople.cs",
+              "RelativeDocumentMoniker": "people\\frmListPeople.cs",
+              "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\people\\frmListPeople.cs",
+              "RelativeToolTip": "people\\frmListPeople.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAwwFwAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T20:42:17.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmListPeople.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\people\\frmListPeople.cs",
+              "RelativeDocumentMoniker": "people\\frmListPeople.cs",
+              "ToolTip": "C:\\Users\\g\\source\\repos\\Restaurant\\Restaurant\\people\\frmListPeople.cs [Design]",
+              "RelativeToolTip": "people\\frmListPeople.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T20:41:09.708Z"
             }
           ]
         }

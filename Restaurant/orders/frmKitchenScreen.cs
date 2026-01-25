@@ -103,7 +103,7 @@ namespace Restaurant.orders
                 dgvInProgressOrders.Columns[4].Width = 300;
 
                 dgvInProgressOrders.Columns[5].HeaderText = "Order Name";
-                dgvInProgressOrders.Columns[5].Width = 300;
+                dgvInProgressOrders.Columns[5].Width = 295;
 
                 dgvInProgressOrders.Columns[6].HeaderText = "Created By";
                 dgvInProgressOrders.Columns[6].Width = 80;

@@ -53,7 +53,7 @@ namespace Restaurant.orders
                 dgvOrders.Columns[5].Width = 300;
 
                 dgvOrders.Columns[6].HeaderText = "Created By";
-                dgvOrders.Columns[6].Width = 80;
+                dgvOrders.Columns[6].Width = 90;
 
 
             }

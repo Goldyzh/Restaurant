@@ -77,7 +77,7 @@ namespace Restaurant.orders
                 dgvOrders.Columns[4].Width = 300;
 
                 dgvOrders.Columns[5].HeaderText = "Order Name";
-                dgvOrders.Columns[5].Width = 300;
+                dgvOrders.Columns[5].Width = 295;
 
                 dgvOrders.Columns[6].HeaderText = "Created By";
                 dgvOrders.Columns[6].Width = 80;
