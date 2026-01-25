@@ -44,8 +44,6 @@ namespace Restaurant.orders
 
 
 
-
-
         private void PendingOrders()
         {
             _dtOrders = clsOrder.GetOrdersForOrdersScreen();
@@ -78,11 +76,11 @@ namespace Restaurant.orders
                 dgvOrders.Columns[4].HeaderText = "Notes";
                 dgvOrders.Columns[4].Width = 300;
 
-                dgvOrders.Columns[5].HeaderText = "Created By";
-                dgvOrders.Columns[5].Width = 80;
+                dgvOrders.Columns[5].HeaderText = "Order Name";
+                dgvOrders.Columns[5].Width = 300;
 
-                dgvOrders.Columns[6].HeaderText = "Order Name";
-                dgvOrders.Columns[6].Width = 300;
+                dgvOrders.Columns[6].HeaderText = "Created By";
+                dgvOrders.Columns[6].Width = 80;
 
 
             }

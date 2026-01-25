@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblPermissions = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.lblIsActive = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
@@ -36,8 +38,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ctrlPersonCard1 = new Restaurant.Controls.ctrlPersonCard();
-            this.lblPermissions = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +57,28 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login Information";
+            // 
+            // lblPermissions
+            // 
+            this.lblPermissions.AutoSize = true;
+            this.lblPermissions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPermissions.Location = new System.Drawing.Point(712, 38);
+            this.lblPermissions.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPermissions.Name = "lblPermissions";
+            this.lblPermissions.Size = new System.Drawing.Size(39, 20);
+            this.lblPermissions.TabIndex = 142;
+            this.lblPermissions.Text = "???";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(574, 38);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(120, 20);
+            this.label5.TabIndex = 141;
+            this.label5.Text = "Permissions : ";
             // 
             // lblIsActive
             // 
@@ -133,28 +155,6 @@
             this.ctrlPersonCard1.Name = "ctrlPersonCard1";
             this.ctrlPersonCard1.Size = new System.Drawing.Size(839, 300);
             this.ctrlPersonCard1.TabIndex = 2;
-            // 
-            // lblPermissions
-            // 
-            this.lblPermissions.AutoSize = true;
-            this.lblPermissions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPermissions.Location = new System.Drawing.Point(712, 38);
-            this.lblPermissions.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPermissions.Name = "lblPermissions";
-            this.lblPermissions.Size = new System.Drawing.Size(39, 20);
-            this.lblPermissions.TabIndex = 142;
-            this.lblPermissions.Text = "???";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(574, 38);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 20);
-            this.label5.TabIndex = 141;
-            this.label5.Text = "Permissions : ";
             // 
             // ctrlUserCard
             // 

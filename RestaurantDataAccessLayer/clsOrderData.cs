@@ -75,8 +75,8 @@ namespace Restaurant_DataAccess
 
                 DataTable dt = new DataTable();
                 SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-
-                  string query = "SELECT * FROM Orders WHERE Status = 'Pending' or Status = 'InProgress' or Status = 'Ready' ORDER BY OrderID DESC";
+            
+                  string query = "SELECT * FROM View_OrdersForOrdersScreen WHERE Status = 'Pending' or Status = 'InProgress' or Status = 'Ready' ORDER BY  OrderID DESC";
 
 
 
@@ -118,7 +118,7 @@ namespace Restaurant_DataAccess
             DataTable dt = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = "SELECT * FROM Orders WHERE Status = 'Cancelled' or Status = 'Finished' ORDER BY OrderID DESC";
+            string query = "SELECT * FROM View_OrdersForOrdersScreen WHERE Status = 'Cancelled' or Status = 'Finished' ORDER BY OrderID DESC";
 
 
 
@@ -160,7 +160,7 @@ namespace Restaurant_DataAccess
             DataTable dt = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = "SELECT * FROM Orders WHERE Status = 'InProgress' or Status = 'Ready' ORDER BY OrderID DESC";
+            string query = "SELECT * FROM View_OrdersForOrdersScreen WHERE Status = 'InProgress' or Status = 'Ready' ORDER BY OrderID DESC";
 
 
 

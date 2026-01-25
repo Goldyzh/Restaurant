@@ -102,11 +102,11 @@ namespace Restaurant.orders
                 dgvInProgressOrders.Columns[4].HeaderText = "Notes";
                 dgvInProgressOrders.Columns[4].Width = 300;
 
-                dgvInProgressOrders.Columns[5].HeaderText = "Created By";
-                dgvInProgressOrders.Columns[5].Width = 80;
+                dgvInProgressOrders.Columns[5].HeaderText = "Order Name";
+                dgvInProgressOrders.Columns[5].Width = 300;
 
-                dgvInProgressOrders.Columns[6].HeaderText = "Order Name";
-                dgvInProgressOrders.Columns[6].Width = 200;
+                dgvInProgressOrders.Columns[6].HeaderText = "Created By";
+                dgvInProgressOrders.Columns[6].Width = 80;
 
 
             }
