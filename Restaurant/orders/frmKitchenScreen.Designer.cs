@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.lbllblOrdersRecordsCount = new System.Windows.Forms.Label();
+            this.lblOrdersRecordsCount = new System.Windows.Forms.Label();
             this.RecordsCount = new System.Windows.Forms.Label();
             this.dgvInProgressOrders = new System.Windows.Forms.DataGridView();
             this.cmsOrdersKitchen = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -41,6 +41,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.cbFilterBy = new System.Windows.Forms.ComboBox();
+            this.txtFilterValue = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInProgressOrders)).BeginInit();
             this.cmsOrdersKitchen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).BeginInit();
@@ -59,13 +62,13 @@
             // 
             // lbllblOrdersRecordsCount
             // 
-            this.lbllblOrdersRecordsCount.AutoSize = true;
-            this.lbllblOrdersRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbllblOrdersRecordsCount.Location = new System.Drawing.Point(177, 491);
-            this.lbllblOrdersRecordsCount.Name = "lbllblOrdersRecordsCount";
-            this.lbllblOrdersRecordsCount.Size = new System.Drawing.Size(18, 20);
-            this.lbllblOrdersRecordsCount.TabIndex = 13;
-            this.lbllblOrdersRecordsCount.Text = "0";
+            this.lblOrdersRecordsCount.AutoSize = true;
+            this.lblOrdersRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrdersRecordsCount.Location = new System.Drawing.Point(177, 491);
+            this.lblOrdersRecordsCount.Name = "lbllblOrdersRecordsCount";
+            this.lblOrdersRecordsCount.Size = new System.Drawing.Size(18, 20);
+            this.lblOrdersRecordsCount.TabIndex = 13;
+            this.lblOrdersRecordsCount.Text = "0";
             // 
             // RecordsCount
             // 
@@ -143,7 +146,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Green;
-            this.label1.Location = new System.Drawing.Point(414, 100);
+            this.label1.Location = new System.Drawing.Point(426, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(210, 25);
             this.label1.TabIndex = 19;
@@ -154,11 +157,45 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Green;
-            this.label2.Location = new System.Drawing.Point(1387, 100);
+            this.label2.Location = new System.Drawing.Point(1383, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(134, 25);
             this.label2.TabIndex = 20;
             this.label2.Text = "Order Items";
+            // 
+            // cbFilterBy
+            // 
+            this.cbFilterBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFilterBy.FormattingEnabled = true;
+            this.cbFilterBy.Items.AddRange(new object[] {
+            "Order ID",
+            "Order Name"});
+            this.cbFilterBy.Location = new System.Drawing.Point(100, 109);
+            this.cbFilterBy.Name = "cbFilterBy";
+            this.cbFilterBy.Size = new System.Drawing.Size(210, 21);
+            this.cbFilterBy.TabIndex = 109;
+            this.cbFilterBy.SelectedIndexChanged += new System.EventHandler(this.cbFilterBy_SelectedIndexChanged);
+            // 
+            // txtFilterValue
+            // 
+            this.txtFilterValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFilterValue.Location = new System.Drawing.Point(317, 110);
+            this.txtFilterValue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtFilterValue.Name = "txtFilterValue";
+            this.txtFilterValue.Size = new System.Drawing.Size(256, 20);
+            this.txtFilterValue.TabIndex = 108;
+            this.txtFilterValue.TextChanged += new System.EventHandler(this.txtFilterValue_TextChanged);
+            this.txtFilterValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterValue_KeyPress_1);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(14, 110);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 20);
+            this.label3.TabIndex = 107;
+            this.label3.Text = "Filter By:";
             // 
             // frmKitchenScreen
             // 
@@ -166,13 +203,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Restaurant.Properties.Resources._813M9p5FvEL;
             this.ClientSize = new System.Drawing.Size(1772, 544);
+            this.Controls.Add(this.cbFilterBy);
+            this.Controls.Add(this.txtFilterValue);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblOrderItemsRecordsCount);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dgvOrderItems);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.lbllblOrdersRecordsCount);
+            this.Controls.Add(this.lblOrdersRecordsCount);
             this.Controls.Add(this.RecordsCount);
             this.Controls.Add(this.dgvInProgressOrders);
             this.Name = "frmKitchenScreen";
@@ -189,7 +229,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label lbllblOrdersRecordsCount;
+        private System.Windows.Forms.Label lblOrdersRecordsCount;
         private System.Windows.Forms.Label RecordsCount;
         private System.Windows.Forms.DataGridView dgvInProgressOrders;
         private System.Windows.Forms.ContextMenuStrip cmsOrdersKitchen;
@@ -200,5 +240,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbFilterBy;
+        private System.Windows.Forms.TextBox txtFilterValue;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -205,36 +205,31 @@
             this.cbFilterBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFilterBy.FormattingEnabled = true;
             this.cbFilterBy.Items.AddRange(new object[] {
-            "None",
-            "Person ID",
-            "National No.",
-            "First Name",
-            "Second Name",
-            "Third Name",
-            "Last Name",
-            "Nationality",
-            "Gendor",
-            "Phone",
-            "Email"});
+            "Item ID",
+            "Name Item",
+            "Description"});
             this.cbFilterBy.Location = new System.Drawing.Point(113, 255);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(210, 21);
             this.cbFilterBy.TabIndex = 106;
+            this.cbFilterBy.SelectedIndexChanged += new System.EventHandler(this.cbFilterBy_SelectedIndexChanged_1);
             // 
             // txtFilterValue
             // 
             this.txtFilterValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFilterValue.Location = new System.Drawing.Point(330, 255);
+            this.txtFilterValue.Location = new System.Drawing.Point(330, 256);
             this.txtFilterValue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtFilterValue.Name = "txtFilterValue";
             this.txtFilterValue.Size = new System.Drawing.Size(256, 20);
             this.txtFilterValue.TabIndex = 105;
+            this.txtFilterValue.TextChanged += new System.EventHandler(this.txtFilterValue_TextChanged_1);
+            this.txtFilterValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterValue_KeyPress_1);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 253);
+            this.label1.Location = new System.Drawing.Point(27, 256);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 20);
             this.label1.TabIndex = 104;

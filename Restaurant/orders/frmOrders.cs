@@ -51,11 +51,11 @@ namespace Restaurant.orders
 
             if (dgvOrders.Rows.Count <= 0)
             {
-                lbllblOrdersRecordsCount.Text = "0";
+                lblOrdersRecordsCount.Text = "0";
             }
             else
             {
-                lbllblOrdersRecordsCount.Text = (dgvOrders.Rows.Count - 1).ToString();
+                lblOrdersRecordsCount.Text = (dgvOrders.Rows.Count - 1).ToString();
             }
 
             if (dgvOrders.Rows.Count > 0)
@@ -186,18 +186,15 @@ namespace Restaurant.orders
 
             lblOrderStatus.Text = "N/A";
 
-            // txtNotes.Text = "";
-
-            //txtOrderName.Text = "";
-
-
-
 
         }
 
 
         private void frmOrders_Load(object sender, EventArgs e)
         {
+
+            cbFilterBy.SelectedIndex = 1;
+
             _ResetDefualtValues();
 
             PendingOrders();
@@ -241,10 +238,6 @@ namespace Restaurant.orders
             }
             else
                 MessageBox.Show("Order was not set In Progress.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
-
-
 
         }
 
@@ -320,8 +313,6 @@ namespace Restaurant.orders
 
             }
 
-
-
         }
 
        
@@ -348,8 +339,6 @@ namespace Restaurant.orders
                  else
                  MessageBox.Show("Order was not Cancelled.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-
-
             }
         }
 
@@ -373,7 +362,6 @@ namespace Restaurant.orders
                 PendingOrders();
             };
 
-
             frm1.ShowDialog();
 
         }
@@ -395,15 +383,12 @@ namespace Restaurant.orders
                 else
                     MessageBox.Show("Order was not set Finished.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-
-
             }
         }
 
         private void textOrderNmae_TextChanged(object sender, EventArgs e)
         {
-            _OrderName = txtOrderName.Text;
-           
+            _OrderName = txtOrderName.Text;   
         }
 
         private void txtNotes_TextChanged(object sender, EventArgs e)
@@ -411,12 +396,6 @@ namespace Restaurant.orders
             _Notes = txtNotes.Text;
            
         }
-
-        private void lblTotalPrice_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -447,5 +426,70 @@ namespace Restaurant.orders
 
             frm1.ShowDialog();
         }
+
+      
+
+        private void txtFilterValue_TextChanged(object sender, EventArgs e)
+        {
+
+            string FilterColumn = "";
+            //Map Selected Filter to real Column ItemName 
+            switch (cbFilterBy.Text)
+            {
+                case "Order ID":
+                    FilterColumn = "OrderID";
+                    break;
+
+                case "Order Name":
+                    FilterColumn = "OrderName";
+                    break;
+
+                default:
+                    FilterColumn = "None";
+                    break;
+
+            }
+
+            //Reset the filters in case nothing selected or filter value conains nothing.
+            if (txtFilterValue.Text.Trim() == "" || FilterColumn == "None")
+            {
+                _dtOrders.DefaultView.RowFilter = "";
+                lblOrdersRecordsCount.Text = dgvOrders.Rows.Count.ToString();
+                return;
+            }
+
+
+            if (FilterColumn == "OrderID")
+                //in this case we deal with integer not string.
+
+                _dtOrders.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, txtFilterValue.Text.Trim());
+            else
+                _dtOrders.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", FilterColumn, txtFilterValue.Text.Trim());
+
+            lblOrdersRecordsCount.Text = dgvOrders.Rows.Count.ToString();
+        }
+
+
+
+        private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            txtFilterValue.Visible = (cbFilterBy.Text != "None");
+
+            if (txtFilterValue.Visible)
+            {
+                txtFilterValue.Text = "";
+                txtFilterValue.Focus();
+            }
+
+        }
+
+        private void txtFilterValue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //we allow number incase person id is selected.
+            if (cbFilterBy.Text == "Order ID")
+                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
     }
 }

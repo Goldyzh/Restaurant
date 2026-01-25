@@ -95,7 +95,7 @@ namespace Restaurant.People
 
         }
     
-        private void txtFilterValue_TextChanged(object sender, EventArgs e)
+        private void txtFilterValue_TextChanged_1(object sender, EventArgs e)
         {
            
             string FilterColumn = "";
@@ -263,5 +263,7 @@ namespace Restaurant.People
             if (cbFilterBy.Text=="Person ID")
               e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+
+     
     }
 }

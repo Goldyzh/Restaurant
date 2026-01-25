@@ -47,7 +47,7 @@ namespace Restaurant.Item
         private void frmListItem_Load(object sender, EventArgs e)
         {
             dgvItems.DataSource = _dtCategory;
-            cbFilterBy.SelectedIndex = 0;
+            cbFilterBy.SelectedIndex = 1;
             lblRecordsCount.Text = (dgvItems.Rows.Count - 1).ToString();
             if (dgvItems.Rows.Count <= 0)
             {
@@ -90,19 +90,19 @@ namespace Restaurant.Item
 
         }
 
-        private void txtFilterValue_TextChanged(object sender, EventArgs e)
+        private void txtFilterValue_TextChanged_1(object sender, EventArgs e)
         {
 
             string FilterColumn = "";
             //Map Selected Filter to real Column ItemName 
             switch (cbFilterBy.Text)
             {
-                case "Category ID":
-                    FilterColumn = "CategoryID";
+                case "Item ID":
+                    FilterColumn = "ItemID";
                     break;
 
                 case "Item Name":
-                    FilterColumn = "ItemName";
+                    FilterColumn = "Name Item";
                     break;
 
                 case "Description":
@@ -124,7 +124,7 @@ namespace Restaurant.Item
             }
 
 
-            if (FilterColumn == "CategoryID")
+            if (FilterColumn == "ItemID")
                 //in this case we deal with integer not string.
 
                 _dtCategory.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, txtFilterValue.Text.Trim());
@@ -135,7 +135,7 @@ namespace Restaurant.Item
 
         }
 
-        private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbFilterBy_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
             txtFilterValue.Visible = (cbFilterBy.Text != "None");
@@ -148,12 +148,6 @@ namespace Restaurant.Item
 
         }
 
-        private void showDetailsToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            int ItemID = (int)dgvItems.CurrentRow.Cells[0].Value;
-            Form frm = new frmAddUpdatedItems(ItemID);
-            frm.ShowDialog();
-        }
 
         private void editToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
@@ -219,10 +213,10 @@ namespace Restaurant.Item
             //frm.ShowDialog();
         }
 
-        private void txtFilterValue_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtFilterValue_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             //we allow number incase person id is selected.
-            if (cbFilterBy.Text == "Person ID")
+            if (cbFilterBy.Text == "Item ID")
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
@@ -233,5 +227,7 @@ namespace Restaurant.Item
             frm1.ShowDialog();
             _RefreshItemsList();
         }
+
+      
     }
 }

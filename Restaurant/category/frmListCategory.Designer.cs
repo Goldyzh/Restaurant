@@ -116,30 +116,25 @@
             this.cbFilterBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFilterBy.FormattingEnabled = true;
             this.cbFilterBy.Items.AddRange(new object[] {
-            "None",
-            "Person ID",
-            "National No.",
-            "First Name",
-            "Second Name",
-            "Third Name",
-            "Last Name",
-            "Nationality",
-            "Gendor",
-            "Phone",
-            "Email"});
-            this.cbFilterBy.Location = new System.Drawing.Point(101, 266);
+            "Category ID",
+            "Name",
+            "Description"});
+            this.cbFilterBy.Location = new System.Drawing.Point(101, 263);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(210, 21);
             this.cbFilterBy.TabIndex = 96;
+            this.cbFilterBy.SelectedIndexChanged += new System.EventHandler(this.cbFilterBy_SelectedIndexChanged);
             // 
             // txtFilterValue
             // 
             this.txtFilterValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFilterValue.Location = new System.Drawing.Point(318, 266);
+            this.txtFilterValue.Location = new System.Drawing.Point(318, 264);
             this.txtFilterValue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtFilterValue.Name = "txtFilterValue";
             this.txtFilterValue.Size = new System.Drawing.Size(256, 20);
             this.txtFilterValue.TabIndex = 95;
+            this.txtFilterValue.TextChanged += new System.EventHandler(this.txtFilterValue_TextChanged);
+            this.txtFilterValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterValue_KeyPress);
             // 
             // label1
             // 

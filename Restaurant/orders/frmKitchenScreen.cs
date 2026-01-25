@@ -63,8 +63,6 @@ namespace Restaurant.orders
 
             }
 
-            
-
 
         }
 
@@ -77,11 +75,11 @@ namespace Restaurant.orders
 
             if (dgvInProgressOrders.Rows.Count <= 0)
             {
-                lbllblOrdersRecordsCount.Text = "0";
+                lblOrdersRecordsCount.Text = "0";
             }
             else
             {
-                lbllblOrdersRecordsCount.Text = (dgvInProgressOrders.Rows.Count - 1).ToString();
+                lblOrdersRecordsCount.Text = (dgvInProgressOrders.Rows.Count - 1).ToString();
             }
 
             if (dgvInProgressOrders.Rows.Count > 0)
@@ -116,10 +114,9 @@ namespace Restaurant.orders
 
         private void frmKitchenScreen_Load(object sender, EventArgs e)
         {
+            cbFilterBy.SelectedIndex = 1;
 
             GetRadyItems();
-
-
         }
 
         private void SetReadyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -144,10 +141,6 @@ namespace Restaurant.orders
             }
         }
 
-        private void dgvOrderItems_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void dgvInProgressOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -167,20 +160,69 @@ namespace Restaurant.orders
 
 
 
-            ////4- load Data in form
-            //lblOrderID.Text = _OrderID.ToString();
+        }
 
-            //if (_Order.Notes != "")
-            //{
-            //    txtNotes.Text = _Order.Notes.ToString();
+     
+        private void txtFilterValue_TextChanged(object sender, EventArgs e)
+        {
 
-            //}
-            //if (_Order.OrderName != "")
-            //{
-            //    txtOrderName.Text = _Order.OrderName.ToString();
+            string FilterColumn = "";
+            //Map Selected Filter to real Column ItemName 
+            switch (cbFilterBy.Text)
+            {
+                case "Order ID":
+                    FilterColumn = "OrderID";
+                    break;
 
-            //}
+                case "Order Name":
+                    FilterColumn = "OrderName";
+                    break;
 
+                default:
+                    FilterColumn = "None";
+                    break;
+
+            }
+
+            //Reset the filters in case nothing selected or filter value conains nothing.
+            if (txtFilterValue.Text.Trim() == "" || FilterColumn == "None")
+            {
+                _dtOrders.DefaultView.RowFilter = "";
+                lblOrdersRecordsCount.Text = dgvInProgressOrders.Rows.Count.ToString();
+                return;
+            }
+
+
+            if (FilterColumn == "OrderID")
+                //in this case we deal with integer not string.
+
+                _dtOrders.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, txtFilterValue.Text.Trim());
+            else
+                _dtOrders.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", FilterColumn, txtFilterValue.Text.Trim());
+
+            lblOrdersRecordsCount.Text = dgvInProgressOrders.Rows.Count.ToString();
+        }
+
+
+
+        private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            txtFilterValue.Visible = (cbFilterBy.Text != "None");
+
+            if (txtFilterValue.Visible)
+            {
+                txtFilterValue.Text = "";
+                txtFilterValue.Focus();
+            }
+
+        }
+
+        private void txtFilterValue_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            //we allow number incase person id is selected.
+            if (cbFilterBy.Text == "Order ID")
+                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

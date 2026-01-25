@@ -47,7 +47,7 @@
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.RecordsCount = new System.Windows.Forms.Label();
-            this.lbllblOrdersRecordsCount = new System.Windows.Forms.Label();
+            this.lblOrdersRecordsCount = new System.Windows.Forms.Label();
             this.btnOrderNow = new System.Windows.Forms.Button();
             this.dgvOrders = new System.Windows.Forms.DataGridView();
             this.cmsOrders = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -65,6 +65,9 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.cbFilterBy = new System.Windows.Forms.ComboBox();
+            this.txtFilterValue = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.gbIndianRed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).BeginInit();
             this.cmsItemsOrder.SuspendLayout();
@@ -129,7 +132,6 @@
             this.lblTotalPrice.Size = new System.Drawing.Size(20, 24);
             this.lblTotalPrice.TabIndex = 9;
             this.lblTotalPrice.Text = "0";
-            this.lblTotalPrice.Click += new System.EventHandler(this.lblTotalPrice_Click);
             // 
             // label8
             // 
@@ -243,15 +245,15 @@
             this.RecordsCount.TabIndex = 7;
             this.RecordsCount.Text = "Records Count:";
             // 
-            // lbllblOrdersRecordsCount
+            // lblOrdersRecordsCount
             // 
-            this.lbllblOrdersRecordsCount.AutoSize = true;
-            this.lbllblOrdersRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbllblOrdersRecordsCount.Location = new System.Drawing.Point(160, 867);
-            this.lbllblOrdersRecordsCount.Name = "lbllblOrdersRecordsCount";
-            this.lbllblOrdersRecordsCount.Size = new System.Drawing.Size(18, 20);
-            this.lbllblOrdersRecordsCount.TabIndex = 6;
-            this.lbllblOrdersRecordsCount.Text = "0";
+            this.lblOrdersRecordsCount.AutoSize = true;
+            this.lblOrdersRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrdersRecordsCount.Location = new System.Drawing.Point(160, 867);
+            this.lblOrdersRecordsCount.Name = "lblOrdersRecordsCount";
+            this.lblOrdersRecordsCount.Size = new System.Drawing.Size(18, 20);
+            this.lblOrdersRecordsCount.TabIndex = 6;
+            this.lblOrdersRecordsCount.Text = "0";
             // 
             // btnOrderNow
             // 
@@ -426,12 +428,49 @@
             this.label9.Text = "Add Item";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
+            // cbFilterBy
+            // 
+            this.cbFilterBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFilterBy.FormattingEnabled = true;
+            this.cbFilterBy.Items.AddRange(new object[] {
+            "Order ID",
+            "Order Name"});
+            this.cbFilterBy.Location = new System.Drawing.Point(651, 532);
+            this.cbFilterBy.Name = "cbFilterBy";
+            this.cbFilterBy.Size = new System.Drawing.Size(210, 21);
+            this.cbFilterBy.TabIndex = 112;
+            this.cbFilterBy.SelectedIndexChanged += new System.EventHandler(this.cbFilterBy_SelectedIndexChanged);
+            // 
+            // txtFilterValue
+            // 
+            this.txtFilterValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFilterValue.Location = new System.Drawing.Point(868, 533);
+            this.txtFilterValue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtFilterValue.Name = "txtFilterValue";
+            this.txtFilterValue.Size = new System.Drawing.Size(256, 20);
+            this.txtFilterValue.TabIndex = 111;
+            this.txtFilterValue.TextChanged += new System.EventHandler(this.txtFilterValue_TextChanged);
+            this.txtFilterValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterValue_KeyPress);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(565, 533);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(80, 20);
+            this.label10.TabIndex = 110;
+            this.label10.Text = "Filter By:";
+            // 
             // frmOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Restaurant.Properties.Resources._813M9p5FvEL;
             this.ClientSize = new System.Drawing.Size(1136, 938);
+            this.Controls.Add(this.cbFilterBy);
+            this.Controls.Add(this.txtFilterValue);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.lblTitle);
@@ -443,7 +482,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvOrders);
             this.Controls.Add(this.btnOrderNow);
-            this.Controls.Add(this.lbllblOrdersRecordsCount);
+            this.Controls.Add(this.lblOrdersRecordsCount);
             this.Controls.Add(this.RecordsCount);
             this.Controls.Add(this.dgvOrderItems);
             this.Controls.Add(this.gbIndianRed);
@@ -472,7 +511,7 @@
         private System.Windows.Forms.Label lblOrderID;
         private System.Windows.Forms.DataGridView dgvOrderItems;
         private System.Windows.Forms.Label RecordsCount;
-        private System.Windows.Forms.Label lbllblOrdersRecordsCount;
+        private System.Windows.Forms.Label lblOrdersRecordsCount;
         private System.Windows.Forms.Button btnOrderNow;
         private System.Windows.Forms.DataGridView dgvOrders;
         private System.Windows.Forms.Label label4;
@@ -500,5 +539,8 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cbFilterBy;
+        private System.Windows.Forms.TextBox txtFilterValue;
+        private System.Windows.Forms.Label label10;
     }
 }

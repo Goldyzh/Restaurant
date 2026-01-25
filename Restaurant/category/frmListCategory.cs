@@ -47,7 +47,7 @@ namespace Restaurant.Category
         private void frmListCategory_Load(object sender, EventArgs e)
         {
             dgvCategory.DataSource = _dtCategory;
-            cbFilterBy.SelectedIndex = 0;
+            cbFilterBy.SelectedIndex = 1;
             if (dgvCategory.Rows.Count <= 0)
             {
                 lblRecordsCount.Text = "0";
@@ -62,7 +62,7 @@ namespace Restaurant.Category
                 dgvCategory.Columns[0].HeaderText = "Category ID";
                 dgvCategory.Columns[0].Width = 50;
 
-                dgvCategory.Columns[1].HeaderText = "Name.";
+                dgvCategory.Columns[1].HeaderText = "Name";
                 dgvCategory.Columns[1].Width = 190;
 
 
@@ -82,15 +82,15 @@ namespace Restaurant.Category
             //Map Selected Filter to real Column name 
             switch (cbFilterBy.Text)
             {
-                case "Person ID":
+                case "Category ID":
                     FilterColumn = "CategoryID";
                     break;
 
-                case "National No.":
+                case "Name":
                     FilterColumn = "Name";
                     break;
 
-                case "First Name":
+                case "Description":
                     FilterColumn = "Description";
                     break;
 
@@ -133,22 +133,6 @@ namespace Restaurant.Category
 
         }
 
-        //private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    int CategoryID = (int)dgvCategory.CurrentRow.Cells[0].Value;
-        //    Form frm = new frmShowPersonInfo(CategoryID);
-        //    frm.ShowDialog();
-        //}
-
-        //private void editToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-
-        //    Form frm = new frmAddUpdatePerson((int)dgvCategory.CurrentRow.Cells[0].Value);
-        //    frm.ShowDialog();
-
-        //    _RefreshPeoplList();
-
-        //}
 
         private void sendEmailToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -162,52 +146,13 @@ namespace Restaurant.Category
 
         }
 
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            //if (MessageBox.Show("Are you sure you want to delete Person [" + dgvCategory.CurrentRow.Cells[0].Value + "]", "Confirm Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-
-            //{
-
-            //    //Perform Delele and refresh
-            //    if (clsCategory.DeletePerson((int)dgvCategory.CurrentRow.Cells[0].Value))
-            //    {
-            //        MessageBox.Show("Person Deleted Successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //        _RefreshPeoplList();
-            //    }
-
-            //    else
-            //        MessageBox.Show("Person was not deleted because it has data linked to it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            //}
-
-        }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            //Form frm = new frmAddUpdatePerson();
-            //frm.ShowDialog();
-
-            //_RefreshPeoplList();
-        }
-
+  
       
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void dgvCategory_DoubleClick(object sender, EventArgs e)
-        {
-            //Form frm = new frmShowPersonInfo((int)dgvCategory.CurrentRow.Cells[0].Value);
-            //frm.ShowDialog();
-        }
 
         private void txtFilterValue_KeyPress(object sender, KeyPressEventArgs e)
         {
             //we allow number incase person id is selected.
-            if (cbFilterBy.Text == "Person ID")
+            if (cbFilterBy.Text == "Category ID")
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
