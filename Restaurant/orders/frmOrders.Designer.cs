@@ -193,7 +193,7 @@
             this.dgvOrderItems.ContextMenuStrip = this.cmsItemsOrder;
             this.dgvOrderItems.Location = new System.Drawing.Point(10, 229);
             this.dgvOrderItems.Name = "dgvOrderItems";
-            this.dgvOrderItems.Size = new System.Drawing.Size(623, 256);
+            this.dgvOrderItems.Size = new System.Drawing.Size(643, 256);
             this.dgvOrderItems.TabIndex = 1;
             // 
             // cmsItemsOrder

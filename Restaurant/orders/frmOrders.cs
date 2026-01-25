@@ -114,7 +114,10 @@ namespace Restaurant.orders
                 dgvOrderItems.Columns[2].HeaderText = "Item ID";
                 dgvOrderItems.Columns[2].Width = 80;
 
-                 _OrderTotalPrice = dgvOrderItems.Rows.Cast<DataGridViewRow>()
+                dgvOrderItems.Columns[3].HeaderText = "Item Name";
+                dgvOrderItems.Columns[3].Width = 120;
+
+                _OrderTotalPrice = dgvOrderItems.Rows.Cast<DataGridViewRow>()
                                                      .Where(r => !r.IsNewRow)
                                                      .Sum(r => Convert.ToDecimal(r.Cells[5].Value ?? 0));
                                                     
