@@ -164,5 +164,24 @@ namespace Restaurant.Category
             frm1.ShowDialog();
             _RefreshCategoryList();
         }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to delete Person [" + dgvCategory.CurrentRow.Cells[0].Value + "]", "Confirm Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+
+            {
+
+                //Perform Delele and refresh
+                if (clsCategory.DeleteCategory((int)dgvCategory.CurrentRow.Cells[0].Value))
+                {
+                    MessageBox.Show("Category Deleted Successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _RefreshCategoryList();
+                }
+
+                else
+                    MessageBox.Show("Category was not deleted because it has data linked to it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
     }
 }

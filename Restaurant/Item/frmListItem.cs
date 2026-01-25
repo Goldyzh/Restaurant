@@ -174,21 +174,21 @@ namespace Restaurant.Item
         private void deleteToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
 
-            //if (MessageBox.Show("Are you sure you want to delete Person [" + dgvCategory.CurrentRow.Cells[0].Value + "]", "Confirm Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            if (MessageBox.Show("Are you sure you want to delete Person [" + dgvItems.CurrentRow.Cells[0].Value + "]", "Confirm Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
 
-            //{
+            {
 
-            //    //Perform Delele and refresh
-            //    if (clsItems.DeletePerson((int)dgvCategory.CurrentRow.Cells[0].Value))
-            //    {
-            //        MessageBox.Show("Person Deleted Successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //        _RefreshPeoplList();
-            //    }
+                //Perform Delele and refresh
+                if (clsItems.DeleteItem((int)dgvItems.CurrentRow.Cells[0].Value))
+                {
+                    MessageBox.Show("Item Deleted Successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _RefreshItemsList();
+                }
 
-            //    else
-            //        MessageBox.Show("Person was not deleted because it has data linked to it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show("Item was not deleted because it has data linked to it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            //}
+            }
 
         }
 
