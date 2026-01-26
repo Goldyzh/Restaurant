@@ -36,8 +36,6 @@ namespace Restaurant.orders
         public frmOrders()
         {
             InitializeComponent();
-            //_Mode = enMode.AddNew;
-
         }
 
      
@@ -354,8 +352,6 @@ namespace Restaurant.orders
             _ResetDefualtValues();
 
             frmAddItemToOrder frm1 = new frmAddItemToOrder(_OrderID, -1 , _OrderName, _Notes, _OrderTotalPrice);
-
-            //frmAddItemToOrder frm1 = new frmAddItemToOrder();
 
             frm1.DataBack += Frm_DataBack;
 

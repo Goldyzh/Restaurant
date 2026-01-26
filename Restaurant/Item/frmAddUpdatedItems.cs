@@ -330,11 +330,7 @@ namespace Restaurant.Item
                 errorProvider1.SetError(Temp, null);
             }
 
-        }
-
-
-     
-
+        } 
 
     }
 }

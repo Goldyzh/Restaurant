@@ -192,25 +192,10 @@ namespace Restaurant.Item
 
         }
 
-        private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
-        {
-            //Form frm = new frmAddUpdatePerson();
-            //frm.ShowDialog();
-
-            //_RefreshPeoplList();
-        }
-
-
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void dgvCategory_DoubleClick(object sender, EventArgs e)
-        {
-            //Form frm = new frmShowPersonInfo((int)dgvCategory.CurrentRow.Cells[0].Value);
-            //frm.ShowDialog();
         }
 
         private void txtFilterValue_KeyPress_1(object sender, KeyPressEventArgs e)

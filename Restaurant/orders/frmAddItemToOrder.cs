@@ -49,19 +49,11 @@ namespace Restaurant.orders
 
         private OrderMode _OrderMode;
 
-
         public enum OrderItemsMode { AddNew = 0, Update = 1 };
 
         private OrderItemsMode _OrderItemsMode;
 
 
-        //public frmAddItemToOrder()
-        //{
-        //    InitializeComponent();
-        //    _OrderMode = OrderMode.AddNew;
-        //    _OrderItemsMode = OrderItemsMode.AddNew;
-
-        //}
 
         public frmAddItemToOrder(int OrderID , int OrderItemsID , string OrderNmae, string Notes , decimal OrderTotalPrice)
         {
@@ -96,9 +88,6 @@ namespace Restaurant.orders
             _Notes = Notes;
             _OrderTotalPrice = OrderTotalPrice;
 
-           
-
-
 
 
         }
@@ -110,21 +99,14 @@ namespace Restaurant.orders
             {
                 _Order = new clsOrder();
             }
-            //else
-            //{
-            //    lblTitle.Text = "Update Person";
-            //}
 
-        
+
 
             if (_OrderItemsMode == OrderItemsMode.AddNew)
             {
                 _OrderItems = new clsOrderItems();
             }
           
-
-            //txtQuantity.Text = "1";
-
 
         }
 
@@ -180,7 +162,6 @@ namespace Restaurant.orders
         }
 
 
-
         private void CalculatePrice(decimal Price, int Quantity)
         {
 
@@ -195,16 +176,12 @@ namespace Restaurant.orders
 
         }
 
-
-
         private void cbItem_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             _Item = clsItems.FindItemByItemName(cbItem.Text);
 
             _ItemID = _Item.ItemID;
-
-
 
             CalculatePrice(_Item.Price, 1);
 
@@ -221,8 +198,6 @@ namespace Restaurant.orders
 
             if (string.IsNullOrWhiteSpace(txtQuantity.Text))
                 return;
-
-           // Quantity = int.Parse(txtQuantity.Text);
 
             if (!int.TryParse(txtQuantity.Text, out int value))
             {
@@ -287,7 +262,6 @@ namespace Restaurant.orders
                     return;
                 }
 
-                //MessageBox.Show(_Item.ItemName);
 
 
 
@@ -296,10 +270,6 @@ namespace Restaurant.orders
                 cbItem.SelectedIndex = cbItem.FindString(_Item.ItemName);
 
                 cbCategory.Text = _Item.CategoryInfo.Name;
-
-                Console.WriteLine("_Item.CategoryInfo.Name=");
-                Console.WriteLine(_Item.CategoryInfo.Name);
-
 
                 lblTitle.Text = "Update Item";
 
@@ -310,9 +280,6 @@ namespace Restaurant.orders
 
             }
 
-           
-
-
 
         }
 
@@ -320,14 +287,7 @@ namespace Restaurant.orders
         {
             _FillCategoriesInComoboBox();
             _ResetDefualtValues();
-
-            //if (_OrderItemsMode == OrderItemsMode.Update)
-            //{
-            //    _LoadData();
-            //}
             _LoadData();
-
-
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -362,23 +322,11 @@ namespace Restaurant.orders
             _Order.TotalPrice = _OrderTotalPrice;
 
 
-         
-
-
-
-
-
             bool IsOrderSaved = false;
 
-            //if (_OrderMode == OrderMode.AddNew)
-            //{
+
                 if (_Order.Save())
                 {
-                Console.WriteLine("_Order.TotalPrice=");
-                Console.WriteLine(_Order.TotalPrice);
-
-                //لازم نرجع الايدي للكالد فورم
-                // lblCategoryID.Text = _Category.CategoryID.ToString();
                 //change form mode to update.
                 _OrderMode = OrderMode.Update;
                     _OrderID = _Order.OrderID;
@@ -394,7 +342,7 @@ namespace Restaurant.orders
                     MessageBox.Show("Error: Data Is not Saved Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     IsOrderSaved = false;
                 }
-            //}
+         
 
            
 
@@ -413,9 +361,6 @@ namespace Restaurant.orders
 
                     MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // زايد
-                    // Trigger the event to send data back to the caller form.
-                    //  DataBack?.Invoke(this, _OrderItems.ItemID);
                 }
                 else
                     MessageBox.Show("Error: Data Is not Saved Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
