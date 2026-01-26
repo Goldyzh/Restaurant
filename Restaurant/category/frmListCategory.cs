@@ -1,5 +1,6 @@
 ﻿using Restaurant.category;
 using Restaurant.Classes;
+using Restaurant.Item;
 using Restaurant_Buisness;
 using System;
 using System.Collections.Generic;
@@ -182,6 +183,15 @@ namespace Restaurant.Category
                     MessageBox.Show("Category was not deleted because it has data linked to it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmAddUpdatedCategory((int)dgvCategory.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+
+            _RefreshCategoryList();
+
         }
     }
 }

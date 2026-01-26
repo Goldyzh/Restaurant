@@ -43,7 +43,6 @@ namespace Restaurant.category
         public frmAddUpdatedCategory(int CategoryID)
         {
             InitializeComponent();
-
             _Mode = enMode.Update;
             _CategoryID = CategoryID;
         }
@@ -81,7 +80,7 @@ namespace Restaurant.category
 
             if (_Category == null)
             {
-                MessageBox.Show("No Person with ID = " + _CategoryID, "Person Not Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No Category with ID = " + _CategoryID, "Category Not Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.Close();
                 return;
             }
@@ -201,6 +200,7 @@ namespace Restaurant.category
 
                 // Trigger the event to send data back to the caller form.
                 DataBack?.Invoke(this, _Category.CategoryID);
+                this.Close();
             }
             else
                 MessageBox.Show("Error: Data Is not Saved Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
