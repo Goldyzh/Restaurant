@@ -360,7 +360,7 @@ namespace Restaurant_DataAccess
 
             catch (Exception ex)
             {
-                 Console.WriteLine("Error:------------------ " + ex.Message);
+                 //Console.WriteLine("Error:------------------ " + ex.Message);
             }
             finally
             {
@@ -377,8 +377,7 @@ namespace Restaurant_DataAccess
             DataTable dt = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"SELECT * FROM View_ItemsByCategoryName where Name = @CategoryName";
-            // string query = @"SELECT * FROM Items where CategoryID = @CategoryID";
+            string query = @"SELECT * FROM View_ItemsByCategoryName where IsAvailable != 0 and Name = @CategoryName";
 
             SqlCommand command = new SqlCommand(query, connection);
 

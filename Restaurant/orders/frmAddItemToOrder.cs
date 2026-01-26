@@ -42,8 +42,7 @@ namespace Restaurant.orders
         decimal _OrderTotalPrice = 0;
 
 
-
-
+        DataTable dtItems = new DataTable();
 
 
         public enum OrderMode { AddNew = 0, Update = 1 };
@@ -140,7 +139,6 @@ namespace Restaurant.orders
             }
         }
 
-        DataTable dtItems = new DataTable();
 
         private void _FillItemsInComoboBox(string CategoryName)
         {
