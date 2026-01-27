@@ -102,7 +102,7 @@ namespace Restaurant.Item
                     break;
 
                 case "Item Name":
-                    FilterColumn = "Name Item";
+                    FilterColumn = "ItemName";
                     break;
 
                 case "Description":
