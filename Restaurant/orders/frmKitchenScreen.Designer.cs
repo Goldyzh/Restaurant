@@ -60,12 +60,12 @@
             this.lblTitle.TabIndex = 15;
             this.lblTitle.Text = "Kitchen Screen";
             // 
-            // lbllblOrdersRecordsCount
+            // lblOrdersRecordsCount
             // 
             this.lblOrdersRecordsCount.AutoSize = true;
             this.lblOrdersRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrdersRecordsCount.Location = new System.Drawing.Point(177, 491);
-            this.lblOrdersRecordsCount.Name = "lbllblOrdersRecordsCount";
+            this.lblOrdersRecordsCount.Name = "lblOrdersRecordsCount";
             this.lblOrdersRecordsCount.Size = new System.Drawing.Size(18, 20);
             this.lblOrdersRecordsCount.TabIndex = 13;
             this.lblOrdersRecordsCount.Text = "0";
@@ -83,6 +83,8 @@
             // 
             // dgvInProgressOrders
             // 
+            this.dgvInProgressOrders.AllowUserToAddRows = false;
+            this.dgvInProgressOrders.AllowUserToDeleteRows = false;
             this.dgvInProgressOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInProgressOrders.ContextMenuStrip = this.cmsOrdersKitchen;
             this.dgvInProgressOrders.Location = new System.Drawing.Point(18, 143);
@@ -113,6 +115,8 @@
             // 
             // dgvOrderItems
             // 
+            this.dgvOrderItems.AllowUserToAddRows = false;
+            this.dgvOrderItems.AllowUserToDeleteRows = false;
             this.dgvOrderItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrderItems.ContextMenuStrip = this.cmsOrdersKitchen;
             this.dgvOrderItems.Location = new System.Drawing.Point(1163, 143);

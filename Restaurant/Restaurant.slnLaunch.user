@@ -1,0 +1,16 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "Restaurant.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "..\\RestaurantWebAPI\\RestaurantWebAPI.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      }
+    ]
+  }
+]

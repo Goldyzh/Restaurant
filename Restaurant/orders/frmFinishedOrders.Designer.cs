@@ -40,18 +40,20 @@
             // 
             // dgvOrders
             // 
+            this.dgvOrders.AllowUserToAddRows = false;
+            this.dgvOrders.AllowUserToDeleteRows = false;
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrders.Location = new System.Drawing.Point(12, 160);
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.Size = new System.Drawing.Size(1150, 345);
             this.dgvOrders.TabIndex = 0;
             // 
-            // lbllblOrdersRecordsCount
+            // lblOrdersRecordsCount
             // 
             this.lblOrdersRecordsCount.AutoSize = true;
             this.lblOrdersRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrdersRecordsCount.Location = new System.Drawing.Point(166, 508);
-            this.lblOrdersRecordsCount.Name = "lbllblOrdersRecordsCount";
+            this.lblOrdersRecordsCount.Name = "lblOrdersRecordsCount";
             this.lblOrdersRecordsCount.Size = new System.Drawing.Size(18, 20);
             this.lblOrdersRecordsCount.TabIndex = 8;
             this.lblOrdersRecordsCount.Text = "0";
